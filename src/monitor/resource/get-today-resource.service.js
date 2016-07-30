@@ -5,7 +5,7 @@
     GetTodayResourceService.$inject = ['$resource', 'API_HOST', 'TIME_CONTEXT'];
 
     function GetTodayResourceService($resource, API_HOST, TIME_CONTEXT) {
-        var timeResource = $resource(API_HOST + TIME_CONTEXT + '/:action/:param');
+        var timeResource = $resource(API_HOST + TIME_CONTEXT + ':action/:param');
         return {
             getTodayRecords: getTodayRecords
         };

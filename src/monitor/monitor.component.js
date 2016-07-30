@@ -6,8 +6,19 @@
             controller: MonitorComponent,
             controllerAs: 'monitor'
         });
-
-    function MonitorComponent() {
-
+    MonitorComponent.$inject = ['EventEmitterService'];
+    function MonitorComponent(EventEmitterService) {
+        var monitor = this;
+        monitor.$onInit = onInit;
+        monitor.isLoading = false;
+        EventEmitterService.onComplete('refreshTodayRecords', function (entries) {
+            monitor.entries = entries;
+        });
+        function onInit() {
+            monitor.isLoading = true;
+            EventEmitterService.emit('refreshTodayRecords', function () {
+                monitor.isLoading = false;
+            });
+        }
     }
 })();

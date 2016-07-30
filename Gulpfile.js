@@ -1,6 +1,6 @@
 'use strict';
 
-var API_HOST = process.env.API_HOST || 'gds-ms-api.herokuapp.com';
+var API_HOST = process.env.API_HOST || 'https://gds-ms-api.herokuapp.com';
 var SCANNER_CONTEXT = process.env.SCANNER_CONTEXT || '/gds/scanner/';
 var TIME_CONTEXT = process.env.SCANNER_CONTEXT || '/gds/time/';
 var CONFIG_HOST = process.env.CONFIG_HOST || '';

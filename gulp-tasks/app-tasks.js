@@ -19,12 +19,17 @@ var SRC_JS = [
     'src/app/core/page-control/page-control.component.js',
     'src/app/core/toolbar-logo/toolbar-logo.component.js',
     'src/app/core/main-frame/main-frame.component.js',
+    'src/app/common/event-emitter/event-emitter.service.js',
+    'src/app/core/info-bar/info-bar.component.js',
     'src/monitor/monitor.module.js',
     'src/monitor/monitor-resource.service.js',
     'src/monitor/monitor.component.js',
-    'src/app/core/info-bar/info-bar.component.js',
-    'src/school/school-resource.service.js', '' +
-    'src/monitor/control/monitor-control.component.js'
+    'src/monitor/control/monitor-control.component.js',
+    'src/monitor/events/refresh-event.service.js',
+    'src/monitor/resource/get-today-resource.service.js',
+    'src/school/school-resource.service.js',
+    'src/scanner/scanner.module.js',
+    'src/scanner/scanner.service.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';
