@@ -1,0 +1,8 @@
+bower_components
+node_modules
+dist
+src/app/app.constant.js
+.env
+.idea
+*.log
+index.html
