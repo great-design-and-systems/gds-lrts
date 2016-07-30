@@ -19,7 +19,6 @@ var LIB_JS = [
     'bower_components/socket.io-client/socket.io.js',
     'vendors/pace/pace.js',
     'vendors/jqClock/jqClock.js',
-    'bower_components/angular-auto-height/dist/auto-height.js',
     'bower_components/angular-material-data-table/dist/md-data-table.js'
 ];
 
