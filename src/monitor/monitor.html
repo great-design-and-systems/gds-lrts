@@ -1,4 +1,7 @@
 <div layout>
+    <div ng-if="monitor.isLoading">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
     <md-table-container flex ng-if="!monitor.isLoading">
         <md-progress ng-if="monitor.isLoading"></md-progress>
         <table md-table md-progress="promise">

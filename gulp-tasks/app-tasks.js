@@ -21,6 +21,7 @@ var SRC_JS = [
     'src/app/core/main-frame/main-frame.component.js',
     'src/app/common/event-emitter/event-emitter.service.js',
     'src/app/core/info-bar/info-bar.component.js',
+    'src/app/core/auto-height/auto-height.directive.js',
     'src/monitor/monitor.module.js',
     'src/monitor/monitor-resource.service.js',
     'src/monitor/monitor.component.js',
