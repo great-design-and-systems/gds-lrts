@@ -18,6 +18,7 @@ var SRC_JS = [
   'src/app/core/clock/clock.directive.js',
   'src/app/core/page-control/page-control.component.js',
   'src/app/core/toolbar-logo/toolbar-logo.component.js',
+  'src/app/core/main-frame/main-frame.component.js',
   'src/monitor/monitor.module.js',
   'src/monitor/monitor-resource.service.js'
 ];
