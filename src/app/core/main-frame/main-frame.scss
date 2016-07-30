@@ -1,8 +1,4 @@
 main-frame {
-  .main-div {
-   @extend .app-content-border;
-   @extend .box;
-  }
-   padding: 5px;
-   background: $mainFrameBackground !important;
+  @extend .app-frame;
+  padding: 15px;
 }

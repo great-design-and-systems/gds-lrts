@@ -1,13 +1,13 @@
-(function() {
-  'use strict';
-  angular.module('gdsApp')
-    .component('monitor', {
-      templateUrl: 'src/monitor/monitor.html',
-      controller: MonitorComponent,
-      controllerAs: 'monitor'
-    });
+(function () {
+    'use strict';
+    angular.module('app.monitor')
+        .component('monitor', {
+            templateUrl: 'src/monitor/monitor.html',
+            controller: MonitorComponent,
+            controllerAs: 'monitor'
+        });
 
-  function MonitorComponent() {
+    function MonitorComponent() {
 
-  }
+    }
 })();

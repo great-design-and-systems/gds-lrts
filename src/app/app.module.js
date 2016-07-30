@@ -1,4 +1,4 @@
-(function() {
-  'use strict';
-  angular.module('gdsApp', ['ui.router', 'ngResource', 'ngMaterial', 'm43nu.auto-height', 'app.core', 'app.monitor']);
+(function () {
+    'use strict';
+    angular.module('gdsApp', ['ui.router', 'ngResource', 'm43nu.auto-height', 'ngMaterial', 'app.core', 'app.monitor']);
 })();

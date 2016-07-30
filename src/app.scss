@@ -5,18 +5,41 @@ body {
   background-color: $appBackground;
 }
 
-.app-content-border { 
-  box-shadow: 1px 1px 1px $borderColor;
-}
-
-.box {
-   @include border-radius(4px);
+.app-frame {
+  @include box(4px);
+  @include content-border();
+  padding: 5px;
+  background: $mainFrameBackground !important;
 }
 
 .main-content {
   background: none;
+  padding: 4px;
+}
+
+.frame-view-component {
+  width: 100%;
+}
+
+.app-title {
+  color: white;
+  font-family: Old English Text MT;
+}
+
+.app-sub-title {
+  color: white;
+  font-family: Myriad Pro Regular;
+  font-size: $subTitleFontSize !important;
+}
+
+.app-logo {
+  height: $logoHeight;
+  width: $logoWidth;
 }
 
 @import "app/core/clock/clock";
 @import "app/core/toolbar-logo/toolbar-logo";
 @import "app/core/main-frame/main-frame";
+@import "app/core/info-bar/info-bar";
+@import "monitor/monitor";
+@import "app/core/page-control/page-control";
