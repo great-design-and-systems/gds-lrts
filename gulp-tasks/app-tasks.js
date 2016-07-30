@@ -15,6 +15,9 @@ var SRC_JS = [
   'src/app/app.route.js',
   'src/app/app.vendor.js',
   'src/app/app.clock.directive.js',
+  'src/app/core/core.module.js',
+  'src/app/core/page-control/page-control.component.js',
+  'src/app/core/toolbar-logo/toolbar-logo.component.js',
   'src/monitor/monitor.module.js',
   'src/monitor/monitor-resource.service.js'
 ];

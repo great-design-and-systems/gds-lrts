@@ -9,7 +9,8 @@
     "bower": "./node_modules/.bin/bower",
     "postinstall": "bower update -V && gulp",
     "server": "./node_modules/.bin/http-server",
-    "start": "npm run server"
+    "start": "npm run server",
+    "debug": "npm run gulp debug"
   },
   "repository": {
     "type": "git",
