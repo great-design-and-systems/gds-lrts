@@ -16,9 +16,8 @@
                     }
                     element.height(height);
                 }
-
                 setTimeout(setElementHeight, 0);
             }
-        }
+        };
     }
 })();

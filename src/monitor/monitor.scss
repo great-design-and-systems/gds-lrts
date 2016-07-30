@@ -1,3 +1,9 @@
 monitor {
   @extend .frame-view-component;
+  tbody {
+    tr[md-row] {
+      text-align: center;
+      background: floralwhite;
+    }
+  }
 }
