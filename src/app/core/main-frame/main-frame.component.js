@@ -4,4 +4,4 @@
     .component('mainFrame', {
       template: '<div ui-view="mainFrame"></div>'
     });
-});
+})();
