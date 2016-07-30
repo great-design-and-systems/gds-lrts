@@ -27,6 +27,10 @@
     "angular-resource": "^1.5.8",
     "angular-ui-router": "ui-router#^0.3.1",
     "angular-material": "^1.0.9",
-    "jquery": "^3.1.0"
+    "jquery": "^3.1.0",
+    "angular-auto-height": "m43nu/angular-auto-height"
+  },
+  "resolutions": {
+    "angular": "1.5.8"
   }
 }

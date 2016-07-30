@@ -18,7 +18,8 @@ var LIB_JS = [
   'bower_components/angular-aria/angular-aria.js',
   'bower_components/socket.io-client/socket.io.js',
   'vendors/pace/pace.js',
-  'vendors/jqClock/jqClock.js'
+  'vendors/jqClock/jqClock.js',
+  'bower_components/angular-auto-height/dist/auto-height.js'
 ];
 
 var LIB_CSS = [

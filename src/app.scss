@@ -1,6 +1,22 @@
 @import "app.variables";
-@import "app/core/clock/clock";
-@import "app/core/toolbar-logo/toolbar-logo";
+@import "app.mixin";
+
 body {
   background-color: $appBackground;
 }
+
+.app-content-border { 
+  box-shadow: 1px 1px 1px $borderColor;
+}
+
+.box {
+   @include border-radius(4px);
+}
+
+.main-content {
+  background: none;
+}
+
+@import "app/core/clock/clock";
+@import "app/core/toolbar-logo/toolbar-logo";
+@import "app/core/main-frame/main-frame";

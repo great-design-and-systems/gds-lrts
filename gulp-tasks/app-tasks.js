@@ -20,7 +20,8 @@ var SRC_JS = [
   'src/app/core/toolbar-logo/toolbar-logo.component.js',
   'src/app/core/main-frame/main-frame.component.js',
   'src/monitor/monitor.module.js',
-  'src/monitor/monitor-resource.service.js'
+  'src/monitor/monitor-resource.service.js',
+  'src/monitor/monitor.component.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';

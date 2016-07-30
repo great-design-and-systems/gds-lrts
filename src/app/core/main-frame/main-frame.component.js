@@ -2,6 +2,6 @@
   'use strict';
   angular.module('app.core')
     .component('mainFrame', {
-      template: '<div ui-view="mainFrame"></div>'
+      template: '<div class="main-div" ui-view="mainFrame"></div>'
     });
-});
+})();
