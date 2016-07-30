@@ -1,4 +1,5 @@
-(function() {
-  'use strict';
-  angular.module('gdsApp', ['ui.router', 'ngResource', 'ngMaterial', 'app.core', 'app.monitor']);
+(function () {
+    'use strict';
+    angular.module('gdsApp', ['ui.router', 'ngResource', 'ngMaterial', 'md.data.table',
+        'app.core', 'app.monitor', 'app.scanner']);
 })();

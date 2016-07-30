@@ -1,4 +1,14 @@
 toolbar-logo {
-    background-color: $appBackground;
-    height: 61px;
+  padding: 2px;
+  .school-title {
+    margin-left: 2px;
+    @extend .app-title;
+  }
+  .school-sub-title {
+    margin-left: 2px;
+    @extend .app-sub-title;
+  }
+  .school-logo {
+    @extend .app-logo;
+  }
 }

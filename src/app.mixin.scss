@@ -1,0 +1,14 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin content-border() {
+  box-shadow: 1px 1px 1px $borderColor;
+}
+
+@mixin box($radius) {
+  @include border-radius($radius);
+}

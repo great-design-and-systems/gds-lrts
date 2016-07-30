@@ -2,31 +2,38 @@
 <html ng-app="gdsApp">
 
 <head>
-  <base href=".">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href=".">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GDS Libary Reports and Tracking System</title>
+    <title>GDS Libary Reports and Tracking System</title>
 
-  <!-- build:vendorCSS -->
-  <!-- endbuild -->
-  <!-- build:appCSS -->
-  <!-- endbuild -->
+    <!-- build:vendorCSS -->
+    <!-- endbuild -->
+    <!-- build:appCSS -->
+    <!-- endbuild -->
 
 </head>
 
 <body layout="row">
-  <div flex ng-cloak class="md-primary">
+<div flex ng-cloak>
     <page-control></page-control>
-    <md-content layout>
-      <main-frame flex></main-frame>
+    <md-content class="main-content" layout layout-padding="2">
+        <!--<md-sidenav class="md-sidenav-left"
+                    md-component-id="left"
+                    md-is-locked-open="$mdMedia('gt-md')"
+                    md-disable-backdrop
+                    md-whiteframe="4">
+        </md-sidenav>-->
+        <main-frame flex auto-height offset="90"></main-frame>
+        <info-bar flex="25"></info-bar>
     </md-content>
-  </div>
-  <!-- build:vendorJS -->
-  <!-- endbuild -->
-  <!-- build:appJS -->
-  <!-- endbuild -->
+</div>
+<!-- build:vendorJS -->
+<!-- endbuild -->
+<!-- build:appJS -->
+<!-- endbuild -->
 </body>
 
 </html>
