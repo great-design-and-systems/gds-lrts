@@ -14,7 +14,7 @@ var SRC_JS = [
   'src/app/app.constant.js',
   'src/app/app.route.js',
   'src/app/app.vendor.js',
-  'src/app/app.clock.directive.js',
+  'src/app/core/clock/clock.directive.js',
   'src/app/core/core.module.js',
   'src/app/core/page-control/page-control.component.js',
   'src/app/core/toolbar-logo/toolbar-logo.component.js',

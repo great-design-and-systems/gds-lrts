@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('gdsApp')
+  angular.module('app.core')
     .directive('clock', AppClock);
   AppClock.$inject = ['vendors'];
 
