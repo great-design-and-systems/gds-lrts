@@ -12,6 +12,7 @@ var angularTemplates = require('gulp-angular-templates');
 var SRC_JS = [
   'src/app/app.module.js',
   'src/app/app.constant.js',
+  'src/app/app.theme.js',
   'src/app/app.route.js',
   'src/app/app.vendor.js',
   'src/app/core/core.module.js',

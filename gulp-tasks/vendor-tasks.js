@@ -23,7 +23,6 @@ var LIB_JS = [
 
 var LIB_CSS = [
   'vendors/pace/pace.css',
-  'bower_components/angular-material/angular-material.css',
   'vendors/jqClock/jqClock.css'
 ];
 
