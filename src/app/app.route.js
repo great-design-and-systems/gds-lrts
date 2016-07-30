@@ -6,23 +6,17 @@
   AppRoute.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   function AppRoute($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/monitor');
 
-//     $stateProvider
-  //       .state('home', {
-  //         url: '/home',
-  //         template: '<home></home>'
-  //       })
-  //       .state('timeIn', {
-  //         url: '/time-in',
-  //         template: '<time-in></time-in>'
-  //       })
-  //       .state('barcode', {
-  //         url: '/bar-code/:timeInID',
-  //         template: '<bar-code time-in-id="barCode.param.timeInID"></bar-code>',
-  //         controller: ExposeRouteParams,
-  //         controllerAs: 'barCode'
-  //       });
+    $stateProvider
+      .state('monitor', {
+        url: '/monitor',
+        views: {
+          'mainFrame': {
+            template: '<monitor></monitor>'
+          }
+        }
+      });
   }
 
   ExposeRouteParams.$inject = ['$stateParams'];
