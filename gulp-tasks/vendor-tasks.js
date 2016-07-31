@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var pump = require('pump');
 var uglify = require('gulp-uglify');
 var uglifycss = require('gulp-uglifycss');
+var copy = require('gulp-copy');
 
 var LIB_JS = [
     'bower_components/jquery/dist/jquery.js',
@@ -23,19 +24,21 @@ var LIB_JS = [
 ];
 
 var LIB_CSS = [
-    'vendors/pace/pace.css',
     'bower_components/angular-material/angular-material.css',
-    'vendors/jqClock/jqClock.css',
-    'bower_components/angular-material-data-table/dist/md-data-table.css'
+    'bower_components/font-awesome/css/font-awesome.css',
+    'vendors/pace/pace.css',
+    'vendors/jqClock/jqClock.css'
 ];
+
+var LIB_FONTS = ['bower_components/font-awesome/fonts/'];
 
 module.exports = function (gulp) {
     gulp.task('vendor-build', function () {
-        runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-compress-scripts', 'vendor-compress-css');
+        runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-compress-scripts', 'vendor-compress-css', 'vendor-copy-fonts');
     });
 
     gulp.task('vendor-debug', function () {
-        runSequence('vendor-concat-scripts', 'vendor-concat-css');
+        runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-copy-fonts');
     });
 
     gulp.task('vendor-compress-scripts', function (cb) {
@@ -63,6 +66,16 @@ module.exports = function (gulp) {
             .pipe(gulp.dest('./dist'));
     });
 
+    gulp.task('vendor-concat-css', function () {
+        return gulp.src(LIB_CSS)
+            .pipe(concat('vendors.css'))
+            .pipe(gulp.dest('./dist'));
+    });
+
+    gulp.task('vendor-copy-fonts', function () {
+        gulp.src('./bower_components/font-awesome/fonts/*.*')
+            .pipe(gulp.dest('./fonts/'));
+    });
     gulp.task('vendor-concat-css', function () {
         return gulp.src(LIB_CSS)
             .pipe(concat('vendors.css'))

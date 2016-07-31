@@ -10,7 +10,7 @@
     function PageControlComponent($state) {
         var pageControl = this;
         pageControl.getCurrent = getCurrent;
-
+  
         function getCurrent() {
             return $state.current;
         }
