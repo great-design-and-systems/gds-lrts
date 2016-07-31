@@ -27,7 +27,8 @@ var LIB_CSS = [
   'bower_components/angular-material/angular-material.css',
   'bower_components/font-awesome/css/font-awesome.css',
   'vendors/pace/pace.css',
-  'vendors/jqClock/jqClock.css'
+  'vendors/jqClock/jqClock.css',
+  'bower_components/angular-material-data-table/dist/md-data-table.css'
 ];
 
 var LIB_FONTS = ['bower_components/font-awesome/fonts/'];
@@ -65,8 +66,6 @@ module.exports = function(gulp) {
             .pipe(concat('vendors.js'))
             .pipe(gulp.dest('./dist'));
     });
-
-<<<<<<< HEAD
   gulp.task('vendor-concat-css', function() {
     return gulp.src(LIB_CSS)
       .pipe(concat('vendors.css'))
@@ -78,11 +77,3 @@ module.exports = function(gulp) {
     .pipe(gulp.dest('./fonts/'));
   })
 }
-=======
-    gulp.task('vendor-concat-css', function () {
-        return gulp.src(LIB_CSS)
-            .pipe(concat('vendors.css'))
-            .pipe(gulp.dest('./dist'));
-    });
-};
->>>>>>> 4e430d80bc73bda10acb3a17f71f599ab5ce84f4

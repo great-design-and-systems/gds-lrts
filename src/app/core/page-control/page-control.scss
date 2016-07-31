@@ -9,4 +9,8 @@ page-control {
     border-left: $pageControlBorder;
     font-weight: bold;
   }
+
+    md-toolbar:not(.md-menu-toolbar) {
+        background-color: $primary;
+    }
 }

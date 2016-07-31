@@ -1,9 +1,12 @@
 @import "../bower_components/angular-material/angular-material.scss";
 @import "app.variables";
 @import "app.mixin";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
   background-color: $appBackground;
+  font-family: $fontFamily;
+  font-size: $fontSize;
 }
 
 .app-frame {
@@ -36,6 +39,11 @@ body {
 .app-logo {
   height: $logoHeight;
   width: $logoWidth;
+}
+
+.primary {
+  background-color: $primary;
+  color: #fff !important;
 }
 
 @import "app/core/clock/clock";

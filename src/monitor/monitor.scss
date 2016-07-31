@@ -6,4 +6,9 @@ monitor {
       background: floralwhite;
     }
   }
+  thead {
+  	th[md-column]{
+  		@extend .primary;
+  	}
+  }
 }
