@@ -1,4 +1,3 @@
-@import "../bower_components/angular-material/angular-material.scss";
 @import "app.variables";
 @import "app.mixin";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
@@ -46,9 +45,16 @@ body {
   color: #fff !important;
 }
 
+.md-sidenav-left {
+  background: none;
+  width: $sidenavLeftWidth;
+  @extend .app-frame;
+}
+
 @import "app/core/clock/clock";
 @import "app/core/toolbar-logo/toolbar-logo";
 @import "app/core/main-frame/main-frame";
 @import "app/core/info-bar/info-bar";
 @import "monitor/monitor";
 @import "app/core/page-control/page-control";
+@import "app/core/navigation-links/navigation-links";

@@ -26,21 +26,21 @@ var LIB_JS = [
 var LIB_CSS = [
   'bower_components/angular-material/angular-material.css',
   'bower_components/font-awesome/css/font-awesome.css',
+  'bower_components/angular-material-data-table/dist/md-data-table.css',
   'vendors/pace/pace.css',
   'vendors/jqClock/jqClock.css',
-  'bower_components/angular-material-data-table/dist/md-data-table.css'
 ];
 
 var LIB_FONTS = ['bower_components/font-awesome/fonts/'];
 
-module.exports = function(gulp) {
-  gulp.task('vendor-build', function() {
-    runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-compress-scripts', 'vendor-compress-css','vendor-copy-fonts');
-  });
+module.exports = function (gulp) {
+    gulp.task('vendor-build', function () {
+        runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-compress-scripts', 'vendor-compress-css', 'vendor-copy-fonts');
+    });
 
-  gulp.task('vendor-debug', function() {
-    runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-copy-fonts');
-  });
+    gulp.task('vendor-debug', function () {
+        runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-copy-fonts');
+    });
 
     gulp.task('vendor-compress-scripts', function (cb) {
         pump([
@@ -66,14 +66,20 @@ module.exports = function(gulp) {
             .pipe(concat('vendors.js'))
             .pipe(gulp.dest('./dist'));
     });
-  gulp.task('vendor-concat-css', function() {
-    return gulp.src(LIB_CSS)
-      .pipe(concat('vendors.css'))
-      .pipe(gulp.dest('./dist'));
-  });
 
-  gulp.task('vendor-copy-fonts', function() {
-    gulp.src('./bower_components/font-awesome/fonts/*.*')
-    .pipe(gulp.dest('./fonts/'));
-  })
-}
+    gulp.task('vendor-concat-css', function () {
+        return gulp.src(LIB_CSS)
+            .pipe(concat('vendors.css'))
+            .pipe(gulp.dest('./dist'));
+    });
+
+    gulp.task('vendor-copy-fonts', function () {
+        gulp.src('./bower_components/font-awesome/fonts/*.*')
+            .pipe(gulp.dest('./fonts/'));
+    });
+    gulp.task('vendor-concat-css', function () {
+        return gulp.src(LIB_CSS)
+            .pipe(concat('vendors.css'))
+            .pipe(gulp.dest('./dist'));
+    });
+};
