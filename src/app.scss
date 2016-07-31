@@ -39,6 +39,7 @@ body {
 
 .md-sidenav-left {
   background: none;
+  width: $sidenavLeftWidth;
   @extend .app-frame;
 }
 

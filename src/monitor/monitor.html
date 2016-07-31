@@ -1,5 +1,5 @@
-<div layout>
-    <div ng-if="monitor.isLoading">
+<div layout="row" flex>
+    <div ng-if="monitor.isLoading" flex>
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
     <md-table-container flex ng-if="!monitor.isLoading">

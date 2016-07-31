@@ -7,3 +7,5 @@ src/app/app.constant.js
 *.log
 /index.html
 gds-lrts.iml
+img/Thumbs.db
+fonts
