@@ -37,9 +37,15 @@ body {
   width: $logoWidth;
 }
 
+.md-sidenav-left {
+  background: none;
+  @extend .app-frame;
+}
+
 @import "app/core/clock/clock";
 @import "app/core/toolbar-logo/toolbar-logo";
 @import "app/core/main-frame/main-frame";
 @import "app/core/info-bar/info-bar";
 @import "monitor/monitor";
 @import "app/core/page-control/page-control";
+@import "app/core/navigation-links/navigation-links";

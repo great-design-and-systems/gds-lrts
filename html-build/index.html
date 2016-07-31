@@ -20,14 +20,15 @@
 <div flex ng-cloak>
     <page-control></page-control>
     <md-content class="main-content" layout layout-padding="2">
-        <!--<md-sidenav class="md-sidenav-left"
+        <md-sidenav layout="column" class="md-sidenav-left"
                     md-component-id="left"
                     md-is-locked-open="$mdMedia('gt-md')"
-                    md-disable-backdrop
-                    md-whiteframe="4">
-        </md-sidenav>-->
+                    md-disable-backdrop>
+            <navigation-links flex layout="column">
+            </navigation-links>
+        </md-sidenav>
         <main-frame flex auto-height offset="90"></main-frame>
-        <info-bar flex="25"></info-bar>
+        <info-bar flex="20"></info-bar>
     </md-content>
 </div>
 <!-- build:vendorJS -->

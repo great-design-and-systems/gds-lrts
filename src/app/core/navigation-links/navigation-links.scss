@@ -1,0 +1,11 @@
+navigation-links {
+  .nav-link {
+    cursor: pointer;
+    height: 40px;
+    background: $navBackgroundLink;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
