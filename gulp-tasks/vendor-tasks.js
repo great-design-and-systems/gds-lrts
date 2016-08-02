@@ -35,7 +35,7 @@ var LIB_FONTS = ['bower_components/font-awesome/fonts/'];
 
 module.exports = function (gulp) {
     gulp.task('vendor-build', function () {
-        runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-compress-scripts', 'vendor-compress-css', 'vendor-copy-fonts');
+        runSequence('vendor-concat-scripts', 'vendor-concat-css', 'vendor-compress-scripts', 'vendor-compress-css', 'vendor-copy-fonts-prod');
     });
 
     gulp.task('vendor-debug', function () {
@@ -76,6 +76,10 @@ module.exports = function (gulp) {
     gulp.task('vendor-copy-fonts', function () {
         gulp.src('./bower_components/font-awesome/fonts/*.*')
             .pipe(gulp.dest('./fonts/'));
+    });
+    gulp.task('vendor-copy-fonts-prod', function () {
+        gulp.src('./bower_components/font-awesome/fonts/*.*')
+            .pipe(gulp.dest('./dist/fonts/'));
     });
     gulp.task('vendor-concat-css', function () {
         return gulp.src(LIB_CSS)

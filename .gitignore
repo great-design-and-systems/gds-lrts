@@ -9,3 +9,4 @@ src/app/app.constant.js
 gds-lrts.iml
 img/Thumbs.db
 fonts
+npm-debug.*

@@ -8,7 +8,8 @@ monitor {
   }
   thead {
   	th[md-column]{
-  		// @extend .primary;
+  		background-color: $appBackground;
+      color: #fff !important;
   	}
   }
 }

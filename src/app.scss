@@ -13,28 +13,7 @@ body {
 .no-bg-color {
   background-color: transparent !important;
 }
-page-control button.md-button {
-  background-color: $blendColorBG;
-  border-bottom: solid 1px $blendColorBorder;
-  box-shadow: none !important;
-  text-transform: capitalize;
-}
-page-control button.md-icon-button {
-  background-color: transparent !important;
-  border: none !important;
-}
-page-control button.md-icon-button md-icon {
-  height: auto;
-}
-page-control .md-toolbar-tools {
-  padding-left: 0;
-}
-page-control .page-current-label {
-  padding: 10px 20px;
-  border: solid 1px $blendColorBorder;
-  margin: 2px 15px 0;
-  text-transform: uppercase;
-}
+
 /* END THEME */
 
 .app-frame {
@@ -83,29 +62,6 @@ page-control .page-current-label {
 .md-sidenav-left {
   background-color: transparent !important;
   padding: 10px 10px 0 !important;
-}
-
-main-frame, info-bar {
-    height: 612px !important;
-    background-color: rgba(255,255,255,0.75) !important;
-    border-radius: 0px !important;
-    padding: 25px !important;
-}
-
-main-frame {
-  box-shadow: inset 1px 1px 1px #666;
-}
-
-info-bar {
-  box-shadow: inset -1px 1px 1px #666;
-  padding: 0px !important;
-}
-md-table-container {
-  box-shadow: 1px 1px 4px #888;
-}
-monitor thead th[md-column]{
-  background-color: $appBackground;
-  color: #fff !important;
 }
 
 @import "app/core/clock/clock";
