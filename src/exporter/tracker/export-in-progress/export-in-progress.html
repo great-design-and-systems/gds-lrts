@@ -1,0 +1,13 @@
+<md-list>
+    <md-subheader class="md-no-sticky">
+        <div layout="row">
+            <span>Export in-progress</span><span flex></span>
+            <a class="toggle-shown" ng-click="exportInProgress.shown=!exportInProgress.shown">
+                <md-icon ng-if="!exportInProgress.shown" md-font-icon="fa fa-plus"></md-icon>
+                <md-icon ng-if="exportInProgress.shown" md-font-icon="fa fa-minus"></md-icon>
+            </a>
+        </div>
+    </md-subheader>
+    <md-divider></md-divider>
+    <md-list-item class="md-3-line"></md-list-item>
+</md-list>

@@ -1,0 +1,12 @@
+export-in-progress {
+  .md-subheader {
+    @extend .primary;
+  }
+  .toggle-shown {
+    cursor: pointer;
+    md-icon {
+      color: $white;
+    }
+
+  }
+}

@@ -33,7 +33,13 @@ var SRC_JS = [
     'src/school/school-resource.service.js',
     'src/scanner/scanner.module.js',
     'src/scanner/scanner.service.js',
-    'src/app/app.theme.js'
+    'src/app/app.theme.js',
+    'src/exporter/exporter.module.js',
+    'src/exporter/exporter.service.js',
+    'src/exporter/tracker/export-in-progress/export-in-progress.js',
+    'src/exporter/resource/exporter-resource.service.js',
+    'src/exporter/events/get-export-in-progress.event.service.js'
+
 ];
 
 var SASS_INDEX = 'src/app.scss';

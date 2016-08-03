@@ -7,5 +7,6 @@
         .constant('CONFIG_HOST', '#CONFIG_HOST')
         .constant('CONFIG_CONTEXT', '#CONFIG_CONTEXT')
         .constant('SCHOOL_CONTEXT', '#SCHOOL_CONTEXT')
+        .constant('EXPORT_CONTEXT','#EXPORT_CONTEXT')
         .constant('SCHOOL_KEY', '#SCHOOL_KEY');
 })();

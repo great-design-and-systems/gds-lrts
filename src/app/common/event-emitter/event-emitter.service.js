@@ -8,19 +8,39 @@
             emit: emit,
             onComplete: onComplete
         };
-        function emit(eventName, callback) {
-            $rootScope.$broadcast(eventName, function (err, resolve) {
-                if (err) {
-                    if (callback) {
-                        callback(err);
+        function emit(eventName, data, callback) {
+            var localCallback = callback;
+            if (data instanceof Function) {
+                localCallback = data;
+            }
+            if (data && !data instanceof Function) {
+                $rootScope.$broadcast(eventName, data, function (err, resolve) {
+                    if (err) {
+                        if (localCallback) {
+                            localCallback(err);
+                        }
+                    } else {
+                        if (localCallback) {
+                            localCallback(undefined, resolve);
+                        }
+                        $rootScope.$broadcast(eventName + '_complete', resolve);
                     }
-                } else {
-                    if (callback) {
-                        callback(undefined, resolve);
+                });
+            } else {
+                $rootScope.$broadcast(eventName, function (err, resolve) {
+                    if (err) {
+                        if (localCallback) {
+                            localCallback(err);
+                        }
+                    } else {
+                        if (localCallback) {
+                            localCallback(undefined, resolve);
+                        }
+                        $rootScope.$broadcast(eventName + '_complete', resolve);
                     }
-                    $rootScope.$broadcast(eventName + '_complete', resolve);
-                }
-            });
+                });
+            }
+
         }
 
         function onComplete(eventName, callback) {

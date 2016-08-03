@@ -50,7 +50,7 @@ body {
 
 .primary {
   background-color: $primary;
-  color: #fff !important;
+  color: $white;
 }
 
 .md-sidenav-left {
@@ -71,3 +71,4 @@ body {
 @import "monitor/monitor";
 @import "app/core/page-control/page-control";
 @import "app/core/navigation-links/navigation-links";
+@import "exporter/tracker/export-in-progress/export-in-progress";
