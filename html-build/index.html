@@ -17,23 +17,30 @@
 </head>
 
 <body layout="row">
-    <div flex ng-cloak>
-        <page-control></page-control>
-        <md-content class="main-content" layout layout-padding="2">
-            <md-sidenav layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop>
-                <navigation-links flex layout="column">
-                </navigation-links>
-            </md-sidenav>
+<div flex ng-cloak>
+    <page-control></page-control>
+    <md-content class="main-content" layout layout-padding="2">
+        <md-sidenav layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')"
+                    md-disable-backdrop>
+            <navigation-links flex layout="column">
+            </navigation-links>
+        </md-sidenav>
 
-            <main-frame flex auto-height offset="90"></main-frame>
+        <main-frame flex auto-height offset="90"></main-frame>
 
-            <info-bar flex="20"></info-bar>
-        </md-content>
-    </div>
-    <!-- build:vendorJS -->
-    <!-- endbuild -->
-    <!-- build:appJS -->
-    <!-- endbuild -->
+        <info-bar flex="20"></info-bar>
+    </md-content>
+</div>
+<!--Vendor specific configuration -->
+<script type="text/javascript">
+    window.paceOptions = {
+        ajax: false
+    }
+</script>
+<!-- build:vendorJS -->
+<!-- endbuild -->
+<!-- build:appJS -->
+<!-- endbuild -->
 </body>
 
 </html>

@@ -3,14 +3,15 @@
     angular.module('app.exporter')
         .service('CreateExportEventService', RefreshEventService)
         .run(RunService);
-    RefreshEventService.$inject = ['$rootScope', 'ExporterResourceService', 'CREATE_EXPORT_CSV'];
+    RefreshEventService.$inject = ['$rootScope', 'ExporterResourceService', 'ExporterEvents', 'vendors'];
 
-    function RefreshEventService($rootScope, ExporterResourceService, CREATE_EXPORT_CSV) {
+    function RefreshEventService($rootScope, ExporterResourceService, ExporterEvents, vendors) {
         return {
             execute: execute
         };
         function execute() {
-            $rootScope.$on(CREATE_EXPORT_CSV, function ($event, data, callback) {
+            $rootScope.$on(ExporterEvents.CREATE_EXPORT_CSV, function ($event, data, callback) {
+                vendors.pace.restart();
                 ExporterResourceService.createExportCSV(data.description, data.limit, function (err, result) {
                     if (err) {
                         callback(err);

@@ -26,10 +26,12 @@ var SRC_JS = [
     'src/monitor/monitor.module.js',
     'src/monitor/monitor-resource.service.js',
     'src/monitor/monitor.component.js',
+    'src/monitor/monitor.constant.js',
     'src/monitor/control/monitor-control.component.js',
     'src/monitor/events/refresh-event.service.js',
     'src/monitor/resource/get-today-resource.service.js',
     'src/monitor/link/monitor-link.component.js',
+    'src/monitor/events/create-today-records-export-event.js',
     'src/school/school-resource.service.js',
     'src/scanner/scanner.module.js',
     'src/scanner/scanner.service.js',
@@ -37,10 +39,13 @@ var SRC_JS = [
     'src/exporter/exporter.module.js',
     'src/exporter/exporter.service.js',
     'src/exporter/exporter.contant.js',
-    'src/exporter/tracker/export-in-progress/export-in-progress.js',
+    'src/exporter/tracker/export-in-progress/export-in-progress.component.js',
     'src/exporter/resource/exporter-resource.service.js',
     'src/exporter/events/get-export-in-progress.event.service.js',
-    'src/exporter/events/create-export-csv.event.service.js'
+    'src/exporter/events/create-export-csv.event.service.js',
+    'src/exporter/events/add-export-items-csv-event.service.js',
+    'src/exporter/events/get-export-completed.event.service.js',
+    'src/exporter/tracker/export-completed/export-completed.component.js'
 
 ];
 

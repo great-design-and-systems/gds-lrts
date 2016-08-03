@@ -1,4 +1,4 @@
-export-in-progress {
+export-completed {
   .md-subheader {
     @extend .primary;
     height: 40px !important;
@@ -24,5 +24,8 @@ export-in-progress {
     .md-circular {
       padding-top: 15px;
     }
+  }
+  .div-loader {
+    height: 50px;
   }
 }

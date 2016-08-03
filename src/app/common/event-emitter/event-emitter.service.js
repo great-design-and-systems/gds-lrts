@@ -13,7 +13,7 @@
             if (data instanceof Function) {
                 localCallback = data;
             }
-            if (data && !data instanceof Function) {
+            if (data && !(data instanceof Function)) {
                 $rootScope.$broadcast(eventName, data, function (err, resolve) {
                     if (err) {
                         if (localCallback) {

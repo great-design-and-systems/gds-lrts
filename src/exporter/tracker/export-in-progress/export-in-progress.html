@@ -8,7 +8,7 @@
             </a>
         </span>
     </md-subheader>
-    <md-list-item ng-repeat="export in exportInProgress.exports">
+    <md-list-item ng-if="exportInProgress.shown" ng-repeat="export in exportInProgress.exports">
         <div layout="row" class="md-item-div">
             <div class="md-circular">
                 <md-progress-circular class="md-hue-2"
