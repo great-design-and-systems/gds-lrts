@@ -36,9 +36,11 @@ var SRC_JS = [
     'src/app/app.theme.js',
     'src/exporter/exporter.module.js',
     'src/exporter/exporter.service.js',
+    'src/exporter/exporter.contant.js',
     'src/exporter/tracker/export-in-progress/export-in-progress.js',
     'src/exporter/resource/exporter-resource.service.js',
-    'src/exporter/events/get-export-in-progress.event.service.js'
+    'src/exporter/events/get-export-in-progress.event.service.js',
+    'src/exporter/events/create-export-csv.event.service.js'
 
 ];
 

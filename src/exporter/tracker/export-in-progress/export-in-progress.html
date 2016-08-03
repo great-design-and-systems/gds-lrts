@@ -1,13 +1,24 @@
-<md-list>
+<md-list ng-if="exportInProgress.exports && exportInProgress.exports.length">
     <md-subheader class="md-no-sticky">
-        <div layout="row">
+        <span layout="row">
             <span>Export in-progress</span><span flex></span>
             <a class="toggle-shown" ng-click="exportInProgress.shown=!exportInProgress.shown">
                 <md-icon ng-if="!exportInProgress.shown" md-font-icon="fa fa-plus"></md-icon>
                 <md-icon ng-if="exportInProgress.shown" md-font-icon="fa fa-minus"></md-icon>
             </a>
-        </div>
+        </span>
     </md-subheader>
-    <md-divider></md-divider>
-    <md-list-item class="md-3-line"></md-list-item>
+    <md-list-item ng-repeat="export in exportInProgress.exports">
+        <div layout="row" class="md-item-div">
+            <div class="md-circular">
+                <md-progress-circular class="md-hue-2"
+                                      md-diameter="40px"></md-progress-circular>
+            </div>
+            <div class="md-list-item-text" layout="column" flex>
+                <h4>{{ export.description }}</h4>
+                <md-progress-linear md-mode="determinate"
+                                    value="{{exportInProgress.getPercent(export)}}"></md-progress-linear>
+            </div>
+        </div>
+    </md-list-item>
 </md-list>
