@@ -75,7 +75,7 @@
                 callback(undefined, data);
             }, function (err) {
                 callback(err);
-            })
+            });
         }
     }
 })();
