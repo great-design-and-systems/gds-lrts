@@ -6,6 +6,7 @@
             GET_COMPLETED_EVENT: 'getCompletedEvent',
             CREATE_EXPORT_CSV: 'createExportCSV',
             ADD_EXPORT_ITEMS_CSV: 'addExportItemsCSV',
+            REMOVE_EXPORT_ITEM: 'removeExportTrackerById',
             EXPORTER_PROGRESS_LISTENER: 'exporter-progress',
             EXPORTER_COMPLETED_LISTENER: 'exporter-complete'
         });

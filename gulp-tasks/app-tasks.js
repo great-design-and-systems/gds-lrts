@@ -45,7 +45,8 @@ var SRC_JS = [
     'src/exporter/events/create-export-csv.event.service.js',
     'src/exporter/events/add-export-items-csv-event.service.js',
     'src/exporter/events/get-export-completed.event.service.js',
-    'src/exporter/tracker/export-completed/export-completed.component.js'
+    'src/exporter/tracker/export-completed/export-completed.component.js',
+    'src/exporter/events/remove-export-item-event.service.js'
 
 ];
 

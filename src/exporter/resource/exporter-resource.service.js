@@ -18,7 +18,8 @@
             getExportInProgress: getExportInProgress,
             getExportCompleted: getExportCompleted,
             createExportCSV: createExportCSV,
-            addExportItemsCSV: addExportItemsCSV
+            addExportItemsCSV: addExportItemsCSV,
+            removeExportTrackerById: removeExportTrackerById
         };
 
         function getExportInProgress(callback) {
@@ -65,6 +66,16 @@
             }, function (err) {
                 callback(err);
             });
+        }
+
+        function removeExportTrackerById(exportId, callback) {
+            return exportResource.remove({
+                action: exportId
+            }, function (data) {
+                callback(undefined, data);
+            }, function (err) {
+                callback(err);
+            })
         }
     }
 })();

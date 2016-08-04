@@ -24,6 +24,13 @@ export-completed {
     .md-circular {
       padding-top: 15px;
     }
+    .md-circular-close {
+      @extend .md-circular;
+      md-icon {
+        cursor: pointer;
+        color: $danger;
+      }
+    }
   }
   .div-loader {
     height: 50px;
