@@ -22,10 +22,13 @@ export-completed {
       padding-bottom: 2px;
     }
     .md-circular {
+      padding-left: 10px;
       padding-top: 15px;
+      padding-right: 5px;
     }
     .md-circular-close {
       @extend .md-circular;
+      padding-right: 10px;
       md-icon {
         cursor: pointer;
         color: $danger;

@@ -6,8 +6,8 @@
             controller: ExportCompletedComponent,
             controllerAs: 'exportCompleted'
         });
-    ExportCompletedComponent.$inject = ['EventEmitterService', 'ExporterEvents', '$mdDialog'];
-    function ExportCompletedComponent(EventEmitterService, ExporterEvents, $mdDialog) {
+    ExportCompletedComponent.$inject = ['EventEmitterService', 'ExporterEvents', '$mdDialog', 'DownloaderService'];
+    function ExportCompletedComponent(EventEmitterService, ExporterEvents, $mdDialog, DownloaderService) {
         var exportCompleted = this;
         exportCompleted.$onInit = onInit;
         exportCompleted.shown = true;
@@ -17,6 +17,7 @@
             exportCompleted.exports = exports;
         });
         exportCompleted.removeExport = removeExport;
+        exportCompleted.getLink = getLink;
         function onInit() {
             exportCompleted.isLoading = true;
             EventEmitterService.emit(ExporterEvents.GET_COMPLETED_EVENT);
@@ -44,6 +45,10 @@
                     EventEmitterService.emit(ExporterEvents.GET_COMPLETED_EVENT);
                 });
             });
+        }
+
+        function getLink(fileId) {
+            return DownloaderService.createDownloadLink(fileId);
         }
     }
 })();

@@ -14,7 +14,9 @@
                 <img height="24" width="25" ng-src="{{exportCompleted.getIcon(export)}}">
             </div>
             <div class="md-list-item-text" layout="column" flex>
-                <h5>{{ export.description }}</h5>
+                <md-button class="md-primary" ng-href="{{exportCompleted.getLink(export.fileId)}}" target="_blank">
+                    {{ export.description }}
+                </md-button>
             </div>
             <div class="md-circular-close">
                 <md-progress-circular md-diameter="20px" ng-if="export.isRemoving"

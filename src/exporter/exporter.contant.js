@@ -8,6 +8,7 @@
             ADD_EXPORT_ITEMS_CSV: 'addExportItemsCSV',
             REMOVE_EXPORT_ITEM: 'removeExportTrackerById',
             EXPORTER_PROGRESS_LISTENER: 'exporter-progress',
-            EXPORTER_COMPLETED_LISTENER: 'exporter-complete'
+            EXPORTER_COMPLETED_LISTENER: 'exporter-complete',
+            EXPORTER_DELETED_LISTENER: 'exporter-deleted'
         });
 })();

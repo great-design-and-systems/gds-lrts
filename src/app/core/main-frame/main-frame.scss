@@ -1,4 +1,5 @@
 main-frame {
   @extend .app-frame;
   padding: 15px;
+  overflow-y:auto;
 }

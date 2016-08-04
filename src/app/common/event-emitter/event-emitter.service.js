@@ -23,7 +23,7 @@
                         if (localCallback) {
                             localCallback(undefined, resolve);
                         }
-                        $rootScope.$broadcast(eventName + '_complete', resolve);
+                        $rootScope.$emit(eventName + '_complete', resolve);
                     }
                 });
             } else {
@@ -36,7 +36,7 @@
                         if (localCallback) {
                             localCallback(undefined, resolve);
                         }
-                        $rootScope.$broadcast(eventName + '_complete', resolve);
+                        $rootScope.$emit(eventName + '_complete', resolve);
                     }
                 });
             }

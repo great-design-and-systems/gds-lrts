@@ -8,5 +8,6 @@
         .constant('CONFIG_CONTEXT', '#CONFIG_CONTEXT')
         .constant('SCHOOL_CONTEXT', '#SCHOOL_CONTEXT')
         .constant('EXPORT_CONTEXT','#EXPORT_CONTEXT')
+        .constant('FILE_CONTEXT','#FILE_CONTEXT')
         .constant('SCHOOL_KEY', '#SCHOOL_KEY');
 })();
