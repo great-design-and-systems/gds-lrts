@@ -14,7 +14,11 @@
                 <img height="24" width="25" ng-src="{{exportCompleted.getIcon(export)}}">
             </div>
             <div class="md-list-item-text" layout="column" flex>
-                <md-button class="md-primary" ng-href="{{exportCompleted.getLink(export.fileId)}}" target="_blank">
+                <md-button md-tooltip="{{ export.description }}" class="md-primary"
+                           ng-href="{{exportCompleted.getLink(export.fileId)}}" target="_blank">
+                    <md-tooltip md-direction="top">
+                        {{export.description}}
+                    </md-tooltip>
                     {{ export.description }}
                 </md-button>
             </div>
