@@ -12,10 +12,10 @@
                 csvItems.push({
                     'Time': vendors.moment(item.when).format('LTS'),
                     'Full name': item.fullname,
-                    'Purpose':item.purpose,
+                    'Purpose': item.purpose,
                     'Department': item.department,
                     'Person type': item.personType,
-                    'ID': item.personId,
+                    'ID': item.personId ? item.personId : 'N/A',
                     'Date': vendors.moment(item.when).format('MMM Do YY')
                 });
             }
