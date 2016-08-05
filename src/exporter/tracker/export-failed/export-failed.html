@@ -1,0 +1,35 @@
+<md-list ng-if="exportFailed.exports && exportFailed.exports.length && !exportFailed.isLoading">
+    <md-subheader class="md-no-sticky">
+        <span layout="row">
+            <span>Export failed</span><span flex></span>
+            <a class="toggle-shown" ng-click="exportFailed.shown=!exportFailed.shown">
+                <md-icon ng-if="!exportFailed.shown" md-font-icon="fa fa-plus"></md-icon>
+                <md-icon ng-if="exportFailed.shown" md-font-icon="fa fa-minus"></md-icon>
+            </a>
+        </span>
+    </md-subheader>
+    <md-list-item ng-if="exportFailed.shown" ng-repeat="export in exportFailed.exports">
+        <div layout="row" class="md-item-div">
+            <div class="md-circular">
+                <img height="24" width="25" ng-src="{{exportFailed.getIcon()}}">
+            </div>
+            <div class="md-list-item-text" layout="column" flex>
+                <h4 md-tooltip="{{ export.description }}" class="md-primary">
+                    <md-tooltip md-direction="top">
+                        {{export.description}}
+                    </md-tooltip>
+                    {{ export.description }}
+                </h4>
+            </div>
+            <div class="md-circular-close">
+                <md-progress-circular md-diameter="20px" ng-if="export.isRemoving"
+                                      md-mode="indeterminate"></md-progress-circular>
+                <md-icon ng-if="!export.isRemoving" md-font-icon="fa fa-close"
+                         ng-click="exportFailed.removeExport(export)"></md-icon>
+            </div>
+        </div>
+    </md-list-item>
+</md-list>
+<div class="div-loader" ng-if="exportFailed.isLoading">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>

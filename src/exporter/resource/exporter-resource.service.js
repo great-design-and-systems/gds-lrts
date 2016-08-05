@@ -19,7 +19,8 @@
             getExportCompleted: getExportCompleted,
             createExportCSV: createExportCSV,
             addExportItemsCSV: addExportItemsCSV,
-            removeExportTrackerById: removeExportTrackerById
+            removeExportTrackerById: removeExportTrackerById,
+            getExportFailed:getExportFailed
         };
 
         function getExportInProgress(callback) {
@@ -37,6 +38,16 @@
         function getExportCompleted(callback) {
             return exportResource.query({
                 action: 'get-export-completed'
+            }, function (result) {
+                callback(undefined, result);
+            }, function (err) {
+                console.error('export-resource.service', err);
+                callback(err);
+            });
+        }
+        function getExportFailed(callback) {
+            return exportResource.query({
+                action: 'get-export-failed'
             }, function (result) {
                 callback(undefined, result);
             }, function (err) {

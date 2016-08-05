@@ -15,7 +15,12 @@
                                       md-diameter="40px"></md-progress-circular>
             </div>
             <div class="md-list-item-text" layout="column" flex>
-                <h4>{{ export.description }}</h4>
+                <h4 md-tooltip="{{ export.description }}" class="md-primary">
+                    <md-tooltip md-direction="top">
+                        {{export.description}}
+                    </md-tooltip>
+                    {{ export.description }}
+                </h4>
                 <md-progress-linear md-mode="determinate"
                                     value="{{exportInProgress.getPercent(export)}}"></md-progress-linear>
             </div>

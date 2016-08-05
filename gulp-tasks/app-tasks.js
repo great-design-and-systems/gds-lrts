@@ -47,6 +47,8 @@ var SRC_JS = [
     'src/exporter/events/get-export-completed.event.service.js',
     'src/exporter/tracker/export-completed/export-completed.component.js',
     'src/exporter/events/remove-export-item-event.service.js',
+    'src/exporter/events/get-export-failed.event.service.js',
+    'src/exporter/tracker/export-failed/export-failed.component.js',
     'src/downloader/downloader.module.js',
     'src/downloader/downloader.service.js',
     'src/downloader/downloader.constant.js'
