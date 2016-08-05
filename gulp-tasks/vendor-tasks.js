@@ -21,7 +21,8 @@ var LIB_JS = [
     'vendors/pace/pace.js',
     'vendors/jqClock/jqClock.js',
     'bower_components/angular-material-data-table/dist/md-data-table.js',
-    'bower_components/moment/moment.js'
+    'bower_components/moment/moment.js',
+    'bower_components/lodash/lodash.js'
 ];
 
 var LIB_CSS = [

@@ -6,8 +6,8 @@
             controller: MonitorComponent,
             controllerAs: 'monitor'
         });
-    MonitorComponent.$inject = ['EventEmitterService', 'MonitorEvents', 'ExporterEvents'];
-    function MonitorComponent(EventEmitterService, MonitorEvents, ExporterEvents) {
+    MonitorComponent.$inject = ['EventEmitterService', 'MonitorEvents', 'ExporterEvents', 'EntryExportLayoutService'];
+    function MonitorComponent(EventEmitterService, MonitorEvents, ExporterEvents, EntryExportLayoutService) {
         var monitor = this;
         monitor.$onInit = onInit;
         monitor.isLoading = false;
@@ -19,8 +19,14 @@
             EventEmitterService.onComplete(ExporterEvents.CREATE_EXPORT_CSV, function (exportResult) {
                 var addItemsCSV = {};
                 addItemsCSV.exportId = exportResult.exportId;
-                addItemsCSV.items = exportTracker.items;
-                EventEmitterService.emit(ExporterEvents.ADD_EXPORT_ITEMS_CSV, addItemsCSV);
+                EntryExportLayoutService.execute(exportTracker.items, function (errFormatted, csvFormattedData) {
+                    if (errFormatted) {
+                        console.error('monitor.component', errFormatted);
+                    } else {
+                        addItemsCSV.items = csvFormattedData;
+                        EventEmitterService.emit(ExporterEvents.ADD_EXPORT_ITEMS_CSV, addItemsCSV);
+                    }
+                });
             });
         });
         function onInit() {

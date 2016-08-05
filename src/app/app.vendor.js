@@ -5,6 +5,7 @@
             jQuery: $,
             Socket: io,
             pace: Pace,
-            moment: moment
+            moment: moment,
+            lodash: _
         });
 })();

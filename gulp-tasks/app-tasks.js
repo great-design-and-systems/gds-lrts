@@ -32,6 +32,7 @@ var SRC_JS = [
     'src/monitor/resource/get-today-resource.service.js',
     'src/monitor/link/monitor-link.component.js',
     'src/monitor/events/create-today-records-export-event.js',
+    'src/monitor/export-layout/entry-export-layout.service.js',
     'src/school/school-resource.service.js',
     'src/scanner/scanner.module.js',
     'src/scanner/scanner.service.js',
@@ -49,6 +50,7 @@ var SRC_JS = [
     'src/exporter/events/remove-export-item-event.service.js',
     'src/exporter/events/get-export-failed.event.service.js',
     'src/exporter/tracker/export-failed/export-failed.component.js',
+    'src/exporter/csv/csv-formatter.service.js',
     'src/downloader/downloader.module.js',
     'src/downloader/downloader.service.js',
     'src/downloader/downloader.constant.js'
