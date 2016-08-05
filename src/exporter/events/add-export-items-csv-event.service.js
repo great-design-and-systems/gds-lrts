@@ -13,7 +13,7 @@
                     'Time': vendors.moment(item.when).format('LTS'),
                     'Full name': item.fullname,
                     'Purpose': item.purpose,
-                    'Department': item.department,
+                    'Department': item.department ? item.department : 'N/A',
                     'Person type': item.personType,
                     'ID': item.personId ? item.personId : 'N/A',
                     'Date': vendors.moment(item.when).format('MMM Do YY')
