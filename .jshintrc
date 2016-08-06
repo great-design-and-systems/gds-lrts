@@ -58,6 +58,7 @@
     "$": false,
     "io": false,
     "Pace": false,
-    "moment": false
+    "moment": false,
+    "_":false
   }
 }

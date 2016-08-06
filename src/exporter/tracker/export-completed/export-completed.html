@@ -1,11 +1,11 @@
 <md-list ng-if="exportCompleted.exports && exportCompleted.exports.length && !exportCompleted.isLoading">
     <md-subheader class="md-no-sticky">
-        <span layout="row">
+        <span layout="row" layout-padding="5">
             <span>Export completed</span><span flex></span>
-            <a class="toggle-shown" ng-click="exportCompleted.shown=!exportCompleted.shown">
-                <md-icon ng-if="!exportCompleted.shown" md-font-icon="fa fa-plus"></md-icon>
-                <md-icon ng-if="exportCompleted.shown" md-font-icon="fa fa-minus"></md-icon>
-            </a>
+        <a class="toggle-shown" ng-click="exportCompleted.shown=!exportCompleted.shown">
+            <md-icon ng-if="!exportCompleted.shown" md-font-icon="fa fa-plus"></md-icon>
+            <md-icon ng-if="exportCompleted.shown" md-font-icon="fa fa-minus"></md-icon>
+        </a>
         </span>
     </md-subheader>
     <md-list-item ng-if="exportCompleted.shown" ng-repeat="export in exportCompleted.exports">
@@ -14,8 +14,8 @@
                 <img height="24" width="25" ng-src="{{exportCompleted.getIcon(export)}}">
             </div>
             <div class="md-list-item-text" layout="column" flex>
-                <md-button md-tooltip="{{ export.description }}" class="md-primary"
-                           ng-href="{{exportCompleted.getLink(export.fileId)}}" target="_blank">
+                <md-button md-tooltip="{{ export.description }}" class="md-primary" ng-href="{{exportCompleted.getLink(export.fileId)}}"
+                    target="_blank">
                     <md-tooltip md-direction="top">
                         {{export.description}}
                     </md-tooltip>
@@ -23,10 +23,8 @@
                 </md-button>
             </div>
             <div class="md-circular-close">
-                <md-progress-circular md-diameter="20px" ng-if="export.isRemoving"
-                                      md-mode="indeterminate"></md-progress-circular>
-                <md-icon ng-if="!export.isRemoving" md-font-icon="fa fa-close"
-                         ng-click="exportCompleted.removeExport($event, export)"></md-icon>
+                <md-progress-circular md-diameter="20px" ng-if="export.isRemoving" md-mode="indeterminate"></md-progress-circular>
+                <md-icon ng-if="!export.isRemoving" md-font-icon="fa fa-close" ng-click="exportCompleted.removeExport($event, export)"></md-icon>
             </div>
         </div>
     </md-list-item>

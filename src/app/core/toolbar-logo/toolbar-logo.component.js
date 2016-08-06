@@ -15,8 +15,6 @@
             return SchoolResourceService.getSchool(function (err, school) {
                 if (!err) {
                     toolbarLogo.schoolName = school.name;
-                    toolbarLogo.schoolSubName = school.branch;
-                    toolbarLogo.logo = school.logo;
                 }
             }).$promise;
         }

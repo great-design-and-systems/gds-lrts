@@ -2,10 +2,10 @@
     'use strict';
     angular.module('gdsApp')
         .service('SchoolResourceService', SchoolResourceService);
-    SchoolResourceService.$inject = ['$resource', 'CONFIG_HOST', 'SCHOOL_CONTEXT', 'SCHOOL_KEY'];
+    SchoolResourceService.$inject = ['$resource', 'API_HOST', 'SCHOOL_CONTEXT', 'SCHOOL_ID'];
 
-    function SchoolResourceService($resource, CONFIG_HOST, SCHOOL_CONTEXT, SCHOOL_KEY) {
-        var configResource = $resource(CONFIG_HOST + SCHOOL_CONTEXT + ':action');
+    function SchoolResourceService($resource, API_HOST, SCHOOL_CONTEXT, SCHOOL_ID) {
+        var configResource = $resource(API_HOST + SCHOOL_CONTEXT + ':action?param=schoolId::schoolId');
 
         return {
             getSchool: getSchool
@@ -13,14 +13,13 @@
 
         function getSchool(callback) {
             return configResource.get({
-                    action: SCHOOL_KEY
-                },
-                function (data) {
-                    callback(undefined, data);
-                },
-                function (err) {
-                    callback(err);
-                });
+                action: 'getSchoolProfile',
+                schoolId: SCHOOL_ID
+            }, function (data) {
+                callback(undefined, data);
+            }, function (err) {
+                callback(err);
+            });
         }
     }
 })();

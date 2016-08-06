@@ -2,13 +2,11 @@
 
 var API_HOST = process.env.API_HOST || 'https://gds-ms-api.herokuapp.com';
 var SCANNER_CONTEXT = process.env.SCANNER_CONTEXT || '/gds/scanner/';
-var TIME_CONTEXT = process.env.SCANNER_CONTEXT || '/gds/time/';
-var CONFIG_HOST = process.env.CONFIG_HOST || '';
-var CONFIG_CONTEXT = process.env.CONFIG_CONTEXT || '/gds/config/';
-var SCHOOL_KEY = process.env.SCHOOL_KEY || '1E1A801';
-var SCHOOL_CONTEXT = process.env.SCHOOL_CONTEXT || '/gds/school/';
+var TIME_CONTEXT = process.env.TIME_CONTEXT || '/gds/timeServicePort/';
+var SCHOOL_ID = process.env.SCHOOL_ID || '57a60c8d9b19871d0010f0dd'; //Assumption college
+var SCHOOL_CONTEXT = process.env.SCHOOL_CONTEXT || '/gds/schoolConfigServicePort/';
 var EXPORT_CONTEXT = process.env.EXPORT_CONTEXT || '/gds/export/';
-var FILE_CONTEXT = process.env.EXPORT_CONTEXT || '/gds/file/';
+var FILE_CONTEXT = process.env.EXPORT_CONTEXT || '/gds/fileServicePort/';
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var htmlreplace = require('gulp-html-replace');
@@ -49,11 +47,9 @@ gulp.task('set-constant-values', function () {
         .pipe(replace('#API_HOST', API_HOST))
         .pipe(replace('#SCANNER_CONTEXT', SCANNER_CONTEXT))
         .pipe(replace('#TIME_CONTEXT', TIME_CONTEXT))
-        .pipe(replace('#CONFIG_HOST', CONFIG_HOST))
-        .pipe(replace('#CONFIG_CONTEXT', CONFIG_CONTEXT))
         .pipe(replace('#SCHOOL_CONTEXT', SCHOOL_CONTEXT))
         .pipe(replace('#EXPORT_CONTEXT', EXPORT_CONTEXT))
         .pipe(replace('#FILE_CONTEXT', FILE_CONTEXT))
-        .pipe(replace('#SCHOOL_KEY', SCHOOL_KEY))
+        .pipe(replace('#SCHOOL_ID', SCHOOL_ID))
         .pipe(gulp.dest('src/app/'));
 });
