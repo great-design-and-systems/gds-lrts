@@ -8,7 +8,9 @@ body {
   font-family: $fontFamily;
   font-size: $fontSize;
 }
-
+button {
+  border-radius: 0 !important;
+}
 /* THEME */
 .no-bg-color {
   background-color: transparent !important;
@@ -49,10 +51,15 @@ body {
 }
 
 .primary {
-  background-color: $primary;
+  background-color: $primary !important;
   color: $white;
+  * {
+    color: $white;
+  }
+  &:disabled {
+    background-color: darken($primary,1.0);
+  }
 }
-
 .md-sidenav-left {
   background: none;
   width: $sidenavLeftWidth;
@@ -62,6 +69,19 @@ body {
 .md-sidenav-left {
   background-color: transparent !important;
   padding: 10px 10px 0 !important;
+}
+
+.md-input-container label {
+  color: $primary;
+}
+
+.gds-input-for-md {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $borderColor;
+    outline: none;
+    background: none;
 }
 
 @import "app/core/clock/clock";
@@ -74,4 +94,6 @@ body {
 @import "exporter/tracker/export-in-progress/export-in-progress";
 @import "exporter/tracker/export-completed/export-completed";
 @import "exporter/tracker/export-failed/export-failed";
-
+@import "app/core/frame-legend/frame-legend";
+@import "school/setting/purpose-setting/purpose-setting";
+@import "school/link/school-link";

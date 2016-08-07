@@ -1,4 +1,4 @@
-<md-button id="refreshTodayRecords" class="md-primary md-raised" ng-click="monitorControl.emit($event)">Refresh
+<md-button emit-event="refreshTodayRecords" event-debounce="true" class="md-primary md-raised">Refresh
 </md-button>
-<md-button id="createTodayRecordsExport" class="md-primary md-raised" ng-click="monitorControl.emit($event)">Export
+<md-button emit-event="createTodayRecordsExport" event-debounce="true" class="md-primary md-raised">Export
 </md-button>

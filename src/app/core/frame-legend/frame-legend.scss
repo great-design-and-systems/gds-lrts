@@ -1,0 +1,19 @@
+frame-legend {
+    min-height: 25px;
+    color:$white;
+    .legend-div {
+        md-icon {
+            color:$white;
+           padding-top: 15px;
+           padding-right: 5px;
+        }
+        h3 {
+         border-bottom: 1px solid $borderColor;
+        }
+       margin-top: -16px;
+       margin-left: -9px;
+       min-width: 70px;
+       padding-left: 5px;
+       padding-right: 5px;
+    }
+}

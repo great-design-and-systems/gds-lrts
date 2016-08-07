@@ -7,7 +7,7 @@
 
     function AppRoute($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/monitor');
-
+        $urlRouterProvider.when('/school', '/school/setting');
         $stateProvider
             .state('monitor', {
                 label: 'Monitor',
@@ -21,15 +21,14 @@
                     }
                 }
             })
-            .state('school', {
+            .state('schoolSetting', {
+                url: '/school/setting',
                 label: 'School',
-                url: '/school',
+                legend: 'Setting',
+                legendFI: 'fa fa-gear',
                 views: {
                     'mainFrame': {
-                        template: 'school'
-                    },
-                    'control': {
-                        templateUrl: 'src/school/control/school-control.html'
+                        template: '<school-setting></school-setting>'
                     }
                 }
             });

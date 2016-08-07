@@ -1,7 +1,6 @@
 export-completed {
   .md-subheader {
     @extend .primary;
-    height: 40px !important;
   }
   .toggle-shown {
     cursor: pointer;

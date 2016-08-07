@@ -1,0 +1,31 @@
+<md-dialog class="purpose-dialog" aria-label="Purpose form">
+    <form class="purpose-form" role="form" ng-submit="purposeForm.submit()">
+        <md-toolbar class="primary">
+            <div class="md-toolbar-tools">
+                <h3>{{purposeForm.title}}</h3>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="purposeForm.cancel()">
+                    <md-icon md-font-icon="fa fa-close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout="column" layout-padding="1">
+            <md-content layout flex>
+                <md-input-container flex-auto>
+                    <label for="purposeCodeValue">Value</label>
+                    <input md-autofocus required id="purposeCodeValue" ng-model="purposeForm.purpose.codeValue">
+                </md-input-container>
+            </md-content>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-disabled="!purposeForm.purpose.codeValue" type="submit" class="primary md-raised">
+                {{purposeForm.submitLabel}}
+                <md-tooltip>{{purposeForm.submitLabel}}</md-tooltip>
+            </md-button>
+            <md-button ng-click="purposeForm.cancel()" class="md-accent md-raised">
+                {{purposeForm.cancelLabel}}
+                <md-tooltip>{{purposeForm.cancelLabel}}</md-tooltip>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,13 @@
+purpose-setting {
+    margin:5px;
+    .md-toolbar-tools {
+        @extend .primary;
+        
+        input {
+            @extend .gds-input-for-md;
+        }
+    }
+    .purpose-dialog {
+        width: 350px;
+    }
+}

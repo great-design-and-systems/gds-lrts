@@ -23,6 +23,10 @@ var SRC_JS = [
     'src/app/core/info-bar/info-bar.component.js',
     'src/app/core/auto-height/auto-height.directive.js',
     'src/app/core/navigation-links/navigation-links.component.js',
+    'src/app/core/frame-legend/frame-legend.component.js',
+    'src/app/core/emit-event/emit-event.directive.js',
+    'src/app/events/open-dialog.event.js',
+    'src/app/events/open-confirm-dialog.event.js',
     'src/monitor/monitor.module.js',
     'src/monitor/monitor-resource.service.js',
     'src/monitor/monitor.component.js',
@@ -53,8 +57,26 @@ var SRC_JS = [
     'src/exporter/csv/csv-formatter.service.js',
     'src/downloader/downloader.module.js',
     'src/downloader/downloader.service.js',
-    'src/downloader/downloader.constant.js'
-
+    'src/downloader/downloader.constant.js',
+    'src/school/school.module.js',
+    'src/school/school-resource.service.js',
+    'src/school/setting/school-setting.component.js',
+    'src/school/link/school-link.component.js',
+    'src/school/setting/purpose-setting/purpose-setting.component.js',
+    'src/school/school.constant.js',
+    'src/school/setting/purpose-setting/purpose-setting-resource.service.js',
+    'src/school/events/get-purposes-event.js',
+    'src/school/events/open-add-purpose-dialog.event.js',
+    'src/school/setting/purpose-setting/add-purpose/add-purpose.controller.js',
+    'src/school/setting/purpose-setting/edit-purpose/edit-purpose.controller.js',
+    'src/school/events/create-purpose-event.js',
+    'src/school/events/edit-purpose-event.js',
+    'src/school/events/open-edit-purpose-dialog.event.js',
+    'src/school/events/open-remove-purpose-confirm-dialog.event.js',
+    'src/code/code.module.js',
+    'src/code/code.constant.js',
+    'src/code/code-resource.service.js',
+    'src/code/events/delete-code-by-id.event.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';
