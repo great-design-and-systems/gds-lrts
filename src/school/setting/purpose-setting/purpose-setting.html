@@ -4,7 +4,7 @@
 <md-content ng-if="!purposeSetting.isLoading">
     <md-toolbar class="md-table-toolbar md-default">
         <form class="md-toolbar-tools" role="form" ng-submit="purposeSetting.onSubmitNewPurpose()">
-            <span ng-click="purposeSetting.toggle=!purposeSetting.toggle">Purpose</span>
+            <span class="setting-header" ng-click="purposeSetting.toggle=!purposeSetting.toggle">Purpose</span>
             <div flex></div>
             <input required placeholder="Search or add purpose" ng-model="purposeSetting.purposeInput">
             <md-button class="md-icon-button">
@@ -32,8 +32,7 @@
                             <md-icon class="md-primary" md-font-icon="fa fa-pencil"></md-icon>
                             <md-tooltip>Edit {{::purpose.codeValue}}</md-tooltip>
                         </md-button>
-                        <md-button ng-disabled="purpose.codeName == 'others'" class="md-icon-button" event-data="purpose" emit-event="openRemovePurposeConfirmDialog"
-                            event-complete="purposeSetting.purposeOpenConfirmEventComplete">
+                        <md-button ng-disabled="purpose.codeName == 'others'" class="md-icon-button" event-data="purpose" emit-event="openRemovePurposeConfirmDialog" event-complete="purposeSetting.purposeOpenConfirmEventComplete">
                             <md-icon class="md-accent" md-font-icon="fa fa-trash-o"></md-icon>
                             <md-tooltip>Remove {{::purpose.codeValue}}</md-tooltip>
                         </md-button>

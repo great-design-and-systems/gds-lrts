@@ -2,77 +2,82 @@
 @import "app.mixin";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-
 body {
-  background-color: $appBackground;
-  font-family: $fontFamily;
-  font-size: $fontSize;
+    background-color: $appBackground;
+    font-family: $fontFamily;
+    font-size: $fontSize;
 }
+
 button {
-  border-radius: 0 !important;
+    border-radius: 0 !important;
 }
+
+
 /* THEME */
+
 .no-bg-color {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
+
 
 /* END THEME */
 
 .app-frame {
-  @include box(4px);
-  @include content-border();
-  padding: 5px;
-  background: $mainFrameBackground !important;
+    @include box(4px);
+    @include content-border();
+    padding: 5px;
+    background: $mainFrameBackground !important;
 }
 
 .main-content {
-  background: none;
-  padding: 4px;
+    background: none;
+    padding: 4px;
 }
 
 .frame-view-component {
-  width: 100%;
+    width: 100%;
 }
 
 .app-title {
-  color: white;
-  font-family: Old English Text MT;
+    color: white;
+    font-family: Old English Text MT;
 }
 
 .app-sub-title {
-  color: white;
-  font-family: Myriad Pro Regular;
-  font-size: $subTitleFontSize !important;
+    color: white;
+    font-family: Myriad Pro Regular;
+    font-size: $subTitleFontSize !important;
 }
 
 .app-logo {
-  height: $logoHeight;
-  width: $logoWidth;
+    height: $logoHeight;
+    width: $logoWidth;
 }
 
 .primary {
-  background-color: $primary !important;
-  color: $white;
-  * {
+    background-color: $primary !important;
     color: $white;
-  }
-  &:disabled {
-    background-color: darken($primary,1.0);
-  }
-}
-.md-sidenav-left {
-  background: none;
-  width: $sidenavLeftWidth;
-  @extend .app-frame;
+    * {
+        color: $white;
+    }
+    &:disabled {
+        background-color: darken($primary, 1.0);
+    }
 }
 
 .md-sidenav-left {
-  background-color: transparent !important;
-  padding: 10px 10px 0 !important;
+    background: none;
+    width: $sidenavLeftWidth;
+    @extend .app-frame;
+}
+
+.md-sidenav-left {
+    background-color: transparent !important;
+    padding: 10px 10px 0 !important;
 }
 
 .md-input-container label {
-  color: $primary;
+    color: $primary;
 }
 
 .gds-input-for-md {
@@ -97,3 +102,4 @@ button {
 @import "app/core/frame-legend/frame-legend";
 @import "school/setting/purpose-setting/purpose-setting";
 @import "school/link/school-link";
+@import "school/setting/setting"; 

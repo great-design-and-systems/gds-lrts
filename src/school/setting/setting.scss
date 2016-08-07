@@ -1,0 +1,14 @@
+purpose-setting {
+    .md-toolbar-tools {
+        @extend .primary;
+        input {
+            @extend .gds-input-for-md;
+        }
+    }
+    .setting-header {
+        cursor: pointer;
+        &:hover {
+            border-bottom: 1px solid $infoDark;
+        }
+    }
+}
