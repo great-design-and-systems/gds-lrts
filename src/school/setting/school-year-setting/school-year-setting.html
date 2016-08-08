@@ -1,0 +1,45 @@
+<div ng-if="setting.isLoading" flex>
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<md-content ng-if="!setting.isLoading">
+    <md-toolbar class="md-table-toolbar md-default">
+        <form class="md-toolbar-tools" role="form" ng-submit="setting.onSubmit()">
+            <span class="setting-header" ng-click="setting.toggle=!setting.toggle">School year</span>
+            <div flex></div>
+            <input required placeholder="Search or add schoolYear" ng-model="setting.schoolYearInput">
+            <md-button class="md-icon-button">
+                <i emit-event='getSchoolYears' event-class="fa-spin" class="fa fa-refresh"></i>
+                <md-tooltip>Refresh</md-tooltip>
+            </md-button>
+        </form>
+    </md-toolbar>
+    <md-table-container ng-if="!setting.toggle" flex ng-if="!setting.isLoading">
+        <table md-table>
+            <thead md-head>
+                <tr md-row>
+                    <th md-column>No.</th>
+                    <th md-column>Delete</th>
+                    <th md-column></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="schoolYear in setting.schoolYears | filter: {name: setting.schoolYearInput, description:setting.schoolYearInput}">
+                    <td md-cell ng-if="schoolYear.name">{{($index + 1)}}</td>
+                    <td md-cell ng-if="schoolYear.name">{{::schoolYear.name}}</td>
+                    <td md-cell ng-if="schoolYear._id" layout>
+                        <span flex></span>
+                        <md-button class="md-icon-button" event-data="schoolYear" emit-event="openEditSchoolYearDialog" event-complete="setting.dialogEventComplete">
+                            <md-icon class="md-primary" md-font-icon="fa fa-pencil"></md-icon>
+                            <md-tooltip>Edit {{::schoolYear.name}}</md-tooltip>
+                        </md-button>
+                        <md-button class="md-icon-button" event-data="schoolYear" emit-event="openRemoveSchoolYearConfirmDialog" event-complete="setting.openConfirmEventComplete">
+                            <md-icon class="md-accent" md-font-icon="fa fa-trash-o"></md-icon>
+                            <md-tooltip>Remove {{::schoolYear.name}}</md-tooltip>
+                        </md-button>
+                    </td>
+                    <td colspan="4" md-cell ng-if="!schoolYear.name">{{::schoolYear}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+</md-content>

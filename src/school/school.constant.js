@@ -18,6 +18,12 @@
             GET_EDUCATION_LEVELS: 'getEducationLevels',
             DELETE_EDUCATION_LEVEL: 'deleteEducationLevel',
             OPEN_EDIT_EDUCATION_LEVEL_DIALOG: 'openEditEducationLevelDialog',
-            OPEN_REMOVE_EDUCATION_LEVEL_CONFIRM_DIALOG: 'openRemoveEducationLevelConfirmDialog'
+            OPEN_REMOVE_EDUCATION_LEVEL_CONFIRM_DIALOG: 'openRemoveEducationLevelConfirmDialog',
+            CREATE_SCHOOL_YEAR: 'createSchoolYear',
+            UPDATE_SCHOOL_YEAR: 'updateSchoolYear',
+            GET_SCHOOL_YEARS: 'getSchoolYears',
+            DELETE_SCHOOL_YEAR: 'deleteSchoolYear',
+            OPEN_EDIT_SCHOOL_YEAR_DIALOG: 'openEditSchoolYearDialog',
+            OPEN_REMOVE_SCHOOL_YEAR_CONFIRM_DIALOG: 'openRemoveSchoolYearConfirmDialog'
         });
 })();
