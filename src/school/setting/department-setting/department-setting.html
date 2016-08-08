@@ -1,0 +1,45 @@
+<div ng-if="setting.isLoading" flex>
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<md-content ng-if="!setting.isLoading">
+    <md-toolbar class="md-table-toolbar md-default">
+        <form class="md-toolbar-tools" role="form" ng-submit="setting.onSubmit()">
+            <span class="setting-header" ng-click="setting.toggle=!setting.toggle">Department</span>
+            <div flex></div>
+            <input required placeholder="Search or add department" ng-model="setting.departmentInput">
+            <md-button class="md-icon-button">
+                <i emit-event='getDepartments' event-class="fa-spin" class="fa fa-refresh"></i>
+                <md-tooltip>Refresh</md-tooltip>
+            </md-button>
+        </form>
+    </md-toolbar>
+    <md-table-container ng-if="!setting.toggle" flex ng-if="!setting.isLoading">
+        <table md-table>
+            <thead md-head>
+                <tr md-row>
+                    <th md-column>No.</th>
+                    <th md-column>Delete</th>
+                    <th md-column></th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="department in setting.departments | filter: {name: setting.departmentInput, description:setting.departmentInput}">
+                    <td md-cell ng-if="department.name">{{($index + 1)}}</td>
+                    <td md-cell ng-if="department.name">{{::department.name}}</td>
+                    <td md-cell ng-if="department._id" layout>
+                        <span flex></span>
+                        <md-button class="md-icon-button" event-data="department" emit-event="openEditDepartmentDialog" event-complete="setting.dialogEventComplete">
+                            <md-icon class="md-primary" md-font-icon="fa fa-pencil"></md-icon>
+                            <md-tooltip>Edit {{::department.name}}</md-tooltip>
+                        </md-button>
+                        <md-button class="md-icon-button" event-data="department" emit-event="openRemoveDepartmentConfirmDialog" event-complete="setting.openConfirmEventComplete">
+                            <md-icon class="md-accent" md-font-icon="fa fa-trash-o"></md-icon>
+                            <md-tooltip>Remove {{::department.name}}</md-tooltip>
+                        </md-button>
+                    </td>
+                    <td colspan="4" md-cell ng-if="!department.name">{{::department}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+</md-content>

@@ -1,8 +1,13 @@
-purpose-setting {
+school-setting {
     .md-toolbar-tools {
+        border-top: 1px solid $borderColor;
         @extend .primary;
         input {
             @extend .gds-input-for-md;
+            &:focus {
+                border-bottom: 1px solid $primary;
+                border-right: 1px solid $primary;
+            }
         }
     }
     .setting-header {

@@ -13,12 +13,12 @@
             <md-content layout flex>
                 <md-input-container flex-auto>
                     <label for="purposeCodeValue">Value</label>
-                    <input md-autofocus required id="purposeCodeValue" ng-model="purposeForm.purpose.codeValue">
+                    <input ng-disabled="purposeForm.isSubmitting" md-autofocus required id="purposeCodeValue" ng-model="purposeForm.purpose.codeValue">
                 </md-input-container>
             </md-content>
         </md-dialog-content>
         <md-dialog-actions layout="row">
-            <md-button ng-disabled="!purposeForm.purpose.codeValue" type="submit" class="primary md-raised">
+            <md-button ng-disabled="!purposeForm.purpose.codeValue || purposeForm.isSubmitting" type="submit" class="primary md-raised">
                 {{purposeForm.submitLabel}}
                 <md-tooltip>{{purposeForm.submitLabel}}</md-tooltip>
             </md-button>
