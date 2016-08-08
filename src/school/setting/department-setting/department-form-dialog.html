@@ -1,0 +1,31 @@
+<md-dialog class="department-dialog" aria-label="department form">
+    <form class="department-form" role="form" ng-submit="form.submit()">
+        <md-toolbar class="primary">
+            <div class="md-toolbar-tools">
+                <h3>{{form.title}}</h3>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="form.cancel()">
+                    <md-icon md-font-icon="fa fa-close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout="column" layout-padding="1">
+            <md-content layout flex>
+                <md-input-container flex-auto>
+                    <label for="departmentName">Name</label>
+                    <input md-autofocus required id="departmentName" ng-model="form.model.name">
+                </md-input-container>
+            </md-content>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-disabled="!form.model.name" type="submit" class="primary md-raised">
+                {{form.submitLabel}}
+                <md-tooltip>{{form.submitLabel}}</md-tooltip>
+            </md-button>
+            <md-button ng-click="form.cancel()" class="md-accent md-raised">
+                {{form.cancelLabel}}
+                <md-tooltip>{{form.cancelLabel}}</md-tooltip>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

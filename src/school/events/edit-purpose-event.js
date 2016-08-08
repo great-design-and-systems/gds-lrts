@@ -1,8 +1,8 @@
 (function () {
     angular.module('app.school')
-        .run(CreatePurposeEvent);
-    CreatePurposeEvent.$inject = ['$rootScope', 'SchoolEvents', 'PurposeSettingResourceService', 'vendors'];
-    function CreatePurposeEvent($rootScope, SchoolEvents, PurposeSettingResourceService, vendors) {
+        .run(Event);
+    Event.$inject = ['$rootScope', 'SchoolEvents', 'PurposeSettingResourceService', 'vendors'];
+    function Event($rootScope, SchoolEvents, PurposeSettingResourceService, vendors) {
         $rootScope.$on(SchoolEvents.EDIT_PURPOSE, function ($event, purpose, callback) {
             vendors.pace.restart();
             PurposeSettingResourceService.updatePurpose(purpose._id, purpose.codeName, purpose.codeValue, purpose.updatedBy, function (err, result) {
