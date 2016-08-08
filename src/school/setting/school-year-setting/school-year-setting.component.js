@@ -57,7 +57,7 @@
                     return pred.name.toLowerCase() === setting.schoolYearInput.toLowerCase();
                 });
                 if (inputCurrentIndex === -1) {
-                    EventEmitterService.emit(SchoolEvents.CREATE_SCHOOL_YEAR, {
+                   /* EventEmitterService.emit(SchoolEvents.CREATE_SCHOOL_YEAR, {
                         name: setting.schoolYearInput,
                         description: setting.schoolYearInput,
                         createdBy: 'SYSTEM' //TODO: use user id here
@@ -66,7 +66,7 @@
                             setting.schoolYearInput = undefined;
                             EventEmitterService.emit(SchoolEvents.GET_SCHOOL_YEARS);
                         } //TODO: error show an alert message
-                    });
+                    });*/
                 }
             }
         }

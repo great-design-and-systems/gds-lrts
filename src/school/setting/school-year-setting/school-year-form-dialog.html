@@ -1,5 +1,5 @@
-<md-dialog class="department-dialog" aria-label="School year form">
-    <form class="department-form" role="form" ng-submit="form.submit()">
+<md-dialog class="schoolYear-dialog" aria-label="School year form">
+    <form class="schoolYear-form" role="form" ng-submit="form.submit()">
         <md-toolbar class="primary">
             <div class="md-toolbar-tools">
                 <h3>{{form.title}}</h3>
@@ -12,13 +12,13 @@
         <md-dialog-content layout="column" layout-padding="1">
             <md-content layout flex>
                 <md-input-container flex-auto>
-                    <label for="departmentName">Name</label>
-                    <input ng-disabled="form.isSubmitting" md-autofocus required id="departmentName" ng-model="form.model.name">
+                    <label for="schoolYearName">Description</label>
+                    <input ng-disabled="form.isSubmitting" md-autofocus required id="schoolYearName" ng-model="form.model.description">
                 </md-input-container>
             </md-content>
         </md-dialog-content>
         <md-dialog-actions layout="row">
-            <md-button ng-disabled="!form.model.name || form.isSubmitting" type="submit" class="primary md-raised">
+            <md-button ng-disabled="!form.model.description || form.isSubmitting" type="submit" class="primary md-raised">
                 {{form.submitLabel}}
                 <md-tooltip>{{form.submitLabel}}</md-tooltip>
             </md-button>
