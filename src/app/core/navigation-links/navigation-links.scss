@@ -1,19 +1,18 @@
 navigation-links {
-  padding:1px;
-  .nav-link {
-    cursor: pointer;
-    min-height: 40px;
-    background: $navBackgroundLink;
-    color:$white;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 10px;
-    .nav-sub-link {
-      md-icon {
-        color:$white;
-      }
-      text-align: center;
-      vertical-align: middle;
+    padding: 1px;
+    .nav-link {
+        min-height: 40px;
+        background: $navBackgroundLink;
+        color: $white;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 10px;
+        .nav-sub-link {
+            md-icon {
+                color: $white;
+            }
+            text-align: center;
+            vertical-align: middle;
+        }
     }
-  } 
 }

@@ -1,9 +1,12 @@
 (function() {
     angular.module('app.school')
-        .component('schoolYearSetting', {
-            templateUrl: 'src/school/setting/school-year-setting/school-year-setting.html',
+        .component('semesterSetting', {
+            templateUrl: 'src/school/setting/semester-setting/semester-setting.html',
             controller: SettingComponent,
-            controllerAs: 'setting'
+            controllerAs: 'setting',
+            bindings: {
+                schoolYear: '='
+            }
         });
     SettingComponent.$inject = ['EventEmitterService', 'SchoolEvents', 'AppEvents', 'vendors'];
 
@@ -14,18 +17,18 @@
         setting.dialogEventComplete = dialogEventComplete;
         setting.openConfirmEventComplete = openConfirmEventComplete;
         setting.onSubmit = onSubmit;
-        EventEmitterService.onComplete(SchoolEvents.GET_SCHOOL_YEARS, getResponse);
+        EventEmitterService.onComplete(SchoolEvents.GET_SEMESTERS, getResponse);
 
         function onInit() {
             setting.isLoading = true;
-            EventEmitterService.emit(SchoolEvents.GET_SCHOOL_YEARS, function() {
+            EventEmitterService.emit(SchoolEvents.GET_SEMESTERS, setting.schoolYear._id, function() {
                 setting.isLoading = false;
             });
         }
 
         function getResponse(result) {
             if (result) {
-                setting.schoolYears = result;
+                setting.semesters = result;
             } //TODO: alert errors
         }
 
@@ -33,7 +36,7 @@
             if (!err) {
                 EventEmitterService.emit(AppEvents.OPEN_DIALOG, dialogData, function(err, $dialog) {
                     $dialog.then(function() {
-                        EventEmitterService.emit(SchoolEvents.GET_SCHOOL_YEARS);
+                        EventEmitterService.emit(SchoolEvents.GET_SEMESTERS, setting.schoolYear._id);
                     }); //TODO: error show an alert message
                 });
             }
@@ -42,9 +45,9 @@
         function openConfirmEventComplete(err, createdConfirmDialogData) {
             EventEmitterService.emit(AppEvents.OPEN_DIALOG_CONFIRM, createdConfirmDialogData, function(err, $dialog) {
                 $dialog.then(function() {
-                    EventEmitterService.emit(SchoolEvents.DELETE_SCHOOL_YEAR, createdConfirmDialogData.schoolYearId, function(err) {
+                    EventEmitterService.emit(SchoolEvents.DELETE_SEMESTER, createdConfirmDialogData.semesterId, function(err) {
                         if (!err) {
-                            EventEmitterService.emit(SchoolEvents.GET_SCHOOL_YEARS);
+                            EventEmitterService.emit(SchoolEvents.GET_SEMESTERS, setting.schoolYear._id);
                         } //TODO: error show an alert message
                     });
                 });
@@ -52,14 +55,17 @@
         }
 
         function onSubmit() {
-            if (setting.schoolYearInput) {
-                var inputCurrentIndex = vendors.lodash.findIndex(setting.schoolYears, function(pred) {
-                    return pred.description.toLowerCase() === setting.schoolYearInput.toLowerCase();
+            if (setting.semesterInput) {
+                var inputCurrentIndex = vendors.lodash.findIndex(setting.semesters, function(pred) {
+                    return pred.description.toLowerCase() === setting.semesterInput.toLowerCase();
                 });
                 if (inputCurrentIndex === -1) {
-                    EventEmitterService.emit(SchoolEvents.OPEN_ADD_SCHOOL_YEAR_DIALOG, setting.schoolYearInput, function(err, dialog) {
+                    EventEmitterService.emit(SchoolEvents.OPEN_ADD_SEMESTER_DIALOG, {
+                        schoolYearId: setting.schoolYear._id,
+                        description: setting.semesterInput
+                    }, function(err, dialog) {
                         dialogEventComplete(err, dialog);
-                        setting.schoolYearInput = undefined;
+                        setting.semesterInput = undefined;
                     });
                 }
             }

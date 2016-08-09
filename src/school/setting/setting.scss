@@ -1,7 +1,7 @@
 school-setting {
     .md-toolbar-tools {
-        border-top: 1px solid $borderColor;
         @extend .primary;
+        border-top: 1px solid $borderColor;
         input {
             @extend .gds-input-for-md;
             &:focus {
@@ -12,8 +12,33 @@ school-setting {
     }
     .setting-header {
         cursor: pointer;
+        padding-left: 25px;
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10px;
+        outline: none;
+        padding-bottom: 5px;
         &:hover {
-            border-bottom: 1px solid $infoDark;
+            color: $info !important;
+        }
+    }
+    .setting-toolbar {
+        width: 100%;
+        @extend .primary;
+        padding-left: 5px;
+        border-top: 1px solid $borderColor;
+        input {
+            @extend .gds-input-for-md;
+            height: 25px;
+            margin-top: 5px;
+            font-size: 20px;
+            width: 250px;
+            &:focus {
+                border-bottom: 1px solid $primary;
+            }
+            &:hover {
+                border-bottom: 1px solid $primary;
+            }
         }
     }
 }

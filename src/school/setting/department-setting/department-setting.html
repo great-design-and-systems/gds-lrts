@@ -2,8 +2,8 @@
     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
 </div>
 <md-content ng-if="!setting.isLoading">
-    <md-toolbar class="md-table-toolbar md-default">
-        <form class="md-toolbar-tools" role="form" ng-submit="setting.onSubmit()">
+    <div layout class="md-table-toolbar setting-toolbar md-default">
+        <form layout="row" flex role="form" ng-submit="setting.onSubmit()">
             <span class="setting-header" ng-click="setting.toggle=!setting.toggle">Department</span>
             <div flex></div>
             <input required placeholder="Search or add department" ng-model="setting.departmentInput">
@@ -12,7 +12,7 @@
                 <md-tooltip>Refresh</md-tooltip>
             </md-button>
         </form>
-    </md-toolbar>
+    </div>
     <md-table-container ng-if="!setting.toggle" flex ng-if="!setting.isLoading">
         <table md-table>
             <thead md-head>

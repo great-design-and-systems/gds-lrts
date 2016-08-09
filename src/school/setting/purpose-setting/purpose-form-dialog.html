@@ -4,7 +4,7 @@
             <div class="md-toolbar-tools">
                 <h3>{{purposeForm.title}}</h3>
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="purposeForm.cancel()">
+                <md-button ng-disabled="purposeForm.isSubmitting" class="md-icon-button" ng-click="purposeForm.cancel()">
                     <md-icon md-font-icon="fa fa-close" aria-label="Close dialog"></md-icon>
                 </md-button>
             </div>
@@ -18,11 +18,14 @@
             </md-content>
         </md-dialog-content>
         <md-dialog-actions layout="row">
+            <div ng-if="purposeForm.isSubmitting">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
             <md-button ng-disabled="!purposeForm.purpose.codeValue || purposeForm.isSubmitting" type="submit" class="primary md-raised">
                 {{purposeForm.submitLabel}}
                 <md-tooltip>{{purposeForm.submitLabel}}</md-tooltip>
             </md-button>
-            <md-button ng-click="purposeForm.cancel()" class="md-accent md-raised">
+            <md-button ng-disabled="purposeForm.isSubmitting" ng-click="purposeForm.cancel()" class="md-accent md-raised">
                 {{purposeForm.cancelLabel}}
                 <md-tooltip>{{purposeForm.cancelLabel}}</md-tooltip>
             </md-button>

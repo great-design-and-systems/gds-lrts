@@ -1,12 +1,12 @@
 (function() {
     angular.module('app.school')
-        .controller('EditSchoolYearController', EditSchoolYearController);
-    EditSchoolYearController.$inject = ['$scope', '$mdDialog', 'EventEmitterService', 'SchoolEvents', 'vendors'];
+        .controller('AddSchoolYearController', AddSchoolYearController);
+    AddSchoolYearController.$inject = ['$scope', '$mdDialog', 'EventEmitterService', 'SchoolEvents', 'vendors'];
 
-    function EditSchoolYearController(scope, $mdDialog, EventEmitterService, SchoolEvents, vendors) {
+    function AddSchoolYearController(scope, $mdDialog, EventEmitterService, SchoolEvents, vendors) {
         var form = this;
-        form.title = 'Edit school year';
-        form.submitLabel = 'Update';
+        form.title = 'New school year';
+        form.submitLabel = 'Create';
         form.cancelLabel = 'Cancel';
         form.cancel = cancel;
         form.submit = submit;
@@ -18,12 +18,11 @@
 
         function submit() {
             form.isSubmitting = true;
-            EventEmitterService.emit(SchoolEvents.UPDATE_SCHOOL_YEAR, {
-                _id: form.model._id,
+            EventEmitterService.emit(SchoolEvents.CREATE_SCHOOL_YEAR, {
                 description: form.model.description,
                 dateStart: vendors.moment(form.model.dateStart).format('yyyy-MM-DD'),
                 dateEnd: vendors.moment(form.model.dateEnd).format('yyyy-MM-DD'),
-                updatedBy: 'System' //USER_ID
+                createdBy: 'System' //USER_ID
             }, function(err, result) {
                 form.isSubmitting = false;
                 if (!err) {

@@ -52,12 +52,13 @@
             });
         }
 
-        function updateSchoolYear(id, name, description, dateStart, dateEnd, updatedBy, callback) {
+        function updateSchoolYear(id, description, dateStart, dateEnd, updatedBy, callback) {
             resource.updateSchoolYear({
                 schoolYearId: id,
-                name: name,
                 description: description,
-                updatedBy: updatedBy
+                updatedBy: updatedBy,
+                dateStart: dateStart,
+                dateEnd: dateEnd
             }, function(result) {
                 callback(undefined, result);
             }, function(err) {
@@ -65,12 +66,13 @@
             });
         }
 
-        function createSchoolYear(name, description, dateStart, dateEnd, createdBy, callback) {
+        function createSchoolYear(description, dateStart, dateEnd, createdBy, callback) {
             resource.createSchoolYear({
-                name: name,
                 description: description,
                 createdBy: createdBy,
-                schoolId: SCHOOL_ID
+                schoolId: SCHOOL_ID,
+                dateStart: dateStart,
+                dateEnd: dateEnd
             }, function(result) {
                 callback(undefined, result);
             }, function(err) {

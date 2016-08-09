@@ -9,32 +9,33 @@ $white: #fff !important;
 $primary: rgba(14, 11, 70, 0.5);
 
 /* THEME */
+
 $appBackground: #BF9B30;
 $blendColorBG: rgba(0, 0, 0, 0.25) !important;
 $blendColorBorder: rgba(0, 0, 0, 0.35) !important;
 
 /* ALERTS */
+
 $success: #4CAF50;
 $successLight: #C8E6C9;
 $successDark: #388E3C;
-
 $danger: #F44336;
 $dangerLight: #FFCDD2;
 $dangerDark: #D32F2F;
-
 $warning: #FFC107;
 $warningLight: #FFECB3;
 $warningDark: #FFA000;
-
 $info: #2196F3;
 $infoLight: #BBDEFB;
 $infoDark: #1976D2;
 
 /* TYPOGRAPHY */
-$fontFamily: 'Open Sans', sans-serif;
-$fontSize: 12px;
 
+$fontFamily: 'Open Sans',
+sans-serif;
+$fontSize: 12px;
 $navBackgroundLink: #646484;
 $sidenavLeftWidth: 225px;
-
 $toolbarHeight: 40px;
+$disabledColor: rgba(0, 0, 0, 0.26);
+$disabledBackgroundColor: rgba(0, 0, 0, 0.12);

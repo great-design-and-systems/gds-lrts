@@ -4,15 +4,15 @@
     Event.$inject = ['$rootScope', 'SchoolEvents'];
 
     function Event($rootScope, SchoolEvents) {
-        $rootScope.$on(SchoolEvents.OPEN_EDIT_SCHOOL_YEAR_DIALOG, function($event, data, callback) {
-            data.dateStart = new Date(data.dateStart);
-            data.dateEnd = new Date(data.dateEnd);
+        $rootScope.$on(SchoolEvents.OPEN_ADD_SCHOOL_YEAR_DIALOG, function($event, description, callback) {
             var dialogData = {
-                controller: 'EditSchoolYearController',
+                controller: 'AddSchoolYearController',
                 controllerAs: 'form',
                 templateUrl: 'src/school/setting/school-year-setting/school-year-form-dialog.html',
                 locals: {
-                    model: data
+                    model: {
+                        description: description
+                    }
                 },
                 bindToController: true
             };

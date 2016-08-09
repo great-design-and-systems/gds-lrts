@@ -24,6 +24,14 @@
             GET_SCHOOL_YEARS: 'getSchoolYears',
             DELETE_SCHOOL_YEAR: 'deleteSchoolYear',
             OPEN_EDIT_SCHOOL_YEAR_DIALOG: 'openEditSchoolYearDialog',
-            OPEN_REMOVE_SCHOOL_YEAR_CONFIRM_DIALOG: 'openRemoveSchoolYearConfirmDialog'
+            OPEN_REMOVE_SCHOOL_YEAR_CONFIRM_DIALOG: 'openRemoveSchoolYearConfirmDialog',
+            OPEN_ADD_SCHOOL_YEAR_DIALOG: 'openAddSchoolYearDialog',
+            CREATE_SEMESTER: 'createSemester',
+            UPDATE_SEMESTER: 'updateSemester',
+            GET_SEMESTERS: 'getSemesters',
+            DELETE_SEMESTER: 'deleteSemester',
+            OPEN_EDIT_SEMESTER_DIALOG: 'openEditSemesterDialog',
+            OPEN_REMOVE_SEMESTER_CONFIRM_DIALOG: 'openRemoveSemesterConfirmDialog',
+            OPEN_ADD_SEMESTER_DIALOG: 'openAddSemesterDialog'
         });
 })();

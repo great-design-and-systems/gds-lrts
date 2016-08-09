@@ -60,8 +60,13 @@ button {
     * {
         color: $white;
     }
-    &:disabled {
-        background-color: darken($primary, 1.0);
+}
+
+button[disabled~=disabled] {
+    &.primary {
+        color: $disabledColor !important;
+        background-color: $disabledBackgroundColor !important;
+        cursor: default;
     }
 }
 
@@ -102,4 +107,6 @@ button {
 @import "app/core/frame-legend/frame-legend";
 @import "school/setting/purpose-setting/purpose-setting";
 @import "school/link/school-link";
-@import "school/setting/setting"; 
+@import "school/setting/setting";
+@import "school/setting/school-year-setting/school-year-setting";
+@import "school/setting/semester-setting/semester-setting";

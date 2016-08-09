@@ -4,14 +4,14 @@
     Event.$inject = ['$rootScope', 'SchoolEvents'];
 
     function Event($rootScope, SchoolEvents) {
-        $rootScope.$on(SchoolEvents.OPEN_REMOVE_SCHOOL_YEAR_CONFIRM_DIALOG, function($event, data, callback) {
+        $rootScope.$on(SchoolEvents.OPEN_REMOVE_SEMESTER_CONFIRM_DIALOG, function($event, data, callback) {
             var dialogConfirmData = {
                 title: 'Do you want to remove ' + data.description + '?',
-                textContent: 'This school year will be removed permanently.',
+                textContent: 'This semester will be removed permanently.',
                 ok: 'Yes',
                 cancel: 'No, wait!',
-                ariaLabel: 'Remove school year dialog',
-                schoolYearId: data._id
+                ariaLabel: 'Remove semester dialog',
+                semesterId: data._id
             };
             callback(undefined, dialogConfirmData);
         });

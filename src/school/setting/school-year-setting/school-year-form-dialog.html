@@ -4,25 +4,38 @@
             <div class="md-toolbar-tools">
                 <h3>{{form.title}}</h3>
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="form.cancel()">
+                <md-button ng-disabled="form.isSubmitting" class="md-icon-button" ng-click="form.cancel()">
                     <md-icon md-font-icon="fa fa-close" aria-label="Close dialog"></md-icon>
                 </md-button>
             </div>
         </md-toolbar>
         <md-dialog-content layout="column" layout-padding="1">
-            <md-content layout flex>
+            <md-content layout>
                 <md-input-container flex-auto>
                     <label for="schoolYearName">Description</label>
                     <input ng-disabled="form.isSubmitting" md-autofocus required id="schoolYearName" ng-model="form.model.description">
                 </md-input-container>
             </md-content>
+            <md-content layout>
+                <div flex>
+                    <h4>Date start</h4>
+                    <md-datepicker ng-disabled="form.isSubmitting" ng-model="form.model.dateStart" md-placeholder="Enter date"></md-datepicker>
+                </div>
+                <div flex>
+                    <h4>Date end</h4>
+                    <md-datepicker ng-disabled="form.isSubmitting" ng-model="form.model.dateEnd" md-placeholder="Enter date"></md-datepicker>
+                </div>
+            </md-content>
         </md-dialog-content>
         <md-dialog-actions layout="row">
+            <div ng-if="form.isSubmitting">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
             <md-button ng-disabled="!form.model.description || form.isSubmitting" type="submit" class="primary md-raised">
                 {{form.submitLabel}}
                 <md-tooltip>{{form.submitLabel}}</md-tooltip>
             </md-button>
-            <md-button ng-click="form.cancel()" class="md-accent md-raised">
+            <md-button ng-disabled="form.isSubmitting" ng-click="form.cancel()" class="md-accent md-raised">
                 {{form.cancelLabel}}
                 <md-tooltip>{{form.cancelLabel}}</md-tooltip>
             </md-button>

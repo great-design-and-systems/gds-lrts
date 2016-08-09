@@ -1,12 +1,12 @@
 (function() {
     angular.module('app.school')
         .run(Event);
-    Event.$inject = ['$rootScope', 'SchoolEvents', 'SchoolYearSettingResourceService', 'vendors'];
+    Event.$inject = ['$rootScope', 'SchoolEvents', 'SemesterSettingResourceService', 'vendors'];
 
-    function Event($rootScope, SchoolEvents, SchoolYearSettingResourceService, vendors) {
-        $rootScope.$on(SchoolEvents.CREATE_SCHOOL_YEAR, function($event, data, callback) {
+    function Event($rootScope, SchoolEvents, SemesterSettingResourceService, vendors) {
+        $rootScope.$on(SchoolEvents.CREATE_SEMESTER, function($event, data, callback) {
             vendors.pace.restart();
-            SchoolYearSettingResourceService.createSchoolYear(data.description, data.dateStart,
+            SemesterSettingResourceService.createSemester(data.schoolYearId, data.description, data.dateStart,
                 data.dateEnd, data.createdBy,
                 function(err, result) {
                     if (err) {
