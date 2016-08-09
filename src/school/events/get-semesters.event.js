@@ -8,9 +8,12 @@
             vendors.pace.restart();
             SemesterSettingResourceService.getSemesters(id, function(err, result) {
                 if (err) {
-                    callback(err);
+                    callback({ err: err, schoolYearId: id });
                 } else {
-                    callback(undefined, result);
+                    callback(undefined, {
+                        schoolYearId: id,
+                        result: result
+                    });
                 }
             });
         });

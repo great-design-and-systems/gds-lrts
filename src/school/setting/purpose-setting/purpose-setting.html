@@ -6,7 +6,7 @@
         <form layout="row" flex role="form" ng-submit="purposeSetting.onSubmitNewPurpose()">
             <span class="setting-header" ng-click="purposeSetting.toggle=!purposeSetting.toggle">Purpose</span>
             <div flex></div>
-            <input required placeholder="Search or add purpose" ng-model="purposeSetting.schoolYpurposeInputearInput">
+            <input required placeholder="Search or add purpose" ng-model="purposeSetting.purposeInput">
             <md-button class="md-icon-button">
                 <i emit-event='getPurposes' event-class="fa-spin" class="fa fa-refresh"></i>
                 <md-tooltip>Refresh</md-tooltip>

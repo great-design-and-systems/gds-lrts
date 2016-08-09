@@ -1,30 +1,30 @@
-<md-toolbar class="no-bg-color">
-  <div class="md-toolbar-tools">
-    <toolbar-logo></toolbar-logo>
-    <div class="page-current-label">{{pageControl.getCurrent().label}}</div>
-    <div ui-view="control"></div>
-    <span flex></span>
-    
-    <!-- NOTIFICATIONS -->
-    <md-button class="md-icon-button" aria-label="Favorite">
-      <md-icon md-font-icon="fa fa-bell" class="step"></md-icon>
-    </md-button>
+<md-toolbar class="main-toolbar">
+    <div class="md-toolbar-tools">
+        <toolbar-logo></toolbar-logo>
+        <div class="page-current-label">{{pageControl.getCurrent().label}}</div>
+        <div ui-view="control"></div>
+        <span flex></span>
 
-    <!-- DROPDOWN MENU -->
-    <md-menu md-position-mode="target-right target" md-offset="0 45">
-        <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-          <md-icon md-menu-origin md-font-icon="fa fa-caret-down"></md-icon>
+        <!-- NOTIFICATIONS -->
+        <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-font-icon="fa fa-bell" class="step"></md-icon>
         </md-button>
-        <md-menu-content width="4" >
-          <md-menu-item ng-repeat="item in [1, 2, 3]">
-            <md-button ng-click="ctrl.announceClick($index)">
-                <div layout="row" flex>
-                  <p flex>Option {{item}}</p>
-                  <md-icon md-menu-align-target md-svg-icon="call:portable-wifi-off" style="margin: auto 3px auto 0;"></md-icon>
-                </div>
+
+        <!-- DROPDOWN MENU -->
+        <md-menu md-position-mode="target-right target" md-offset="0 45">
+            <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon md-menu-origin md-font-icon="fa fa-caret-down"></md-icon>
             </md-button>
-          </md-menu-item>
-        </md-menu-content>
-      </md-menu>
-  </div>
+            <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                    <md-button ng-click="ctrl.announceClick($index)">
+                        <div layout="row" flex>
+                            <p flex>Option {{item}}</p>
+                            <md-icon md-menu-align-target md-svg-icon="call:portable-wifi-off" style="margin: auto 3px auto 0;"></md-icon>
+                        </div>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
 </md-toolbar>

@@ -1,6 +1,5 @@
 school-setting {
     .md-toolbar-tools {
-        @extend .primary;
         border-top: 1px solid $borderColor;
         input {
             @extend .gds-input-for-md;

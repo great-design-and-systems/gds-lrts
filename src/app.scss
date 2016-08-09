@@ -1,9 +1,9 @@
-@import "app.variables";
-@import "app.mixin";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import "app.variables";
+@import "app.mixin";
 body {
-    background-color: $appBackground;
+    background-color: #f2f2f2;
     font-family: $fontFamily;
     font-size: $fontSize;
 }
@@ -14,6 +14,10 @@ button {
 
 
 /* THEME */
+
+.main-toolbar {
+    background-color: $appBackground !important;
+}
 
 .no-bg-color {
     background-color: transparent !important;

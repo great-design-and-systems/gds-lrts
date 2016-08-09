@@ -1,15 +1,15 @@
 monitor {
-  @extend .frame-view-component;
-  tbody {
-    tr[md-row] {
-      text-align: center;
-      background: floralwhite;
+    @extend .frame-view-component;
+    tbody {
+        tr[md-row] {
+            text-align: center;
+            background: floralwhite;
+        }
     }
-  }
-  thead {
-  	th[md-column]{
-  		background-color: $appBackground;
-      color: #fff !important;
-  	}
-  }
+    thead {
+        th[md-column] {
+            @extend .primary;
+            color: $white !important;
+        }
+    }
 }

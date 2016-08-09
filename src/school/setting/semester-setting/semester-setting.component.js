@@ -26,9 +26,11 @@
             });
         }
 
-        function getResponse(result) {
-            if (result) {
-                setting.semesters = result;
+        function getResponse(data) {
+            if (data) {
+                if (data.schoolYearId === setting.schoolYear._id) {
+                    setting.semesters = data.result;
+                }
             } //TODO: alert errors
         }
 

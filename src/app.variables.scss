@@ -1,18 +1,18 @@
 $mainFrameBackground: rgba(255, 255, 255, 0.2);
-$borderColor: rgba(227, 225, 225, 0.2);
+$borderColor: rgba(227, 225, 225, 0.7);
 $clockWidth: 75%;
 $subTitleFontSize: 12px;
 $logoHeight: 55px;
 $logoWidth: 55px;
 $pageControlBorder: 2px solid white;
-$white: #fff !important;
-$primary: rgba(14, 11, 70, 0.5);
+$white: #f2f2f2;
+$primary: rgb(0, 0, 102);
 
 /* THEME */
 
 $appBackground: #BF9B30;
-$blendColorBG: rgba(0, 0, 0, 0.25) !important;
-$blendColorBorder: rgba(0, 0, 0, 0.35) !important;
+$blendColorBG: rgba(0, 0, 0, 0.25);
+$blendColorBorder: rgba(0, 0, 0, 0.35);
 
 /* ALERTS */
 
@@ -34,7 +34,7 @@ $infoDark: #1976D2;
 $fontFamily: 'Open Sans',
 sans-serif;
 $fontSize: 12px;
-$navBackgroundLink: #646484;
+$navBackgroundLink:$primary;
 $sidenavLeftWidth: 225px;
 $toolbarHeight: 40px;
 $disabledColor: rgba(0, 0, 0, 0.26);
