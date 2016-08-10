@@ -11,5 +11,6 @@
         .constant('SCHOOL_CONTEXT', '#SCHOOL_CONTEXT')
         .constant('EXPORT_CONTEXT', '#EXPORT_CONTEXT')
         .constant('FILE_CONTEXT', '#FILE_CONTEXT')
-        .constant('SCHOOL_ID', '#SCHOOL_ID');
+        .constant('SCHOOL_ID', '#SCHOOL_ID')
+        .constant('LOGIN_CONTEXT','#LOGIN_CONTEXT');
 })();
