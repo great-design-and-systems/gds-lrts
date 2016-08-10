@@ -1,12 +1,12 @@
-(function () {
+(function() {
     'use strict';
     angular.module('gdsApp')
-        .config(AppRoute);
+        .config(AppRoute)
+        .run(CheckSessionRoute);
 
     AppRoute.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function AppRoute($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/monitor');
         $urlRouterProvider.when('/school', '/school/setting');
         $stateProvider
             .state('monitor', {
@@ -31,6 +31,15 @@
                         template: '<school-setting></school-setting>'
                     }
                 }
+            })
+            .state('login', {
+                url: '/login',
+                label: 'Login',
+                views: {
+                    'mainFrame': {
+                        template: '<login></login>'
+                    }
+                }
             });
     }
 
@@ -41,4 +50,15 @@
         exposedRoute.param = $stateParams;
     }
 
+    CheckSessionRoute.$inject = ['EventEmitterService', 'SessionEvents', '$state'];
+
+    function CheckSessionRoute(EventEmitterService, SessionEvents, $state) {
+        EventEmitterService.emit(SessionEvents.CHECK_SESSION, function(err) {
+            if (!err) {
+                $state.go('monitor');
+            } else {
+                $state.go('login');
+            }
+        });
+    }
 })();

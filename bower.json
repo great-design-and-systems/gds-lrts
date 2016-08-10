@@ -1,39 +1,40 @@
 {
-  "name": "gds-lrts",
-  "description": "Library reports and tracking system",
-  "main": "index.js",
-  "authors": [
-    "rickzx98@gmail.com"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "gds-lrts"
-  ],
-  "homepage": "https://github.com/great-design-and-systems/gds-lrts",
-  "moduleType": [
-    "globals"
-  ],
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "angular": "1.5.8",
-    "socket.io-client": "^1.4.8",
-    "angular-resource": "^1.5.8",
-    "angular-ui-router": "ui-router#^0.3.1",
-    "angular-material": "^1.0.9",
-    "jquery": "^3.1.0",
-    "font-awesome": "~4.6.3",
-    "angular-material-data-table": "^0.10.9",
-    "moment": "^2.14.1",
-    "lodash": "^4.14.1"
-  },
-  "resolutions": {
-    "angular": "1.5.8"
-  }
+    "name": "gds-lrts",
+    "description": "Library reports and tracking system",
+    "main": "index.js",
+    "authors": [
+        "rickzx98@gmail.com"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "gds-lrts"
+    ],
+    "homepage": "https://github.com/great-design-and-systems/gds-lrts",
+    "moduleType": [
+        "globals"
+    ],
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "1.5.8",
+        "socket.io-client": "^1.4.8",
+        "angular-resource": "^1.5.8",
+        "angular-ui-router": "ui-router#^0.3.1",
+        "angular-material": "^1.0.9",
+        "jquery": "^3.1.0",
+        "font-awesome": "~4.6.3",
+        "angular-material-data-table": "^0.10.9",
+        "moment": "^2.14.1",
+        "lodash": "^4.14.1",
+        "angular-cookies": "^1.5.8"
+    },
+    "resolutions": {
+        "angular": "1.5.8"
+    }
 }

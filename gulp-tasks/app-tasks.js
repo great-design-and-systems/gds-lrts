@@ -12,6 +12,7 @@ var angularTemplates = require('gulp-angular-templates');
 var SRC_JS = [
     'src/app/app.module.js',
     'src/app/app.constant.js',
+    'src/app/common/event-emitter/event-emitter.service.js',
     'src/app/app.route.js',
     'src/app/app.vendor.js',
     'src/app/core/core.module.js',
@@ -19,7 +20,6 @@ var SRC_JS = [
     'src/app/core/page-control/page-control.component.js',
     'src/app/core/toolbar-logo/toolbar-logo.component.js',
     'src/app/core/main-frame/main-frame.component.js',
-    'src/app/common/event-emitter/event-emitter.service.js',
     'src/app/core/info-bar/info-bar.component.js',
     'src/app/core/auto-height/auto-height.directive.js',
     'src/app/core/navigation-links/navigation-links.component.js',
@@ -116,7 +116,18 @@ var SRC_JS = [
     'src/code/code.module.js',
     'src/code/code.constant.js',
     'src/code/code-resource.service.js',
-    'src/code/events/delete-code-by-id.event.js'
+    'src/code/events/delete-code-by-id.event.js',
+    'src/login/login.module.js',
+    'src/login/login.constant.js',
+    'src/login/login.service.js',
+    'src/login/login-resource.service.js',
+    'src/login/login.component.js',
+    'src/login/events/login.event.js',
+    'src/session/session.module.js',
+    'src/session/session.constant.js',
+    'src/session/session.service.js',
+    'src/session/is-session-active/is-session-active.js',
+    'src/session/events/check-session.event.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';
