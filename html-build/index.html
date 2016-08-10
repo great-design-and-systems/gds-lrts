@@ -16,11 +16,11 @@
 
 </head>
 
-<body layout="row">
+<body layout="row" ng-controller="GdsAppCtrl as gdsApp">
     <div flex ng-cloak>
-        <page-control></page-control>
+        <page-control ng-if="isSessionActive"></page-control>
         <md-content class="main-content" layout layout-padding="2">
-            <md-sidenav layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop>
+            <md-sidenav ng-if="isSessionActive" layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop>
                 <clock></clock>
                 <navigation-links flex layout="column">
                 </navigation-links>
@@ -28,7 +28,7 @@
 
             <main-frame flex auto-height offset="90"></main-frame>
 
-            <info-bar flex="20"></info-bar>
+            <info-bar ng-if="isSessionActive" flex="20"></info-bar>
         </md-content>
     </div>
     <!--Vendor specific configuration -->

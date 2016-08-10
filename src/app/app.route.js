@@ -1,8 +1,7 @@
 (function() {
     'use strict';
     angular.module('gdsApp')
-        .config(AppRoute)
-        .run(CheckSessionRoute);
+        .config(AppRoute);
 
     AppRoute.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -42,23 +41,10 @@
                 }
             });
     }
-
     ExposeRouteParams.$inject = ['$stateParams'];
 
     function ExposeRouteParams($stateParams) {
         var exposedRoute = this;
         exposedRoute.param = $stateParams;
-    }
-
-    CheckSessionRoute.$inject = ['EventEmitterService', 'SessionEvents', '$state'];
-
-    function CheckSessionRoute(EventEmitterService, SessionEvents, $state) {
-        EventEmitterService.emit(SessionEvents.CHECK_SESSION, function(err) {
-            if (!err) {
-                $state.go('monitor');
-            } else {
-                $state.go('login');
-            }
-        });
     }
 })();

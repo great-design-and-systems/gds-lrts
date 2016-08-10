@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 @import "app.variables";
 @import "app.mixin";
 body {
@@ -114,3 +112,4 @@ button[disabled~=disabled] {
 @import "school/setting/setting";
 @import "school/setting/school-year-setting/school-year-setting";
 @import "school/setting/semester-setting/semester-setting";
+@import "login/login";

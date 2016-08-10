@@ -1,10 +1,40 @@
-<md-content layout="column">
-    <md-input-container>
-        <label>Username</label>
-        <input>
-    </md-input-container>
-    <md-input-container>
-        <label>Password</label>
-        <input>
-    </md-input-container>
-</md-content>
+<div flex layout>
+    <span flex="45"></span>
+    <img ng-src="img/assumption-logo.png">
+    <span flex="35"></span>
+</div>
+
+<div flex layout>
+    <span flex="35"></span>
+    <div layout flex class="md-toolbar-tools">
+        <span>Please sign in</span>
+    </div>
+    <span flex="35"></span>
+</div>
+
+<form layout="row" role="form" flex ng-submit="login.execute()">
+    <span flex="35"></span>
+    <md-content flex layout>
+        <span flex="5"></span>
+        <div layout="column" flex>
+            <md-input-container>
+                <md-icon md-font-icon="fa fa-user"></md-icon>
+                <label>Username</label>
+                <input ng-model="login.data.username" required md-autofocus>
+            </md-input-container>
+            <md-input-container>
+                <md-icon md-font-icon="fa fa-key"></md-icon>
+                <label>Password</label>
+                <input ng-model="login.data.password" type="password" required>
+            </md-input-container>
+            <div layout>
+                <span class="login-message" flex>{{login.message}}</span>
+                <md-button class="md-primary md-raised" type="submit">
+                    Submit
+                </md-button>
+            </div>
+        </div>
+        <span flex="5"></span>
+    </md-content>
+    <span flex="35"></span>
+</form>

@@ -1,7 +1,8 @@
-(function () {
+(function() {
     angular.module('app.core')
         .directive('emitEvent', EmitEvent);
     EmitEvent.$inject = ['EventEmitterService'];
+
     function EmitEvent(EventEmitterService) {
         return {
             restrict: 'A',
@@ -13,13 +14,14 @@
             },
             link: EventEventLink
         };
+
         function EventEventLink(scope, element, attr) {
             if (!attr.emitEvent) {
                 throw 'Event name is required.';
             }
             element.unbind('click');
 
-            element.bind('click', function () {
+            element.bind('click', function() {
                 if (scope.eventClass) {
                     element.toggleClass(scope.eventClass);
                 }

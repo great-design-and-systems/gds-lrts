@@ -6,6 +6,7 @@
 
     function Event($rootScope, SessionService, SessionEvents) {
         $rootScope.$on(SessionEvents.CHECK_SESSION, function($event, callback) {
+            $rootScope.isSessionActive = SessionService.isActive();
             if (SessionService.isActive()) {
                 callback(undefined);
             } else {

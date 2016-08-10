@@ -1,24 +1,28 @@
-(function () {
+(function() {
     'use strict';
     angular.module('gdsApp')
         .service('EventEmitterService', EventEmitterService);
     EventEmitterService.$inject = ['$rootScope'];
+
     function EventEmitterService($rootScope) {
         return {
             emit: emit,
-            onComplete: onComplete
+            onComplete: onComplete,
+            onFail: onFail
         };
+
         function emit(eventName, data, callback) {
             var localCallback = callback;
             if (data instanceof Function) {
                 localCallback = data;
             }
             if (data && !(data instanceof Function)) {
-                $rootScope.$broadcast(eventName, data, function (err, resolve) {
+                $rootScope.$broadcast(eventName, data, function(err, resolve) {
                     if (err) {
                         if (localCallback) {
                             localCallback(err);
                         }
+                        $rootScope.$emit(eventName + '_fail', err);
                     } else {
                         if (localCallback) {
                             localCallback(undefined, resolve);
@@ -27,11 +31,12 @@
                     }
                 });
             } else {
-                $rootScope.$broadcast(eventName, function (err, resolve) {
+                $rootScope.$broadcast(eventName, function(err, resolve) {
                     if (err) {
                         if (localCallback) {
                             localCallback(err);
                         }
+                        $rootScope.$emit(eventName + '_fail', err);
                     } else {
                         if (localCallback) {
                             localCallback(undefined, resolve);
@@ -44,7 +49,13 @@
         }
 
         function onComplete(eventName, callback) {
-            $rootScope.$on(eventName + '_complete', function ($event, resolve) {
+            $rootScope.$on(eventName + '_complete', function($event, resolve) {
+                callback(resolve);
+            });
+        }
+
+        function onFail(eventName, callback) {
+            $rootScope.$on(eventName + '_fail', function($event, resolve) {
                 callback(resolve);
             });
         }

@@ -7,7 +7,7 @@ var SCHOOL_ID = process.env.SCHOOL_ID || '57a60c8d9b19871d0010f0dd'; //Assumptio
 var SCHOOL_CONTEXT = process.env.SCHOOL_CONTEXT || '/gds/schoolConfigServicePort/';
 var EXPORT_CONTEXT = process.env.EXPORT_CONTEXT || '/gds/export/';
 var FILE_CONTEXT = process.env.EXPORT_CONTEXT || '/gds/fileServicePort/';
-var LOGIN_CONTEXT = process.env.LOGIN_CONTEXT || 'gds/login/';
+var LOGIN_CONTEXT = process.env.LOGIN_CONTEXT || '/gds/login/';
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var htmlreplace = require('gulp-html-replace');
@@ -15,13 +15,13 @@ var replace = require('gulp-replace');
 var appTasks = new require('./gulp-tasks/app-tasks')(gulp);
 new require('./gulp-tasks/vendor-tasks')(gulp);
 
-gulp.task('default', function () {
+gulp.task('default', function() {
     runSequence('vendor-build', 'set-constant-values', 'app-build', 'html-prod');
 });
-gulp.task('debug', function () {
+gulp.task('debug', function() {
     runSequence('vendor-debug', 'set-constant-values', 'app-debug', 'html-dev');
 })
-gulp.task('html-dev', function () {
+gulp.task('html-dev', function() {
     return gulp.src('html-build/index.html')
         .pipe(htmlreplace({
             appJS: appTasks.SRC_JS,
@@ -32,7 +32,7 @@ gulp.task('html-dev', function () {
         .pipe(gulp.dest('.'));
 })
 
-gulp.task('html-prod', function () {
+gulp.task('html-prod', function() {
     return gulp.src('html-build/index.html')
         .pipe(htmlreplace({
             appJS: 'dist/release/app.js',
@@ -43,7 +43,7 @@ gulp.task('html-prod', function () {
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('set-constant-values', function () {
+gulp.task('set-constant-values', function() {
     gulp.src(['html-build/app.constant.js'])
         .pipe(replace('#API_HOST', API_HOST))
         .pipe(replace('#SCANNER_CONTEXT', SCANNER_CONTEXT))
