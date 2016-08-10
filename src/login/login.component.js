@@ -18,10 +18,12 @@
         }
 
         function execute() {
+            login.isLoading = true;
             EventEmitterService.emit(LoginEvents.LOGIN, login.data, loginResponse);
         }
 
         function loginResponse(err) {
+            login.isLoading = false;
             if (!err) {
                 $state.go('monitor');
             } else {
