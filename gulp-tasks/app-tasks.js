@@ -135,10 +135,20 @@ var SRC_JS = [
     'src/user/events/get-user-name.event.js',
     'src/user/events/get-user-profile.event.js',
     'src/user/link/user-link.component.js',
+    'src/user/change-password/change-password.component.js',
+    'src/user/events/change-password.event.js',
+    'src/user/events/get-user-pasword.event.js',
+    'src/user/events/change-password.event.js',
     'src/logout/logout.module.js',
     'src/logout/logout.constant.js',
     'src/logout/logout.service.js',
-    'src/logout/events/logout.event.js'
+    'src/logout/events/logout.event.js',
+    'src/upload/upload.module.js',
+    'src/upload/upload-resource.service.js',
+    'src/security/security.module.js',
+    'src/security/security-resource.service.js',
+    'src/security/security.constant.js',
+    'src/security/events/validate-password.event.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';

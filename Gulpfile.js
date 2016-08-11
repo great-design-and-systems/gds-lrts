@@ -9,6 +9,7 @@ var EXPORT_CONTEXT = process.env.EXPORT_CONTEXT || '/gds/export/';
 var FILE_CONTEXT = process.env.EXPORT_CONTEXT || '/gds/fileServicePort/';
 var LOGIN_CONTEXT = process.env.LOGIN_CONTEXT || '/gds/login/';
 var USER_CONTEXT = process.env.USER_CONTEXT || '/gds/userServicePort/';
+var SECURITY_CONTEXT = process.env.SECURITY_CONTEXT || '/gds/securityServicePort/';
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var htmlreplace = require('gulp-html-replace');
@@ -55,5 +56,6 @@ gulp.task('set-constant-values', function() {
         .pipe(replace('#SCHOOL_ID', SCHOOL_ID))
         .pipe(replace('#LOGIN_CONTEXT', LOGIN_CONTEXT))
         .pipe(replace('#USER_CONTEXT', USER_CONTEXT))
+        .pipe(replace('#SECURITY_CONTEXT', SECURITY_CONTEXT))
         .pipe(gulp.dest('src/app/'));
 });

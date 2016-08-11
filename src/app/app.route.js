@@ -39,6 +39,15 @@
                         template: '<login></login>'
                     }
                 }
+            })
+            .state('changePasword', {
+                url: '/change-password',
+                label: 'Change password',
+                views: {
+                    'mainFrame': {
+                        template: '<change-password></change-password>'
+                    }
+                }
             });
     }
     ExposeRouteParams.$inject = ['$stateParams'];

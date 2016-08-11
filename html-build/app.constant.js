@@ -15,5 +15,6 @@
         .constant('FILE_CONTEXT', '#FILE_CONTEXT')
         .constant('SCHOOL_ID', '#SCHOOL_ID')
         .constant('LOGIN_CONTEXT', '#LOGIN_CONTEXT')
-        .constant('USER_CONTEXT', '#USER_CONTEXT');
+        .constant('USER_CONTEXT', '#USER_CONTEXT')
+        .constant('SECURITY_CONTEXT', '#SECURITY_CONTEXT');
 })();

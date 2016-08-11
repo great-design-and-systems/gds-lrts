@@ -17,6 +17,7 @@
         'app.login',
         'app.session',
         'app.user',
-        'app.logout'
+        'app.logout',
+        'app.security'
     ]);
 })();
