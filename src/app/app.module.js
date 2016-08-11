@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('gdsApp', [ /*Vendor modules */
         'ui.router',
@@ -18,6 +18,9 @@
         'app.session',
         'app.user',
         'app.logout',
-        'app.security'
+        'app.security',
+        'app.reports',
+        'app.students',
+        'app.faculty'
     ]);
 })();
