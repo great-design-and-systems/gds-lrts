@@ -127,7 +127,18 @@ var SRC_JS = [
     'src/session/session.constant.js',
     'src/session/session.service.js',
     'src/session/is-session-active/is-session-active.js',
-    'src/session/events/check-session.event.js'
+    'src/session/events/check-session.event.js',
+    'src/user/user.module.js',
+    'src/user/user-resource.service.js',
+    'src/user/user.constant.js',
+    'src/user/user.service.js',
+    'src/user/events/get-user-name.event.js',
+    'src/user/events/get-user-profile.event.js',
+    'src/user/link/user-link.component.js',
+    'src/logout/logout.module.js',
+    'src/logout/logout.constant.js',
+    'src/logout/logout.service.js',
+    'src/logout/events/logout.event.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';

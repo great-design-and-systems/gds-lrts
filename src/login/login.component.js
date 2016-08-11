@@ -6,9 +6,9 @@
             controller: LoginComponent,
             controllerAs: 'login'
         });
-    LoginComponent.$inject = ['$state', 'EventEmitterService', 'LoginEvents'];
+    LoginComponent.$inject = ['$state', 'EventEmitterService', 'LoginEvents', 'SessionEvents', 'UserEvents'];
 
-    function LoginComponent($state, EventEmitterService, LoginEvents) {
+    function LoginComponent($state, EventEmitterService, LoginEvents, SessionEvents, UserEvents) {
         var login = this;
         login.$onInit = onInit;
         login.execute = execute;
@@ -25,7 +25,8 @@
         function loginResponse(err) {
             login.isLoading = false;
             if (!err) {
-                $state.go('monitor');
+                EventEmitterService.emit(SessionEvents.CHECK_SESSION);
+                EventEmitterService.emit(UserEvents.GET_USERNAME);
             } else {
                 login.message = 'Invalid username or password';
             }

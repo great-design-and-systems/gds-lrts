@@ -15,6 +15,8 @@
         'app.school',
         'app.code',
         'app.login',
-        'app.session'
+        'app.session',
+        'app.user',
+        'app.logout'
     ]);
 })();
