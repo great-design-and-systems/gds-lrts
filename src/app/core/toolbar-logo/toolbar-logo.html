@@ -1,7 +1,10 @@
 <div layout="row">
     <img class="school-logo" src="img/assumption-logo.png">
-    <div>
-        <div class="school-title">{{::toolbarLogo.schoolName}}</div>
-        <div class="school-sub-title">{{::toolbarLogo.schoolSubName}}</div>
+    <div ng-if="!toolbarLogo.isLoading">
+        <div class="school-title">{{::toolbarLogo.title}}</div>
+        <div class="school-sub-title">{{::toolbarLogo.branch}}</div>
+    </div>
+    <div ng-if="toolbarLogo.isLoading">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
 </div>

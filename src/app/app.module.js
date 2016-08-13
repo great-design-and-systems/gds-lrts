@@ -21,6 +21,7 @@
         'app.security',
         'app.reports',
         'app.students',
-        'app.faculty'
+        'app.faculty',
+        'app.labels'
     ]);
 })();

@@ -171,7 +171,14 @@ var SRC_JS = [
     'src/students/links/students-link.component.js',
     /* Faculty */
     'src/faculty/faculty.module.js',
-    'src/faculty/links/faculty-link.component.js'
+    'src/faculty/links/faculty-link.component.js',
+    /* Label */
+    'src/labels/labels.module.js',
+    'src/labels/labels.constant.js',
+    'src/labels/labels-resource.service.js',
+    'src/labels/labels.service.js',
+    'src/labels/events/get-label.event.js',
+    'src/labels/events/cascade-labels.event.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';
