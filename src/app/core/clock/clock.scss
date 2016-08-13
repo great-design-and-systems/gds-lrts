@@ -1,9 +1,11 @@
-clock {
+clock { 
+  @extend .primary;
   &.jqclock {
     border: none !important;
     margin: 0 !important;
     padding: 5px !important;
     .clockdate {
+      @extend .primary;
       font-size: 16px !important;
     }
     .clocktime {

@@ -1,0 +1,37 @@
+<md-list>
+    <md-subheader class="md-no-sticky">Properties: {{reportsSettings.data.title}}</md-subheader>
+    <md-list-item layout>
+        <md-input-container flex>
+            <label>Title</label>
+            <textarea ng-model="reportsSettings.data.title"></textarea>
+        </md-input-container>
+    </md-list-item>
+    <md-list-item layout>
+        <md-input-container flex>
+            <label>Report type</label>
+            <md-select ng-model="reportsSettings.data.reportType">
+                <md-option ng-value="table">Table</md-option>
+                <md-option ng-value="bar">Bar chart</md-option>
+                <md-option ng-value="line">Line chart</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Person type</label>
+            <md-select ng-model="reportsSettings.data.personType">
+                <md-option ng-value="all">All</md-option>
+                <md-option ng-value="visitor">Visitor</md-option>
+                <md-option ng-value="student">Student</md-option>
+                <md-option ng-value="faculty">Faculty</md-option>
+            </md-select>
+        </md-input-container>
+    </md-list-item>
+    <md-list-item>
+        <h4> Date </h4>
+    </md-list-item>
+    <md-list-item>
+        <md-datepicker md-placeholder="from" ng-model="reportsSettings.data.dateFrom"></md-datepicker>
+    </md-list-item>
+    <md-list-item>
+        <md-datepicker md-placeholder="to" ng-model="reportsSettings.data.dateTo"></md-datepicker>
+    </md-list-item>
+</md-list>

@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('gdsApp')
         .config(AppRoute);
@@ -46,6 +46,19 @@
                 views: {
                     'mainFrame': {
                         template: '<change-password></change-password>'
+                    }
+                }
+            })
+            .state('reports', {
+                url: '/reports',
+                label: 'Reports',
+                settingLabel: 'Properties',
+                views: {
+                    mainFrame: {
+                        template: '<reports-content></reports-content>'
+                    },
+                    pageSetting: {
+                        template: '<reports-settings></reports-settings>'
                     }
                 }
             });

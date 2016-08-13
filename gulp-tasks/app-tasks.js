@@ -32,6 +32,7 @@ var SRC_JS = [
     'src/app/core/navigation-links/navigation-links.component.js',
     'src/app/core/frame-legend/frame-legend.component.js',
     'src/app/core/emit-event/emit-event.directive.js',
+    'src/app/core/page-settings/page-settings.component.js',
     /* Monitor */
     'src/monitor/monitor.module.js',
     'src/monitor/monitor-resource.service.js',
@@ -166,6 +167,8 @@ var SRC_JS = [
     /* Reports */
     'src/reports/reports.module.js',
     'src/reports/links/reports-link.component.js',
+    'src/reports/content/reports-content.component.js',
+    'src/reports/settings/reports-settings.component.js',
     /* Students */
     'src/students/students.module.js',
     'src/students/links/students-link.component.js',

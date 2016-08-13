@@ -1,4 +1,5 @@
 info-bar {
   @extend .app-frame;
   overflow-y: auto;
+  padding-top:0 !important;
 }

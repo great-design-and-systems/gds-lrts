@@ -1,6 +1,20 @@
 @import "app.variables";
 @import "app.mixin";
+
+.placeholder-div {
+    @extend .app-frame;
+    height:50px;
+
+}
+.bg {
+    background: url(../img/bg/eg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 body {
+    @extend .bg;
     background-color: #f2f2f2;
     font-family: $fontFamily;
     font-size: $fontSize;
@@ -115,3 +129,4 @@ button[disabled~=disabled] {
 @import "reports/links/reports-link";
 @import "students/links/students-link";
 @import "faculty/links/faculty-link";
+@import "reports/settings/reports-settings";
