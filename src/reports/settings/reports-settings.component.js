@@ -1,11 +1,14 @@
-(function () {
+(function() {
     angular.module('app.reports')
         .component('reportsSettings', {
             templateUrl: 'src/reports/settings/reports-settings.html',
             controller: ReportsSettingsComponent,
             controllerAs: 'reportsSettings'
         });
-    function ReportsSettingsComponent() {
+    ReportsSettingsComponent.$inject = ['ReportsService'];
+
+    function ReportsSettingsComponent(ReportsService) {
         var reportsSettings = this;
+        reportsSettings.reportProperties = ReportsService.properties;
     }
 })();

@@ -1,5 +1,16 @@
 reports-content {
     .reports-content-body {
-           background-color: white;
+        background-color: white;
+    }
+    .reports-header {
+        text-align: center;
+        .title {
+            font-family: Sans-Serif;
+        }
+        .sub-title {
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     }
 }

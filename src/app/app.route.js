@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
     angular.module('gdsApp')
         .config(AppRoute);
@@ -59,8 +59,12 @@
                     },
                     pageSetting: {
                         template: '<reports-settings></reports-settings>'
+                    },
+                    control: {
+                        template: '<reports-control></reports-control>'
                     }
-                }
+                },
+
             });
     }
     ExposeRouteParams.$inject = ['$stateParams'];

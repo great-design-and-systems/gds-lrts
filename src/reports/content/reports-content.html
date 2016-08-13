@@ -1,1 +1,6 @@
-<div auto-height offset="129" class="reports-content-body"></div>
+<div auto-height offset="129" class="reports-content-body">
+    <div layout="column" class="reports-header">
+        <h2 class="title">{{reportsContent.reportProperties.title}}</h2>
+        <span class="sub-title">{{reportsContent.reportProperties.dateFrom | date: 'MMMM dd yyyy'}} - {{reportsContent.reportProperties.dateTo | date: 'MMMM dd yyyy'}}</span>
+    </div>
+</div>
