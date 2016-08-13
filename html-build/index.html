@@ -18,9 +18,11 @@
 
 <body layout="row" ng-controller="GdsAppCtrl as gdsApp">
     <div flex ng-cloak>
-        <page-control></page-control>
+        <page-control ng-if="isSessionActive"></page-control>
+        <div style="height:64px" ng-if="!isSessionActive"></div>
         <md-content class="main-content" layout layout-padding="2">
-            <md-sidenav ng-if="isSessionActive" layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop>
+            <md-sidenav ng-if="isSessionActive" layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')"
+                md-disable-backdrop>
                 <clock></clock>
                 <navigation-links flex layout="column">
                 </navigation-links>

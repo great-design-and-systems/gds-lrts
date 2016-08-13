@@ -22,7 +22,7 @@
             EventEmitterService.emit(UserEvents.GET_PASSWORD, UserService.getUsername(), function(err, resultPassword) {
                 if (err) {
                     changePassword.isLoading = false;
-                    changePassword.message = err.message;
+                    changePassword.message = err.data.message;
                 } else {
                     EventEmitterService.emit(SecurityEvents.VALIDATE_PASSWORD, {
                         password: changePassword.data.currentPassword,
@@ -30,7 +30,7 @@
                     }, function(err) {
                         if (err) {
                             changePassword.isLoading = false;
-                            changePassword.message = err.message;
+                            changePassword.message = err.data.message;
                         } else {
                             EventEmitterService.emit(UserEvents.CHANGE_PASSWORD, {
                                     username: UserService.getUsername(),
@@ -39,7 +39,7 @@
                                 function(err) {
                                     if (err) {
                                         changePassword.isLoading = false;
-                                        changePassword.message = err.message;
+                                        changePassword.message = err.data.message;
                                     } else {
                                         $state.go('monitor');
                                         //TODO: alert for password change
