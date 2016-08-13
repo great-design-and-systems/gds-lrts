@@ -2,4 +2,45 @@ main-frame {
   @extend .app-frame;
   padding: 15px;
   overflow-y:auto;
+
+    .main-header {
+        cursor: pointer;
+        padding-left: 25px;
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 10px;
+        outline: none;
+        padding-bottom: 5px;
+        &:hover {
+            color: $info !important;
+        }
+    }
+    .main-toolbar {
+        width: 100%;
+        @extend .primary;
+        padding-left: 5px;
+        border-top: 1px solid $borderColor;
+        input {
+            @extend .gds-input-for-md;
+            height: 25px;
+            margin-top: 5px;
+            font-size: 20px;
+            width: 250px;
+            &:focus {
+                border-bottom: 1px solid $primary;
+            }
+            &:hover {
+                border-bottom: 1px solid $primary;
+            }
+        }
+
+         .breadcrumb {
+          padding-top:13px;
+          font-size: 14px;
+           .main-header-breadcrumb {
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+        }
+    }
 }

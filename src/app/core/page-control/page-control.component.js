@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('app.core')
         .component('pageControl', {
@@ -6,17 +6,11 @@
             controller: PageControlComponent,
             controllerAs: 'pageControl'
         });
-    PageControlComponent.$inject = ['$state', '$rootScope'];
+    PageControlComponent.$inject = ['$rootScope'];
 
-    function PageControlComponent($state, $rootScope) {
+    function PageControlComponent($rootScope) {
         var pageControl = this;
-        pageControl.getCurrent = getCurrent;
         pageControl.getUsername = getUsername;
-
-        function getCurrent() {
-            return $state.current;
-        }
-
         function getUsername() {
             return $rootScope.sessionUser;
         }

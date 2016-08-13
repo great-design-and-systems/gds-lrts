@@ -76,11 +76,8 @@ button[disabled~=disabled] {
     background: none;
     width: $sidenavLeftWidth;
     @extend .app-frame;
-}
-
-.md-sidenav-left {
-    background-color: transparent !important;
     padding: 10px 10px 0 !important;
+    overflow-y:auto;
 }
 
 .md-input-container label {
