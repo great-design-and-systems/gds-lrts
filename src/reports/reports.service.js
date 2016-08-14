@@ -82,7 +82,10 @@
                 var visitorData = {};
                 visitorData.label = 'Visitor';
                 visitorData.data = data.Visitor;
-                visitorData.backgroundColor = reports.properties.visitorColor;
+                visitorData.fill = false;
+                visitorData.borderColor = reports.properties.visitorColor;
+                visitorData.pointBorderColor = reports.properties.visitorColor;
+                visitorData.pointBackgroundColor = reports.properties.visitorColor;
                 datasets.push(visitorData);
             }
             if (data.faculty) {
@@ -92,7 +95,10 @@
                 var facultyData = {};
                 facultyData.label = 'Faculty';
                 facultyData.data = data.faculty;
-                facultyData.backgroundColor = reports.properties.facultyColor;
+                facultyData.fill = false;
+                facultyData.borderColor = reports.properties.facultyColor;
+                facultyData.pointBorderColor = reports.properties.facultyColor;
+                facultyData.pointBackgroundColor = reports.properties.facultyColor;
                 datasets.push(facultyData);
             }
             if (data.student) {
@@ -102,7 +108,10 @@
                 var studentData = {};
                 studentData.label = 'Student';
                 studentData.data = data.student;
-                studentData.backgroundColor = reports.properties.studentColor;
+                studentData.fill = false;
+                studentData.borderColor = reports.properties.studentColor;
+                studentData.pointBorderColor = reports.properties.studentColor;
+                studentData.pointBackgroundColor = reports.properties.studentColor;
                 datasets.push(studentData);
             }
             var labels = AVAILABLE_LABELS.slice(0, labelSize);
