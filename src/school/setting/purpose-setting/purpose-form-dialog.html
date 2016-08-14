@@ -21,7 +21,7 @@
             <div ng-if="purposeForm.isSubmitting">
                 <md-progress-circular md-mode="indeterminate"></md-progress-circular>
             </div>
-            <md-button ng-disabled="!purposeForm.purpose.codeValue || purposeForm.isSubmitting" type="submit" class="primary md-raised">
+            <md-button ng-disabled="!purposeForm.purpose.codeValue || purposeForm.isSubmitting" type="submit" class="md-primary md-raised">
                 {{purposeForm.submitLabel}}
                 <md-tooltip>{{purposeForm.submitLabel}}</md-tooltip>
             </md-button>
