@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('gdsApp')
         .service('EventEmitterService', EventEmitterService);
@@ -8,7 +8,8 @@
         return {
             emit: emit,
             onComplete: onComplete,
-            onFail: onFail
+            onFail: onFail,
+            onStart: onStart
         };
 
         function emit(eventName, data, callback) {
@@ -17,7 +18,8 @@
                 localCallback = data;
             }
             if (data && !(data instanceof Function)) {
-                $rootScope.$broadcast(eventName, data, function(err, resolve) {
+                $rootScope.$broadcast(eventName, data, function (err, resolve) {
+                    $rootScope.$broadcast(eventName + '_start', data);
                     if (err) {
                         if (localCallback) {
                             localCallback(err);
@@ -31,7 +33,8 @@
                     }
                 });
             } else {
-                $rootScope.$broadcast(eventName, function(err, resolve) {
+                $rootScope.$broadcast(eventName, function (err, resolve) {
+                    $rootScope.$broadcast(eventName + '_start');
                     if (err) {
                         if (localCallback) {
                             localCallback(err);
@@ -49,14 +52,19 @@
         }
 
         function onComplete(eventName, callback) {
-            $rootScope.$on(eventName + '_complete', function($event, resolve) {
+            $rootScope.$on(eventName + '_complete', function ($event, resolve) {
                 callback(resolve);
             });
         }
 
         function onFail(eventName, callback) {
-            $rootScope.$on(eventName + '_fail', function($event, resolve) {
+            $rootScope.$on(eventName + '_fail', function ($event, resolve) {
                 callback(resolve);
+            });
+        }
+        function onStart(eventName, callback) {
+            $rootScope.$on(eventName + '_start', function ($event, param) {
+                callback(param);
             });
         }
     }

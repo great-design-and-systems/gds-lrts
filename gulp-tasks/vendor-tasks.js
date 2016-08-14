@@ -21,9 +21,13 @@ var LIB_JS = [
     'vendors/pace/pace.js',
     'vendors/jqClock/jqClock.js',
     'bower_components/angular-material-data-table/dist/md-data-table.js',
+    'vendors/chartjs/Chart.js',
     'bower_components/moment/moment.js',
     'bower_components/lodash/lodash.js',
-    'bower_components/angular-cookies/angular-cookies.js'
+    'bower_components/angular-cookies/angular-cookies.js',
+    'bower_components/tinycolor/tinycolor.js',
+    'bower_components/md-color-picker/dist/mdColorPicker.js',
+    'vendors/color2color/color2color.js'
 ];
 
 var LIB_CSS = [
@@ -32,6 +36,7 @@ var LIB_CSS = [
     'bower_components/angular-material-data-table/dist/md-data-table.css',
     'vendors/pace/pace.css',
     'vendors/jqClock/jqClock.css',
+    'bower_components/md-color-picker/dist/mdColorPicker.css'
 ];
 
 var LIB_FONTS = ['bower_components/font-awesome/fonts/'];

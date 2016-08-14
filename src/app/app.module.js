@@ -6,6 +6,7 @@
         'ngMaterial',
         'md.data.table',
         'ngCookies',
+        'mdColorPicker',
         /*start of application modules here*/
         'app.core',
         'app.monitor',

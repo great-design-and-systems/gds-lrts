@@ -3,4 +3,8 @@
         <h2 class="title">{{reportsContent.reportProperties.title}}</h2>
         <span class="sub-title">{{reportsContent.reportProperties.dateFrom | date: 'MMMM dd yyyy'}} - {{reportsContent.reportProperties.dateTo | date: 'MMMM dd yyyy'}}</span>
     </div>
+    <div flex layout class="reports-content-type" ng-switch="reportsContent.reportProperties.reportType">
+        <reports-table flex ng-switch-when="table"></reports-table>
+        <reports-bar-chart flex ng-switch-when="bar"></reports-bar-chart>
+    </div>
 </div>

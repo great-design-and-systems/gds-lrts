@@ -1,0 +1,4 @@
+<div ng-if="reportsBarChart.isLoading">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<canvas ng-if="!reportsBarChart.isLoading" class="bar-chart" id="reportsBarCart"></canvas>

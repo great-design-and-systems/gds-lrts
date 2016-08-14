@@ -6,6 +6,8 @@
             Socket: io,
             pace: Pace,
             moment: moment,
-            lodash: _
+            lodash: _,
+            Chart: Chart,
+            color2color: color2color
         });
 })();
