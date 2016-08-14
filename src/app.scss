@@ -1,6 +1,13 @@
 @import "app.variables";
 @import "app.mixin";
 
+.clickable {
+    cursor: pointer;
+    md-icon {
+      font-size: 20px;
+      font-weight: 100;
+    }
+}
 .placeholder-div {
     @extend .app-frame;
     height:50px;
@@ -161,3 +168,5 @@ button[disabled~=disabled] {
 @import "faculty/links/faculty-link";
 @import "reports/settings/reports-settings";
 @import "reports/content/reports-content"; 
+@import "reports/content/bar-chart/repors-bar-chart";
+@import "reports/content/line-chart/reports-line-chart";

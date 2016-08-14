@@ -9,12 +9,8 @@ export-completed {
       color: $white;
     }
   }
-  md-list {
-    padding-top: 0;
-    background-color: $white;
-    border-radius: 2px;
-  }
   md-list-item {
+    background-color: $white;
     border-bottom: 1px solid darken($borderColor, 10);
     padding: 2px !important;
     .md-item-div {

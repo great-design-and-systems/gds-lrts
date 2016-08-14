@@ -59,6 +59,10 @@
     "io": false,
     "Pace": false,
     "moment": false,
-    "_":false
+    "_": false,
+    "Chart": false,
+    "color2color": false,
+    "html2canvas": false,
+    "Canvas2Image": false
   }
 }
