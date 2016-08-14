@@ -1,7 +1,4 @@
-<div ng-if="reportsTable.isLoading">
-    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-</div>
-<md-table-container ng-if="!reportsTable.isLoading">
+<md-table-container>
     <table md-table>
         <tr md-head>
             <th md-column>Time</th>
@@ -13,7 +10,7 @@
         </tr>
         <tbody md-body>
             <tr md-row ng-repeat="reportItem in reportsTable.values">
-                <td md-cell>{{reportItem.when | date : 'hh:mm a'}}</td>
+                <td md-cell>{{reportItem.when | date : 'MMM d, y h:mm:ss a'}}</td>
                 <td md-cell>{{::reportItem.fullname}}</td>
                 <td md-cell>{{::reportItem.purpose}}</td>
                 <td md-cell>{{::reportItem.personType}}</td>

@@ -5,24 +5,25 @@
             controller: ReportsTableComponent,
             controllerAs: 'reportsTable'
         });
-    ReportsTableComponent.$inject = ['EventEmitterService', 'ReportsEvents'];
-    function ReportsTableComponent(EventEmitterService, ReportsEvents) {
+    ReportsTableComponent.$inject = ['EventEmitterService', 'ReportsEvents', 'ReportsService', 'ExporterEvents', 'EntryExportLayoutService'];
+    function ReportsTableComponent(EventEmitterService, ReportsEvents, ReportsService, ExporterEvents, EntryExportLayoutService) {
         var reportsTable = this;
-        reportsTable.$onInit = onInit;
         EventEmitterService.onComplete(ReportsEvents.GENERATE_REPORTS, function (result) {
-            reportsTable.isLoading = false;
             if (result.type === 'table') {
                 reportsTable.values = result.data;
+                ReportsService.exportData.description = ReportsService.properties.title;
+                ReportsService.exportData.limit = result.data.length;
             }
         });
-        EventEmitterService.onFail(ReportsEvents.GENERATE_REPORTS, function (err) {
-            reportsTable.isLoading = false;//TODO: create an alert service
+        EventEmitterService.onComplete(ExporterEvents.CREATE_EXPORT_CSV, function (exportResult) {
+            var addItemsCSV = {};
+            addItemsCSV.exportId = exportResult.exportId;
+            EntryExportLayoutService.execute(reportsTable.values, function (err, csvFormattedData) {
+                if (!err) {
+                    addItemsCSV.items = csvFormattedData;
+                    EventEmitterService.emit(ExporterEvents.ADD_EXPORT_ITEMS_CSV, addItemsCSV);
+                }
+            });
         });
-        EventEmitterService.onStart(ReportsEvents.GENERATE_REPORTS, function () {
-            reportsTable.isLoading = true;
-        });
-        function onInit() {
-            reportsTable.isLoading = false;
-        }
     }
 })();

@@ -9,21 +9,13 @@
     function ReportsBarChartComponent(EventEmitterService, ReportsEvents, ReportsService) {
         var reportsBarChart = this;
         reportsBarChart.$onInit = onInit;
-        EventEmitterService.onStart(ReportsEvents.GENERATE_REPORTS, function () {
-            reportsBarChart.isLoading = true;
-        });
         EventEmitterService.onComplete(ReportsEvents.GENERATE_REPORTS, function (result) {
-            reportsBarChart.isLoading = false;
             if (result.type === 'bar') {
                 ReportsService.createBarChart(result.data);
             }
         });
-        EventEmitterService.onFail(ReportsEvents.GENERATE_REPORTS, function () {
-            reportsBarChart.isLoading = false;
-            //TODO: alert reason when fail
-        });
         function onInit() {
-            reportsBarChart.isLoading = false;
+            ReportsService.destroyChart();
         }
     }
 })();

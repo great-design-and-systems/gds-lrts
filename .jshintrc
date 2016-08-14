@@ -61,6 +61,8 @@
     "moment": false,
     "_": false,
     "Chart": false,
-    "color2color":false
+    "color2color": false,
+    "html2canvas": false,
+    "Canvas2Image": false
   }
 }

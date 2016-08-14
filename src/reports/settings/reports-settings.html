@@ -3,10 +3,10 @@
     <md-list-item layout>
         <md-input-container flex>
             <label>Title</label>
-            <textarea ng-model="reportsSettings.reportProperties.title"></textarea>
+            <textarea required ng-model="reportsSettings.reportProperties.title"></textarea>
         </md-input-container>
     </md-list-item>
-    <md-list-item layout ng-if="reportsSettings.reportProperties.reportType ==='bar' || reportsSettings.reportProperties.reportType==='line'">
+    <md-list-item layout ng-if="reportsSettings.reportProperties.reportType ==='bar'">
         <md-input-container flex>
             <label>Chart label</label>
             <textarea ng-model="reportsSettings.reportProperties.chartLabel"></textarea>
@@ -17,7 +17,6 @@
             <label>Report type</label>
             <md-select ng-model="reportsSettings.reportProperties.reportType">
                 <md-option value="table">Table</md-option>
-                <md-option value="tableCount">Table (SUM)</md-option>
                 <md-option value="bar">Bar chart</md-option>
                 <md-option value="line">Line chart</md-option>
             </md-select>
@@ -38,14 +37,14 @@
     <md-list-item ng-if="reportsSettings.reportProperties.reportType ==='bar' || reportsSettings.reportProperties.reportType==='line'">
         <div flex layout="column">
             <h4> Chart color </h4>
-            <div md-color-hex="false" md-color-hsl="false" type="1" label="Visitor" ng-if="reportsSettings.reportProperties.isVisitor" ng-model="reportsSettings.reportProperties.visitorColor"
-                md-color-picker md-color-generic-palette="false" md-color-history="false">
+            <div md-color-hex="false" md-color-hsl="false" type="1" label="Visitor" ng-if="reportsSettings.reportProperties.isVisitor"
+                ng-model="reportsSettings.reportProperties.visitorColor" md-color-picker md-color-generic-palette="false" md-color-history="false">
             </div>
-            <div md-color-hex="false" md-color-hsl="false" type="1" label="Faculty" ng-if="reportsSettings.reportProperties.isFaculty" ng-model="reportsSettings.reportProperties.facultyColor"
-                md-color-picker md-color-generic-palette="false" md-color-history="false">
+            <div md-color-hex="false" md-color-hsl="false" type="1" label="Faculty" ng-if="reportsSettings.reportProperties.isFaculty"
+                ng-model="reportsSettings.reportProperties.facultyColor" md-color-picker md-color-generic-palette="false" md-color-history="false">
             </div>
-            <div md-color-hex="false" md-color-hsl="false" type="1" label="Student" ng-if="reportsSettings.reportProperties.isStudent" ng-model="reportsSettings.reportProperties.studentColor"
-                md-color-picker md-color-generic-palette="false" md-color-history="false">
+            <div md-color-hex="false" md-color-hsl="false" type="1" label="Student" ng-if="reportsSettings.reportProperties.isStudent"
+                ng-model="reportsSettings.reportProperties.studentColor" md-color-picker md-color-generic-palette="false" md-color-history="false">
             </div>
         </div>
     </md-list-item>
@@ -53,9 +52,10 @@
         <h4> Date </h4>
     </md-list-item>
     <md-list-item>
-        <md-datepicker md-placeholder="from" ng-model="reportsSettings.reportProperties.dateFrom"></md-datepicker>
+        <md-datepicker required md-placeholder="from" md-max-date="reportsSettings.today" ng-model="reportsSettings.reportProperties.dateFrom"></md-datepicker>
     </md-list-item>
     <md-list-item>
-        <md-datepicker md-min-date="reportsSettings.reportProperties.dateFrom" md-placeholder="to" ng-model="reportsSettings.reportProperties.dateTo"></md-datepicker>
+        <md-datepicker required md-min-date="reportsSettings.reportProperties.dateFrom" md-max-date="reportsSettings.today" md-placeholder="to"
+            ng-model="reportsSettings.reportProperties.dateTo"></md-datepicker>
     </md-list-item>
 </md-list>

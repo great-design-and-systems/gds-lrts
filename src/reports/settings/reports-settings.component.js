@@ -9,6 +9,7 @@
 
     function ReportsSettingsComponent(ReportsService) {
         var reportsSettings = this;
+        reportsSettings.today = new Date();
         reportsSettings.reportProperties = ReportsService.properties;
     }
 })();

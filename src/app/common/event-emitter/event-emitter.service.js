@@ -18,8 +18,8 @@
                 localCallback = data;
             }
             if (data && !(data instanceof Function)) {
+                $rootScope.$broadcast(eventName + '_start', data);
                 $rootScope.$broadcast(eventName, data, function (err, resolve) {
-                    $rootScope.$broadcast(eventName + '_start', data);
                     if (err) {
                         if (localCallback) {
                             localCallback(err);
@@ -33,8 +33,8 @@
                     }
                 });
             } else {
+                $rootScope.$broadcast(eventName + '_start');
                 $rootScope.$broadcast(eventName, function (err, resolve) {
-                    $rootScope.$broadcast(eventName + '_start');
                     if (err) {
                         if (localCallback) {
                             localCallback(err);

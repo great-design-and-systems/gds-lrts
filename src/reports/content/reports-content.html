@@ -1,10 +1,14 @@
-<div auto-height offset="129" class="reports-content-body">
+<div auto-height offset="129" class="reports-content-body" id="reportContent">
     <div layout="column" class="reports-header">
         <h2 class="title">{{reportsContent.reportProperties.title}}</h2>
         <span class="sub-title">{{reportsContent.reportProperties.dateFrom | date: 'MMMM dd yyyy'}} - {{reportsContent.reportProperties.dateTo | date: 'MMMM dd yyyy'}}</span>
     </div>
-    <div flex layout class="reports-content-type" ng-switch="reportsContent.reportProperties.reportType">
+    <div flex ng-if="reportsTable.service.isLoading">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    <div ng-if="!reportsTable.service.isLoading" flex layout class="reports-content-type" ng-switch="reportsContent.reportProperties.reportType">
         <reports-table flex ng-switch-when="table"></reports-table>
         <reports-bar-chart flex ng-switch-when="bar"></reports-bar-chart>
+        <reports-line-chart flex ng-switch-when="line"></reports-line-chart>
     </div>
 </div>

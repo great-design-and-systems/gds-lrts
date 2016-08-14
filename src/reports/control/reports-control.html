@@ -1,2 +1,8 @@
-<md-button emit-event="generateReports" event-debounce="true" class="md-primary md-raised">Generate
+<md-button ng-disabled="!reportsControl.reportProperties.title || !reportsControl.reportProperties.dateFrom || !reportsControl.reportProperties.dateTo" emit-event="generateReports"
+    event-debounce="true" class="md-primary md-raised">Generate
+</md-button>
+<md-button ng-if="reportsControl.reportProperties.reportType != 'table'" ng-print print-element-id="reportContent" class="md-primary md-raised">Print
+</md-button>
+<md-button ng-if="reportsControl.reportProperties.reportType == 'table'" emit-event="createExportCSV" event-data="reportsControl.exportData"
+    class="md-primary md-raised">Export
 </md-button>

@@ -10,6 +10,7 @@
     function MonitorComponent(EventEmitterService, MonitorEvents, ExporterEvents, EntryExportLayoutService) {
         var monitor = this;
         monitor.$onInit = onInit;
+        monitor.$onDestroy = onDestroy;
         monitor.isLoading = false;
         EventEmitterService.onComplete(MonitorEvents.REFRESH_TODAY_RECORDS_EVENT, function (entries) {
             monitor.entries = entries;
@@ -35,5 +36,10 @@
                 monitor.isLoading = false;
             });
         }
+        function onDestroy() {
+            monitor.entries = [];
+            monitor.isLoading = false;
+        }
+
     }
 })();

@@ -176,6 +176,7 @@ var SRC_JS = [
     'src/reports/reports.contant.js',
     'src/reports/reports-resource.service.js',
     'src/reports/content/bar-chart/reports-bar-chart.component.js',
+    'src/reports/content/line-chart/reports-line-chart.component.js',
     /* Students */
     'src/students/students.module.js',
     'src/students/links/students-link.component.js',
@@ -188,7 +189,9 @@ var SRC_JS = [
     'src/labels/labels-resource.service.js',
     'src/labels/labels.service.js',
     'src/labels/events/get-label.event.js',
-    'src/labels/events/cascade-labels.event.js'
+    'src/labels/events/cascade-labels.event.js',
+    /* Print */
+    'vendors/ngPrint/ngPrint.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';
