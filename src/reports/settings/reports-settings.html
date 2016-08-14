@@ -1,18 +1,22 @@
 <md-list>
-    <md-subheader class="md-no-sticky">Properties: {{reportsSettings.reportProperties.title}}</md-subheader>
-    <md-list-item layout>
+    <md-subheader ng-click="reportsSettings.shown=!reportsSettings.shown" class="md-no-sticky clickable">
+        <md-icon ng-if="reportsSettings.shown" md-font-icon="fa fa-caret-up"></md-icon>
+        <md-icon ng-if="!reportsSettings.shown" md-font-icon="fa fa-caret-down"></md-icon>
+        Properties
+    </md-subheader>
+    <md-list-item layout ng-if="reportsSettings.shown">
         <md-input-container flex>
             <label>Title</label>
             <textarea required ng-model="reportsSettings.reportProperties.title"></textarea>
         </md-input-container>
     </md-list-item>
-    <md-list-item layout ng-if="reportsSettings.reportProperties.reportType ==='bar'">
+    <md-list-item layout ng-if="reportsSettings.shown && reportsSettings.reportProperties.reportType ==='bar'">
         <md-input-container flex>
             <label>Chart label</label>
             <textarea ng-model="reportsSettings.reportProperties.chartLabel"></textarea>
         </md-input-container>
     </md-list-item>
-    <md-list-item layout>
+    <md-list-item layout ng-if="reportsSettings.shown">
         <md-input-container flex>
             <label>Report type</label>
             <md-select ng-model="reportsSettings.reportProperties.reportType">
@@ -22,7 +26,7 @@
             </md-select>
         </md-input-container>
     </md-list-item>
-    <md-list-item layout>
+    <md-list-item layout ng-if="reportsSettings.shown">
         <div flex layout="column">
             <h4> Person type </h4>
             <div layout>
@@ -34,7 +38,7 @@
             </div>
         </div>
     </md-list-item>
-    <md-list-item ng-if="reportsSettings.reportProperties.reportType ==='bar' || reportsSettings.reportProperties.reportType==='line'">
+    <md-list-item ng-if="reportsSettings.shown && (reportsSettings.reportProperties.reportType ==='bar' || reportsSettings.reportProperties.reportType==='line')">
         <div flex layout="column">
             <h4> Chart color </h4>
             <div md-color-hex="false" md-color-hsl="false" type="1" label="Visitor" ng-if="reportsSettings.reportProperties.isVisitor"
@@ -48,13 +52,13 @@
             </div>
         </div>
     </md-list-item>
-    <md-list-item>
+    <md-list-item ng-if="reportsSettings.shown">
         <h4> Date </h4>
     </md-list-item>
-    <md-list-item>
+    <md-list-item ng-if="reportsSettings.shown">
         <md-datepicker required md-placeholder="from" md-max-date="reportsSettings.today" ng-model="reportsSettings.reportProperties.dateFrom"></md-datepicker>
     </md-list-item>
-    <md-list-item>
+    <md-list-item ng-if="reportsSettings.shown">
         <md-datepicker required md-min-date="reportsSettings.reportProperties.dateFrom" md-max-date="reportsSettings.today" md-placeholder="to"
             ng-model="reportsSettings.reportProperties.dateTo"></md-datepicker>
     </md-list-item>

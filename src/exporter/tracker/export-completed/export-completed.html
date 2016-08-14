@@ -1,12 +1,8 @@
 <md-list ng-if="exportCompleted.exports && exportCompleted.exports.length && !exportCompleted.isLoading">
-    <md-subheader class="md-no-sticky">
-        <span layout="row">
-            <span>Export completed</span><span flex></span>
-        <a class="toggle-shown" ng-click="exportCompleted.shown=!exportCompleted.shown">
-            <md-icon ng-if="!exportCompleted.shown" md-font-icon="fa fa-plus"></md-icon>
-            <md-icon ng-if="exportCompleted.shown" md-font-icon="fa fa-minus"></md-icon>
-        </a>
-        </span>
+    <md-subheader class="md-no-sticky clickable" ng-click="exportCompleted.shown=!exportCompleted.shown">
+        <md-icon ng-if="exportCompleted.shown" md-font-icon="fa fa-caret-up"></md-icon>
+        <md-icon ng-if="!exportCompleted.shown" md-font-icon="fa fa-caret-down"></md-icon>
+        Export Completed
     </md-subheader>
     <md-list-item ng-if="exportCompleted.shown" ng-repeat="export in exportCompleted.exports">
         <div layout="row" class="md-item-div">

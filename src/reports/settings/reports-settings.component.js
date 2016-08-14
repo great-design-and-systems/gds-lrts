@@ -1,4 +1,4 @@
-(function() {
+(function () {
     angular.module('app.reports')
         .component('reportsSettings', {
             templateUrl: 'src/reports/settings/reports-settings.html',
@@ -9,6 +9,7 @@
 
     function ReportsSettingsComponent(ReportsService) {
         var reportsSettings = this;
+        reportsSettings.shown = true;
         reportsSettings.today = new Date();
         reportsSettings.reportProperties = ReportsService.properties;
     }
