@@ -20,20 +20,15 @@ body {
     font-size: $fontSize;
 }
 
-button {
-    border-radius: 0 !important;
-}
-
-
 /* THEME */
 
-.main-toolbar {
-    background-color: $appBackground !important;
+/* .main-toolbar {
+    background-color: $appBackground ;
 }
 
 .no-bg-color {
-    background-color: transparent !important;
-}
+    background-color: transparent ;
+} /*
 
 
 /* END THEME */
@@ -41,8 +36,8 @@ button {
 .app-frame {
     @include box(4px);
     @include content-border();
-    padding: 5px;
-    background: $mainFrameBackground !important;
+    padding: 4px;
+    background: $mainFrameBackground ;
 }
 
 .main-content {
@@ -62,7 +57,7 @@ button {
 .app-sub-title {
     color: white;
     font-family: Myriad Pro Regular;
-    font-size: $subTitleFontSize !important;
+    font-size: $subTitleFontSize ;
 }
 
 .app-logo {
@@ -71,7 +66,7 @@ button {
 }
 
 .primary {
-    background-color: $primary !important;
+    background-color: $primary ;
     color: $white;
     * {
         color: $white;
@@ -80,8 +75,8 @@ button {
 
 button[disabled~=disabled] {
     &.primary {
-        color: $disabledColor !important;
-        background-color: $disabledBackgroundColor !important;
+        color: $disabledColor ;
+        background-color: $disabledBackgroundColor ;
         cursor: default;
     }
 }
@@ -90,7 +85,7 @@ button[disabled~=disabled] {
     background: none;
     width: $sidenavLeftWidth;
     @extend .app-frame;
-    padding: 10px 10px 0 !important;
+    padding: 10px 10px 0 ;
     overflow-y:auto;
 }
 
@@ -106,6 +101,41 @@ button[disabled~=disabled] {
     outline: none;
     background: none;
 }
+
+// GENERAL
+    // Buttons with type
+    button.md-button.md-primary.md-raised {
+        border-radius: 4px;
+        background-color: #303F9F;
+        border-bottom: solid 2px #1A237E;
+        float: left;
+    }    
+    button.md-button.md-primary.md-raised:not([disabled]):hover {
+        background-color: #3F51B5;
+    }
+    button.md-button.md-primary.md-raised:active {
+        border-bottom:0;
+        margin-top: 2px;
+    }
+    // Header Toolbar
+    md-toolbar.main-toolbar {
+        padding: 4px 0;     
+        border-bottom: solid 4px #1A237E;
+        background-color: #BF9B30;
+    }
+    // Main Content
+    md-content.main-content {
+        padding: 0;
+    }
+    // Side Nav
+    md-content md-sidenav.md-sidenav-left {
+        background-color: #BF9B30;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-right: solid 4px #1A237E;
+        padding: 0;
+    }
 
 @import "app/core/clock/clock";
 @import "app/core/toolbar-logo/toolbar-logo";
