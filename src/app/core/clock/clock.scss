@@ -1,15 +1,32 @@
-clock { 
-  @extend .primary;
-  &.jqclock {
-    border: none !important;
-    margin: 0 !important;
-    padding: 5px !important;
-    .clockdate {
-      @extend .primary;
-      font-size: 16px !important;
+.clock {
+  padding: 10px 0px 25px;
+  color: #fff;
+  text-shadow: 0px 1px 1px #000;
+  text-align: center;
+  ul {
+    padding: 0;
+
+    li {
+      display: inline;
+      font-size: 18px;
     }
-    .clocktime {
-      font-size: 11px !important;
+    li.point {
+      padding: 0 7px;
     }
+    li#hours,
+    li#min,
+    li#sec,
+    li#meridiem {
+      padding:0px 3px 2px;
+      border-bottom: solid 2px #1A237E;
+    }
+    li#meridiem {
+      margin-left: 16px;
+    }
+  }
+  #Date {
+    text-transform: uppercase;
+    margin-top: 15px;
+    letter-spacing: 1px;
   }
 }

@@ -1,18 +1,57 @@
+// navigation-links {
+//     padding: 1px;
+//     .nav-link {
+//         min-height: 40px;
+//         background: $navBackgroundLink;
+//         color: $white;
+//         font-weight: bold;
+//         text-align: center;
+//         padding-top: 10px;
+//         .nav-sub-link {
+//             md-icon {
+//                 color: $white;
+//             }
+//             text-align: center;
+//             vertical-align: middle;
+//         }
+//     }
+// } AE8A20
 navigation-links {
-    padding: 1px;
-    .nav-link {
-        min-height: 40px;
-        background: $navBackgroundLink;
-        color: $white;
-        font-weight: bold;
-        text-align: center;
-        padding-top: 10px;
-        .nav-sub-link {
-            md-icon {
-                color: $white;
-            }
-            text-align: center;
-            vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border-top: solid 1px #9D7910;
+
+    .nav-link.layout-row {
+        border-bottom: solid 1px #9D7910;
+        
+        a {
+            margin: 0;
+            padding: 5px 0 0 20px;
+            text-align: left;
+            color: #fff;
+            font-size: 14px;
+            text-transform: capitalize;
+        }        
+    }    
+
+    p.label {
+        margin: 0;
+        padding: 5px 0px 5px 20px;
+        font-size: 14px;
+        color: #fff;
+        border-bottom: solid 1px #9D7910;
+        width: 100%;
+    }
+
+    school-link {
+        .md-button {
+            display: block;
+            text-align: left;
+            margin: 0;
+            padding: 5px 0px 5px 40px;
+            text-transform: capitalize;
+            color: #fff;
+            border-bottom: solid 1px #9D7910;
         }
     }
 }
