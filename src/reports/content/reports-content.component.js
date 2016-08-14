@@ -23,6 +23,7 @@
         });
         return reportsContent;
         function onDestroy() {
+            ReportsService.properties = {};
             ReportsService.destroyChart();
         }
     }
