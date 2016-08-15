@@ -21,13 +21,13 @@
         <page-control ng-if="isSessionActive"></page-control>
         <div class="placeholder-div" ng-if="!isSessionActive">
         </div>
-        <md-content class="main-content" layout layout-padding="2">
+        <md-content class="main-content" layout>
             <md-sidenav ng-if="isSessionActive" layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop>
                 <clock></clock>
                 <navigation-links flex layout="column">
                 </navigation-links>
             </md-sidenav>
-            <main-frame flex auto-height offset="100"></main-frame>
+            <main-frame flex auto-height offset="96"></main-frame>
             <info-bar ng-if="isSessionActive" flex="20"></info-bar>
         </md-content>
     </div>

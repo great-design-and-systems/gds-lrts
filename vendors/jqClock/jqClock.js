@@ -32,7 +32,6 @@ setInterval( function() {
   } else {
     meridiem = 'AM';
   }
-  console.log(meridiem);
   // Add a leading zero to the hours value
   $("#hours").html(( hours < 10 ? "0" : "" ) + hours);
   $('#meridiem').html(meridiem);
