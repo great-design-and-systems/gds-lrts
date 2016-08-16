@@ -1,7 +1,6 @@
 main-frame {
   @extend .app-frame;
   padding: 20px 20px 0;
-  overflow-y:auto;
   overflow: hidden;
   
   .mf-wrap {
@@ -15,6 +14,9 @@ main-frame {
     md-content {
       padding: 15px;
       
+      md-content {
+        padding: 0px;
+      }
       table.md-table {
         border: solid 1px #aaa;
       }
@@ -51,6 +53,7 @@ main-frame {
       width: 100%;
       padding: 12px;
       font-size: 16px;
+      max-height: 42px;
       @extend .mf-wrap;
       @extend .primary;
 
@@ -68,12 +71,19 @@ main-frame {
         }
       }
       .breadcrumb {
-        padding-top:13px;
-        font-size: 14px;
+        font-size: 16px;
 
         .main-header-breadcrumb {
-          margin-left: 5px;
+          float: left;
+          margin: 1px 10px 0;
+          font-size: 14px;
+        }
+        md-icon.md-font {
+          float: left;
           margin-right: 5px;
+        }
+        span.ng-binding {
+          float: left;
         }
       }    
     }
