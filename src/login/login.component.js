@@ -13,6 +13,9 @@
         login.$onInit = onInit;
         login.execute = execute;
 
+        $('login').parent().parent().css('box-shadow','none');
+        $('login').parent().css('background','none');
+
         function onInit() {
             login.data = {};
         }

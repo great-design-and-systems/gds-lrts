@@ -41,7 +41,6 @@ setInterval( function() {
   
   }, 1000);
   
-  
   // var setContentHeight = function(){ 
   //   setTimeout(function(){ 
   //     var mainHeight = $('main-frame').css('height').replace(/[^-\d\.]/g, '');

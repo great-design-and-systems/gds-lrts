@@ -13,6 +13,7 @@ info-bar {
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 8px;
+    background-color: #fff;
 
 	  .md-subheader .md-subheader-inner {
 	  	padding: 13px 12px;
@@ -41,19 +42,26 @@ info-bar {
 				}
 				.md-list-item-text {
 					a.md-primary.md-button {
-						padding: 0;
+						padding: 0 10px;
+						margin-left: 0;
+						margin-right: 0;
 						text-align: left;
-						text-transform: capi4talize;
+						text-transform: capitalize;
 						font-size: 12px;
+						text-overflow: ellipsis;
+						// white-space: normal;
+						// line-height: 14px;
 					}
 				}
 				.md-circular-close {
 					padding-top: 18px;
+					padding-left: 3px;
 				}
 			}
 			md-input-container {
 				padding: 0 15px;
 				margin-top: 30px;
+				margin-bottom: 0;
 				
 				label:not(.md-container-ignore) {
 					color: #999;
@@ -65,12 +73,67 @@ info-bar {
 				.md-input {
 					border-color: #000;
 				}
-				.md-select-value.md-select-placeholder {
-					color: #000;
-					font-size: 14px;
-					border-color: #000;
+				md-select {
+					margin-bottom: 30px;
+
+					.md-select-value.md-select-placeholder {
+						color: #000;
+						font-size: 13px;
+						border-color: #000;
+						padding-bottom: 1px;
+					}
+					.md-select-value {
+						border-color: #000;
+					}
+				}
+			}
+			div.md-no-style {
+				div.person-type {
+					border-bottom: solid 1px #000;
+					padding: 0 1px;
+
+					h4 {
+						font-weight: 400;
+						font-size: 13px;
+				    padding-bottom: 7px;
+				    margin: 0;
+
+					}
+					md-checkbox {
+						.md-label {
+							margin-top: 4px;
+						}
+					}
+					> div {
+						padding: 0 3px;
+					}
 				}
 			}
 		}
+
+  	md-list-item.date-picker {
+  		h4 {
+  			margin: 30px 15px 0;
+		    font-weight: 400;
+		    font-size: 13px;
+  		}
+  		md-datepicker {
+  			background-color: transparent;
+  			padding-right: 0;
+
+				.md-datepicker-input-container {
+					margin-left: 0px;
+					border-color: #000;
+
+					input {
+						width: 165px;
+						font-size: 13px;
+					}
+				}
+  		}
+  	}
+  	md-list-item.date-picker:last-child {
+  		padding-bottom: 20px !important;
+  	}
   }
 }
