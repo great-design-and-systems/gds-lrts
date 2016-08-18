@@ -1,12 +1,12 @@
 <div class="mf-wrap">
-	<div ng-if="$root.isSessionActive" layout class="main-toolbar md-default">
-	    <span class="main-header">{{mainFrame.getCurrent().label}}</span>
-	    <span ng-if="mainFrame.getCurrent().legend" layout class="breadcrumb">
+    <div ng-if="$root.isSessionActive" layout class="main-toolbar md-default">
+        <span class="main-header">{{mainFrame.getCurrent().label}}</span>
+        <span ng-if="mainFrame.getCurrent().legend" layout class="breadcrumb">
 	        <span class="main-header-breadcrumb">></span>
-		    <md-icon md-font-icon="{{mainFrame.getCurrent().legendFI}}"></md-icon>
-		    <span>{{mainFrame.getCurrent().legend}}</span>
-	    </span>
-	    <!-- <div flex></div> -->
-	</div>
-	<md-content class="main-div" ui-view="mainFrame"></md-content>
+        <md-icon md-font-icon="{{mainFrame.getCurrent().legendFI}}"></md-icon>
+        <span>{{mainFrame.getCurrent().legend}}</span>
+        </span>
+        <!-- <div flex></div> -->
+    </div>
+    <md-content auto-height offset="170" ui-view="mainFrame"></md-content>
 </div>

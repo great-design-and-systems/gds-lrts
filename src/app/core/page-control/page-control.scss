@@ -1,27 +1,24 @@
 page-control {
-    md-toolbar:not(.md-menu-toolbar) {
-        // background-color: $primary;
-    }
-    button.md-button{
+    button.md-button {
         background-color: $blendColorBG;
         border-bottom: solid 1px $blendColorBorder;
         box-shadow: none !important;
         text-transform: capitalize;
     }
     button.md-icon-button {
-      background-color: transparent !important;
-      border: none !important;
+        background-color: transparent !important;
+        border: none !important;
     }
     button.md-icon-button md-icon {
-      height: auto;
+        height: auto;
     }
     .md-toolbar-tools {
-      padding-left: 0;
+        padding-left: 0;
     }
     .page-current-label {
-      padding: 10px 20px;
-      border: solid 1px $blendColorBorder;
-      margin: 2px 15px 0;
-      text-transform: uppercase;
+        padding: 10px 20px;
+        border: solid 1px $blendColorBorder;
+        margin: 2px 15px 0;
+        text-transform: uppercase;
     }
 }
