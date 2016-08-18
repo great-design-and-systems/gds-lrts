@@ -6,15 +6,15 @@
             controller: LoginComponent,
             controllerAs: 'login'
         });
-    LoginComponent.$inject = ['$state', 'EventEmitterService', 'LoginEvents', 'SessionEvents', 'UserEvents'];
+    LoginComponent.$inject = ['$state', 'EventEmitterService', 'LoginEvents', 'SessionEvents', 'UserEvents', 'vendors'];
 
-    function LoginComponent($state, EventEmitterService, LoginEvents, SessionEvents, UserEvents) {
+    function LoginComponent($state, EventEmitterService, LoginEvents, SessionEvents, UserEvents, vendors) {
         var login = this;
         login.$onInit = onInit;
         login.execute = execute;
 
-        $('login').parent().parent().css('box-shadow','none');
-        $('login').parent().css('background','none');
+        vendors.jQuery('login').parent().parent().css('box-shadow', 'none');
+        vendors.jQuery('login').parent().css('background', 'none');
 
         function onInit() {
             login.data = {};
