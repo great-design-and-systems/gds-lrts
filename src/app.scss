@@ -1,25 +1,26 @@
 @import "app.variables";
 @import "app.mixin";
-
 .clickable {
     cursor: pointer;
     md-icon {
-      font-size: 20px;
-      font-weight: 100;
+        font-size: 20px;
+        font-weight: 100;
     }
 }
+
 .placeholder-div {
     @extend .app-frame;
-    height:50px;
-
+    height: 50px;
 }
+
 .bg {
-    background: url(../img/bg/eg.jpg);
+    background: url(/img/bg/eg.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
 body {
     @extend .bg;
     background-color: #f2f2f2;
@@ -27,7 +28,9 @@ body {
     font-size: $fontSize;
 }
 
+
 /* THEME */
+
 
 /* .main-toolbar {
     background-color: $appBackground ;
@@ -41,10 +44,10 @@ body {
 /* END THEME */
 
 .app-frame {
-    @include box(4px);
     @include content-border();
     padding: 4px;
-    background: $mainFrameBackground ;
+    background: transparent;
+    overflow-y: auto;
 }
 
 .main-content {
@@ -64,7 +67,7 @@ body {
 .app-sub-title {
     color: white;
     font-family: Myriad Pro Regular;
-    font-size: $subTitleFontSize ;
+    font-size: $subTitleFontSize;
 }
 
 .app-logo {
@@ -73,7 +76,7 @@ body {
 }
 
 .primary {
-    background-color: $primary ;
+    background-color: $primary;
     color: $white;
     * {
         color: $white;
@@ -82,18 +85,16 @@ body {
 
 button[disabled~=disabled] {
     &.primary {
-        color: $disabledColor ;
-        background-color: $disabledBackgroundColor ;
+        color: $disabledColor;
+        background-color: $disabledBackgroundColor;
         cursor: default;
     }
 }
 
 .md-sidenav-left {
-    background: none;
-    width: $sidenavLeftWidth;
     @extend .app-frame;
-    padding: 10px 10px 0 ;
-    overflow-y:auto;
+    width: $sidenavLeftWidth;
+    padding: 10px 10px 0;
 }
 
 .md-input-container label {
@@ -110,62 +111,64 @@ button[disabled~=disabled] {
 }
 
 // GENERAL
-    div.clearblock {
-        clear: both;
-        content: '';
-        display: block;
-    }
-    // Frames
-    main-frame, info-bar {
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        border-radius: 0;
-        border: none;
-        background-color: #eee;
-    }
-    // Buttons with type
-    div[ui-view="control"]{
-        margin-left: 15px;
-    }
-    button.md-button.md-primary.md-raised {
-        border-radius: 4px;
-        background-color: #303F9F;
-        border-bottom: solid 2px #1A237E;
-        float: left;
-        margin-right: 0;
-        margin-left: 10px   
-    }    
-    button.md-button.md-primary.md-raised:not([disabled]):hover {
-        background-color: #3F51B5;
-    }
-    button.md-button.md-primary.md-raised:active,    
-    button.md-button.md-primary.md-raised:disabled {
-        border-bottom:0;
-        margin-top: 2px;
-    }
-    button.md-button.md-primary.md-raised:active span,    
-    button.md-button.md-primary.md-raised:disabled span {
-        color: rgba(255,255,255,0.30);
-    }
-    // Header Toolbar
-    md-toolbar.main-toolbar {
-        padding: 4px 0;     
-        border-bottom: solid 4px #1A237E;
-        background-color: #BF9B30;
-    }
-    // Main Content
-    md-content.main-content {
-        padding: 0;
-    }
-    // Side Nav
-    md-content md-sidenav.md-sidenav-left {
-        background-color: #BF9B30;
-        border-radius: 0;
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        border-right: solid 4px #1A237E;
-        padding: 0;
-    }
+div.clearblock {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+// Buttons with type
+div[ui-view="control"] {
+    margin-left: 15px; //this can be placed in page-control directive
+}
+
+button.md-button.md-primary.md-raised {
+    border-radius: 4px;
+    background-color: #303F9F;
+    border-bottom: solid 2px #1A237E;
+    float: left;
+    margin-right: 0;
+    margin-left: 10px
+}
+
+button.md-button.md-primary.md-raised:not([disabled]):hover {
+    background-color: #3F51B5;
+}
+
+button.md-button.md-primary.md-raised:active,
+button.md-button.md-primary.md-raised:disabled {
+    border-bottom: 0;
+    margin-top: 2px;
+}
+
+button.md-button.md-primary.md-raised:active span,
+button.md-button.md-primary.md-raised:disabled span {
+    color: rgba(255, 255, 255, 0.30);
+}
+
+// Header Toolbar
+md-toolbar.main-toolbar {
+    //this should be placed in main-frame component
+    padding: 4px 0;
+    border-bottom: solid 4px #1A237E;
+    background-color: #BF9B30;
+}
+
+// Main Content
+md-content.main-content {
+    //this should be placed in main-frame component
+    padding: 0;
+}
+
+// Side Nav
+md-content md-sidenav.md-sidenav-left {
+    background-color: #BF9B30;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-right: solid 4px #1A237E;
+    padding: 0;
+}
 
 @import "app/core/clock/clock";
 @import "app/core/toolbar-logo/toolbar-logo";
@@ -190,6 +193,6 @@ button[disabled~=disabled] {
 @import "students/links/students-link";
 @import "faculty/links/faculty-link";
 @import "reports/settings/reports-settings";
-@import "reports/content/reports-content"; 
+@import "reports/content/reports-content";
 @import "reports/content/bar-chart/repors-bar-chart";
 @import "reports/content/line-chart/reports-line-chart";

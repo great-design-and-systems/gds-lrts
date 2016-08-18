@@ -1,91 +1,81 @@
 main-frame {
-  @extend .app-frame;
-  padding: 20px 20px 0;
-  overflow: hidden;
-  
-  .mf-wrap {
-    -webkit-box-shadow: 0px 1px 4px #444;
-    -moz-box-shadow: 0px 1px 4px #444;
-    box-shadow: 0px 1px 4px #444;
-
-    .main-header {
-        
+    @extend .app-frame;
+    padding: 20px 20px 0;
+    .mf-wrap {
+        -webkit-box-shadow: 0px 1px 4px #444;
+        -moz-box-shadow: 0px 1px 4px #444;
+        box-shadow: 0px 1px 4px #444;
+        md-content {
+            padding: 15px;
+            md-content {
+                padding: 0px;
+            }
+        }
+        .main-toolbar {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            max-height: 42px;
+            @extend .primary;
+            input {
+                @extend .gds-input-for-md;
+                height: 25px;
+                margin-top: 5px;
+                font-size: 20px;
+                width: 250px;
+                &:focus {
+                    border-bottom: 1px solid $primary;
+                }
+                &:hover {
+                    border-bottom: 1px solid $primary;
+                }
+            }
+            .breadcrumb {
+                font-size: 16px;
+                .main-header-breadcrumb {
+                    float: left;
+                    margin: 1px 10px 0;
+                    font-size: 14px;
+                }
+                md-icon.md-font {
+                    float: left;
+                    margin-right: 5px;
+                }
+                span.ng-binding {
+                    float: left;
+                }
+            }
+        }
     }
-    md-content {
-      padding: 15px;
-      
-      md-content {
-        padding: 0px;
-      }
-      table.md-table {
+    table.md-table {
         border: solid 1px #aaa;
-      }
-      table.md-table thead th[md-column]{
+    }
+    table.md-table thead th[md-column] {
         background-color: #aaa;
         font-size: 11px;
         text-transform: uppercase;
         color: #fff;
-      }
-      table.md-table tbody tr[md-row]{
+    }
+    table.md-table tbody tr[md-row] {
         background-color: #fff;
-      }
-      table.md-table td.md-cell {
+    }
+    table.md-table td.md-cell {
         color: #000;
         font-size: 12px;
-      }
-      table.md-table tbody.md-body > tr.md-row,
-      table.md-table tfoot.md-foot > tr.md-row {
-        height: auto;
-      }
-      table.md-table thead.md-head > tr.md-row {
-        height: auto;
-      }
-      table.md-table:not(.md-row-select) td.md-cell:first-child, 
-      table.md-table:not(.md-row-select) th.md-column:first-child {
-        padding: 10px;
-      }
-      table.md-table:not(.md-row-select) td.md-cell:nth-child(n+2):nth-last-child(n+2),
-      table.md-table:not(.md-row-select) th.md-column:nth-child(n+2):nth-last-child(n+2) {
-        padding: 10px;
-      }
     }
-    .main-toolbar {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      max-height: 42px;
-      @extend .mf-wrap;
-      @extend .primary;
-
-      input {
-        @extend .gds-input-for-md;
-        height: 25px;
-        margin-top: 5px;
-        font-size: 20px;
-        width: 250px;
-        &:focus {
-            border-bottom: 1px solid $primary;
-        }
-        &:hover {
-            border-bottom: 1px solid $primary;
-        }
-      }
-      .breadcrumb {
-        font-size: 16px;
-
-        .main-header-breadcrumb {
-          float: left;
-          margin: 1px 10px 0;
-          font-size: 14px;
-        }
-        md-icon.md-font {
-          float: left;
-          margin-right: 5px;
-        }
-        span.ng-binding {
-          float: left;
-        }
-      }    
+    table.md-table tbody.md-body > tr.md-row,
+    table.md-table tfoot.md-foot > tr.md-row {
+        height: auto;
     }
-  }
+    table.md-table thead.md-head > tr.md-row {
+        height: auto;
+    }
+    table.md-table:not(.md-row-select) td.md-cell:first-child,
+    table.md-table:not(.md-row-select) th.md-column:first-child {
+        padding: 10px;
+    }
+    table.md-table:not(.md-row-select) td.md-cell:nth-child(n+2):nth-last-child(n+2),
+    table.md-table:not(.md-row-select) th.md-column:nth-child(n+2):nth-last-child(n+2) {
+        padding: 10px;
+    }
 }
