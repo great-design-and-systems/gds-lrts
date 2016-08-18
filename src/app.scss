@@ -93,7 +93,6 @@ button[disabled~=disabled] {
     width: $sidenavLeftWidth;
     @extend .app-frame;
     padding: 10px 10px 0 ;
-    overflow-y:auto;
 }
 
 .md-input-container label {

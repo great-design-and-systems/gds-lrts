@@ -42,16 +42,16 @@ setInterval( function() {
   }, 1000);
   
   
-  var setContentHeight = function(){ 
-    setTimeout(function(){ 
-      var mainHeight = $('main-frame').css('height').replace(/[^-\d\.]/g, '');
-      var totalHeight = mainHeight * 0.165;
-      var contentHeight = mainHeight - totalHeight;
+  // var setContentHeight = function(){ 
+  //   setTimeout(function(){ 
+  //     var mainHeight = $('main-frame').css('height').replace(/[^-\d\.]/g, '');
+  //     var totalHeight = mainHeight * 0.165;
+  //     var contentHeight = mainHeight - totalHeight;
 
-      $('.mf-wrap > md-content').css('height', contentHeight);
+  //     $('.mf-wrap > md-content').css('height', contentHeight);
 
-    }, 500);
-  }
-  setContentHeight();
-  $('body').on('click','navigation-links .md-button', setContentHeight);
+  //   }, 500);
+  // }
+  // setContentHeight();
+  // $('body').on('click','navigation-links .md-button', setContentHeight);
 });
