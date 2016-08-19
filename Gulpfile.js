@@ -11,6 +11,7 @@ var LOGIN_CONTEXT = process.env.LOGIN_CONTEXT || '/gds/login/';
 var USER_CONTEXT = process.env.USER_CONTEXT || '/gds/userServicePort/';
 var SECURITY_CONTEXT = process.env.SECURITY_CONTEXT || '/gds/securityServicePort/';
 var IMPORT_CONTEXT = process.env.IMPORT_CONTEXT || '/gds/importServicePort/';
+var STUDENT_CONTEXT = process.env.STUDENT_CONTEXT || '/gds/studentServicePort/';
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var htmlreplace = require('gulp-html-replace');
