@@ -67,12 +67,12 @@
 
             })
             .state('createUser', {
-                url: '/user/register/:schoolId',
+                url: '/user/register',
                 idLocked: true,
                 label: 'Register',
                 views: {
                     mainFrame: {
-                        template: '<create-user school-id="route.param.schoolId"></create-user>',
+                        template: '<create-user></create-user>',
                     }
                 }
             })

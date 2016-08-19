@@ -153,6 +153,8 @@ var SRC_JS = [
     'src/user/events/change-password.event.js',
     'src/user/events/get-user-pasword.event.js',
     'src/user/events/change-password.event.js',
+    'src/user/create-user/create-user.component.js',
+    'src/user/events/register.event.js',
     /* Logout */
     'src/logout/logout.module.js',
     'src/logout/logout.constant.js',

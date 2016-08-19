@@ -3,9 +3,11 @@
     angular.module('gdsApp')
         .controller('GdsAppCtrl', GdsAppCtrl);
 
-    GdsAppCtrl.$inject = ['$rootScope', 'EventEmitterService', 'SessionEvents', '$state', 'UserEvents', 'LabelsEvents', 'LabelsService', 'SchoolEvents'];
+    GdsAppCtrl.$inject = ['$rootScope', 'EventEmitterService', 'SessionEvents',
+        '$state', 'UserEvents', 'LabelsEvents', 'LabelsService', 'SchoolEvents'];
 
-    function GdsAppCtrl($rootScope, EventEmitterService, SessionEvents, $state, UserEvents, LabelsEvents, LabelsService, SchoolEvents) {
+    function GdsAppCtrl($rootScope, EventEmitterService, SessionEvents, $state, UserEvents,
+        LabelsEvents, LabelsService, SchoolEvents) {
         var gdsApp = this;
         EventEmitterService.emit(SessionEvents.CHECK_SESSION, function (err) {
             if (!err) {
@@ -33,7 +35,7 @@
                 $state.go('login');
             }
             else if (toState.idLocked) {
-                if (!($rootScope.unlocked === toState.name)) {
+                if ($rootScope.unlocked !== toState.name) {
                     $event.preventDefault();
                     EventEmitterService.emit(SchoolEvents.OPEN_ID_LOCK_DIALOG, function (err, schoolId) {
                         if (!err) {
