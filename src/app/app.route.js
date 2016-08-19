@@ -74,7 +74,8 @@
                     mainFrame: {
                         template: '<create-user school-id="route.param.schoolId"></create-user>',
                     }
-                })
+                }
+            })
             .state('students', {
                 url: '/school/students',
                 label: 'School',
