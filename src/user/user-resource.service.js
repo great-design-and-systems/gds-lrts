@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('app.user')
         .service('UserResourceService', UserResourceService);
@@ -26,6 +26,10 @@
                 params: {
                     username: '@username'
                 }
+            },
+            register: {
+                method: 'POST',
+                url: API_HOST + USER_CONTEXT + 'register'
             }
         });
 
@@ -33,42 +37,43 @@
             getUserProfile: getUserProfile,
             changePassword: changePassword,
             updateAvatar: updateAvatar,
-            getUserPassword: getUserPassword
+            getUserPassword: getUserPassword,
+            register: register
         };
 
         function getUserProfile(username, callback) {
             return userResource.get({
                 action: 'userProfile',
                 param: 'username:' + username
-            }, function(result) {
+            }, function (result) {
                 callback(undefined, result);
-            }, function(err) {
+            }, function (err) {
                 callback(err);
             });
         }
 
         function changePassword(username, password, callback) {
             return userResource.changePassword({
-                    username: username,
-                    password: password
-                },
-                function() {
+                username: username,
+                password: password
+            },
+                function () {
                     callback();
                 },
-                function(err) {
+                function (err) {
                     callback(err);
                 });
         }
 
         function updateAvatar(username, avatarId, callback) {
             return userResource.updateProfile({
-                    username: username,
-                    avatarId: avatarId
-                },
-                function() {
+                username: username,
+                avatarId: avatarId
+            },
+                function () {
                     callback();
                 },
-                function(err) {
+                function (err) {
                     callback(err);
                 });
         }
@@ -76,9 +81,23 @@
         function getUserPassword(username, callback) {
             return userResource.userPassword({
                 username: username
-            }, function(result) {
+            }, function (result) {
                 callback(undefined, result);
-            }, function(err) {
+            }, function (err) {
+                callback(err);
+            });
+        }
+
+        function register(username, email, password, firstname, lastname, callback) {
+            return userResource.register({
+                username: username,
+                email: email,
+                password: password,
+                firstname: firstname,
+                lastname: lastname
+            }, function (result) {
+                callback(undefined, result);
+            }, function (err) {
                 callback(err);
             });
         }

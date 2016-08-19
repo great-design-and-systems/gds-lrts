@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('gdsApp')
         .config(AppRoute);
@@ -65,6 +65,18 @@
                     }
                 },
 
+            })
+            .state('createUser', {
+                url: '/user/register/:schoolId',
+                idLocked: true,
+                label: 'Register',
+                views: {
+                    mainFrame: {
+                        template: '<create-user school-id="route.param.schoolId"></create-user>',
+                        controller: ExposeRouteParams,
+                        controllerAs: 'route'
+                    }
+                }
             });
     }
     ExposeRouteParams.$inject = ['$stateParams'];

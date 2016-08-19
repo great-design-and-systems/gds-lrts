@@ -1,0 +1,18 @@
+<md-dialog class="school-id-lock">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h3>Enter school key</h3>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="schoolIdLockDialog.cancel()">
+                <md-icon class="fa fa-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content layout layout-padding="20">
+        <div></div>
+        <md-input-container flex>
+            <label>School ID</label>
+            <input ng-change="schoolIdLockDialog.validate()" ng-model="schoolIdLockDialog.idToValidate">
+        </md-input-container>
+    </md-dialog-content>
+</md-dialog>

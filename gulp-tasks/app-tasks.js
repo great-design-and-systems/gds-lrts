@@ -122,6 +122,8 @@ var SRC_JS = [
     'src/school/setting/semester-setting/edit-semester/edit-semester.controller.js',
     'src/school/events/open-add-semester-dialog.event.js',
     'src/school/setting/semester-setting/add-semester/add-semester.controller.js',
+    'src/school/events/open-id-lock-dialog.event.js',
+    'src/school/id-lock-dialog/school-id-lock-dialog.controller.js',
     /* Code */
     'src/code/code.module.js',
     'src/code/code.constant.js',
@@ -198,39 +200,39 @@ var SASS_INDEX = 'src/app.scss';
 
 var SRC_SASS = 'src/**/*.scss';
 
-module.exports = function(gulp) {
-    gulp.task('jshint', function() {
+module.exports = function (gulp) {
+    gulp.task('jshint', function () {
         return gulp.src(SRC_JS)
             .pipe(jshint())
             .pipe(jshint.reporter('default', {
                 verbose: true
             }));
     });
-    gulp.task('sass', function() {
+    gulp.task('sass', function () {
         return gulp.src(SASS_INDEX)
             .pipe(sass().on('error', sass.logError))
             .pipe(gulp.dest('./dist'));
     });
-    gulp.task('sass:watch', function() {
+    gulp.task('sass:watch', function () {
         gulp.watch(SRC_SASS, ['sass']);
     });
-    gulp.task('app-build', function() {
+    gulp.task('app-build', function () {
         runSequence('jshint', 'sass', 'app-template', 'app-concat-scripts', 'app-concat-templates', 'app-compress-scripts', 'app-compress-css');
     });
-    gulp.task('app-debug', function() {
+    gulp.task('app-debug', function () {
         runSequence('jshint', 'sass');
     });
-    gulp.task('app-concat-scripts', function() {
+    gulp.task('app-concat-scripts', function () {
         return gulp.src(SRC_JS)
             .pipe(concat('app.js'))
             .pipe(gulp.dest('./dist/'));
     });
-    gulp.task('app-concat-templates', function() {
+    gulp.task('app-concat-templates', function () {
         return gulp.src(['dist/app.js', 'dist/templates/**/*.js'])
             .pipe(concat('app.js'))
             .pipe(gulp.dest('dist'));
     });
-    gulp.task('app-compress-scripts', function(cb) {
+    gulp.task('app-compress-scripts', function (cb) {
         pump([
             gulp.src('dist/app.js'),
             uglify({
@@ -239,7 +241,7 @@ module.exports = function(gulp) {
             gulp.dest('dist/release')
         ], cb);
     });
-    gulp.task('app-compress-css', function(cb) {
+    gulp.task('app-compress-css', function (cb) {
         return gulp.src('./dist/app.css')
             .pipe(uglifycss({
                 "maxLineLen": 80,
@@ -247,7 +249,7 @@ module.exports = function(gulp) {
             }))
             .pipe(gulp.dest('./dist/release'));
     });
-    gulp.task('app-template', function() {
+    gulp.task('app-template', function () {
         return gulp.src('src/**/*.html')
             .pipe(angularTemplates({
                 module: 'gdsApp',

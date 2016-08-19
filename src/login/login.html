@@ -1,4 +1,4 @@
-<div flex layout>
+<div class="login-logo" flex layout>
     <span flex="35"></span>
     <p><img ng-src="img/assumption-logo.png"></p>
     <span flex="35"></span>
@@ -33,6 +33,9 @@
                 </div>
                 <md-button ng-disabled="login.isLoading" class="md-primary md-raised" type="submit">
                     Login
+                </md-button>
+                <md-button ui-sref="createUser">
+                    New User
                 </md-button>
             </div>
         </div>

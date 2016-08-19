@@ -1,4 +1,4 @@
-(function() {
+(function () {
     angular.module('app.school')
         .constant('SchoolEvents', {
             GET_PURPOSES: 'getPurposes',
@@ -32,6 +32,7 @@
             DELETE_SEMESTER: 'deleteSemester',
             OPEN_EDIT_SEMESTER_DIALOG: 'openEditSemesterDialog',
             OPEN_REMOVE_SEMESTER_CONFIRM_DIALOG: 'openRemoveSemesterConfirmDialog',
-            OPEN_ADD_SEMESTER_DIALOG: 'openAddSemesterDialog'
+            OPEN_ADD_SEMESTER_DIALOG: 'openAddSemesterDialog',
+            OPEN_ID_LOCK_DIALOG: 'openIdLockDialog'
         });
 })();
