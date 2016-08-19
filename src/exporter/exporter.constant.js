@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
     angular.module('app.exporter')
         .constant('ExporterEvents', {
@@ -11,6 +11,7 @@
             EXPORTER_PROGRESS_LISTENER: 'exporter-progress',
             EXPORTER_COMPLETED_LISTENER: 'exporter-complete',
             EXPORTER_DELETED_LISTENER: 'exporter-deleted',
-            EXPORTER_FAILED_COMPLETED_LISTENER: 'exporter-fail'
+            EXPORTER_FAILED_COMPLETED_LISTENER: 'exporter-fail',
+            OPEN_REMOVE_EXPORT_CONFIRM_DIALOG: 'openRemoveExportConfirmDialog'
         });
 })();

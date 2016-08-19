@@ -10,8 +10,7 @@
                 <img height="24" width="25" ng-src="{{exportCompleted.getIcon(export)}}">
             </div>
             <div class="md-list-item-text" layout="column" flex>
-                <md-button md-tooltip="{{ export.description }}" class="md-primary" ng-href="{{exportCompleted.getLink(export.fileId)}}"
-                    target="_blank">
+                <md-button md-tooltip="{{ export.description }}" class="md-primary" ng-href="{{exportCompleted.getLink(export.fileId)}}" target="_blank">
                     <md-tooltip md-direction="top">
                         {{export.description}}
                     </md-tooltip>
@@ -19,8 +18,7 @@
                 </md-button>
             </div>
             <div class="md-circular-close">
-                <md-progress-circular md-diameter="20px" ng-if="export.isRemoving" md-mode="indeterminate"></md-progress-circular>
-                <md-icon ng-if="!export.isRemoving" md-font-icon="fa fa-close" ng-click="exportCompleted.removeExport($event, export)"></md-icon>
+                <md-icon md-font-icon="fa fa-close" event-class="faa-flash animated" event-debounce="true" emit-event="openRemoveExportConfirmDialog" event-data="export"></md-icon>
             </div>
         </div>
     </md-list-item>

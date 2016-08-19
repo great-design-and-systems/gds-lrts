@@ -18,8 +18,7 @@
                 </h4>
             </div>
             <div class="md-circular-close">
-                <md-progress-circular md-diameter="20px" ng-if="export.isRemoving" md-mode="indeterminate"></md-progress-circular>
-                <md-icon ng-if="!export.isRemoving" md-font-icon="fa fa-close" ng-click="exportFailed.removeExport(export)"></md-icon>
+                <md-icon md-font-icon="fa fa-close" event-class="faa-flash animated" event-debounce="true" emit-event="openRemoveExportConfirmDialog" event-data="export"></md-icon>
             </div>
         </div>
     </md-list-item>

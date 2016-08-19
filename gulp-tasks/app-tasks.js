@@ -62,6 +62,7 @@ var SRC_JS = [
     'src/exporter/events/get-export-failed.event.service.js',
     'src/exporter/tracker/export-failed/export-failed.component.js',
     'src/exporter/csv/csv-formatter.service.js',
+    'src/exporter/events/open-remove-export-confirm-dialog.event.js',
     /* Downloader */
     'src/downloader/downloader.module.js',
     'src/downloader/downloader.service.js',
