@@ -1,6 +1,6 @@
 'use strict';
 
-var API_HOST = process.env.API_HOST || 'https://gds-ms-api.herokuapp.com';
+var API_HOST = process.env.API_HOST || 'http://localhost:8080';
 var SCANNER_CONTEXT = process.env.SCANNER_CONTEXT || '/gds/scanner/';
 var TIME_CONTEXT = process.env.TIME_CONTEXT || '/gds/timeServicePort/';
 var SCHOOL_ID = process.env.SCHOOL_ID || '57a60c8d9b19871d0010f0dd'; //Assumption college
@@ -19,7 +19,7 @@ var htmlreplace = require('gulp-html-replace');
 var replace = require('gulp-replace');
 var appTasks = new require('./gulp-tasks/app-tasks')(gulp);
 new require('./gulp-tasks/vendor-tasks')(gulp);
-
+var git = require('gulp-git');
 gulp.task('default', function() {
     runSequence('vendor-build', 'set-constant-values', 'app-build', 'html-prod');
 });
@@ -64,4 +64,11 @@ gulp.task('set-constant-values', function() {
         .pipe(replace('#STUDENT_CONTEXT', STUDENT_CONTEXT))
         .pipe(replace('#FACULTY_CONTEXT', FACULTY_CONTEXT))
         .pipe(gulp.dest('src/app/'));
+});
+
+// Run git pull from multiple branches 
+gulp.task('pull', function() {
+    git.pull('origin', ['master'], function(err) {
+        if (err) throw err;
+    });
 });
