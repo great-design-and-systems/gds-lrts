@@ -16,12 +16,14 @@
         };
 
         function EventEventLink(scope, element, attr) {
+            element.css('cursor', 'pointer');
             if (!attr.emitEvent) {
                 throw 'Event name is required.';
             }
             element.unbind('click');
 
             element.bind('click', function() {
+                element.css('cursor', 'wait');
                 if (scope.eventClass) {
                     element.toggleClass(scope.eventClass);
                 }
@@ -45,6 +47,7 @@
                 if (!!scope.eventDebounce) {
                     element.removeAttr('disabled');
                 }
+                element.css('cursor', 'pointer');
             }
         }
     }

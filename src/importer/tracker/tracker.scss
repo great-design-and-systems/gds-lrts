@@ -27,7 +27,8 @@ import-in-progress {
     }
 }
 
-import-completed {
+import-completed,
+import-failed {
     .md-subheader {
         @extend .primary;
     }

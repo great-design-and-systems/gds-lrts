@@ -211,6 +211,7 @@ var SRC_JS = [
     'src/importer/events/opem-remove-import-confirm-dialog.event.js',
     'src/importer/tracker/import-completed/import-completed.component.js',
     'src/importer/tracker/import-in-progress/import-in-progress.component.js',
+    'src/importer/tracker/import-failed/import-failed.component.js',
     /* Print */
     'vendors/ngPrint/ngPrint.js'
 ];

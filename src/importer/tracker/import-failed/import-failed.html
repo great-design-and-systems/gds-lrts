@@ -1,13 +1,13 @@
-<md-list ng-if="importCompleted.imports && importCompleted.imports.length && !importCompleted.isLoading">
-    <md-subheader class="md-no-sticky clickable" ng-click="importCompleted.shown=!importCompleted.shown">
-        <md-icon ng-if="importCompleted.shown" md-font-icon="fa fa-caret-up"></md-icon>
-        <md-icon ng-if="!importCompleted.shown" md-font-icon="fa fa-caret-down"></md-icon>
-        Import Completed
+<md-list ng-if="importFailed.imports && importFailed.imports.length && !importFailed.isLoading">
+    <md-subheader class="md-no-sticky clickable" ng-click="importFailed.shown=!importFailed.shown">
+        <md-icon ng-if="importFailed.shown" md-font-icon="fa fa-caret-up"></md-icon>
+        <md-icon ng-if="!importFailed.shown" md-font-icon="fa fa-caret-down"></md-icon>
+        Import Failed
     </md-subheader>
-    <md-list-item ng-if="importCompleted.shown" ng-repeat="import in importCompleted.imports">
+    <md-list-item ng-if="importFailed.shown" ng-repeat="import in importFailed.imports" class="md-col-3">
         <div layout="row" class="md-item-div">
             <div class="md-circular">
-                <img height="24" width="25" ng-src="{{importCompleted.getIcon(import)}}">
+                <img height="24" width="25" ng-src="{{importFailed.getIcon(import)}}">
             </div>
             <div class="md-list-item-text" layout="column" flex>
                 <md-button md-tooltip="{{ import.description }}" class="md-primary">
@@ -34,6 +34,6 @@
         </div>
     </md-list-item>
 </md-list>
-<div class="div-loader" ng-if="importCompleted.isLoading">
+<div class="div-loader" ng-if="importFailed.isLoading">
     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
 </div>

@@ -173,6 +173,20 @@ md-content md-sidenav.md-sidenav-left {
     box-shadow: none;
 }
 
+.tracker {
+    text-decoration: underline;
+    padding: 2px;
+    &.total {
+        color: $info;
+    }
+    &.error {
+        color: $danger;
+    }
+    &.success {
+        color: $success;
+    }
+}
+
 @import "app/core/clock/clock";
 @import "app/core/toolbar-logo/toolbar-logo";
 @import "app/core/main-frame/main-frame";
