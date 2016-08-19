@@ -17,5 +17,6 @@
         .constant('LOGIN_CONTEXT', '#LOGIN_CONTEXT')
         .constant('USER_CONTEXT', '#USER_CONTEXT')
         .constant('SECURITY_CONTEXT', '#SECURITY_CONTEXT')
-        .constant('IMPORT_CONTEXT', '#IMPORT_CONTEXT');
+        .constant('IMPORT_CONTEXT', '#IMPORT_CONTEXT')
+        .constant('STUDENT_CONTEXT', '#STUDENT_CONTEXT');
 })();

@@ -6,7 +6,9 @@
 
     function StudentsResourceService($resource, API_HOST, STUDENT_CONTEXT) {
         var resource = $resource(API_HOST + STUDENT_CONTEXT, {}, {
-
+            getProfileByStudentId: {
+                method: 'GET'
+            }
         });
     }
 })();

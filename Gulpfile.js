@@ -60,5 +60,6 @@ gulp.task('set-constant-values', function() {
         .pipe(replace('#USER_CONTEXT', USER_CONTEXT))
         .pipe(replace('#SECURITY_CONTEXT', SECURITY_CONTEXT))
         .pipe(replace('#IMPORT_CONTEXT', IMPORT_CONTEXT))
+        .pipe(replace('#STUDENT_CONTEXT', STUDENT_CONTEXT))
         .pipe(gulp.dest('src/app/'));
 });
