@@ -6,12 +6,12 @@
             controller: FacultyControlComponent,
             controllerAs: 'facultyControl'
         });
-    FacultyControlComponent.$inject = ['FilterSettingsService'];
+    FacultyControlComponent.$inject = ['FacultyFilterSettingsService'];
 
-    function FacultyControlComponent(FilterSettingsService) {
+    function FacultyControlComponent(FacultyFilterSettingsService) {
         var facultyControl = this;
         facultyControl.importData = {};
         facultyControl.importData.dataFor = 'faculty';
-        facultyControl.filter = FilterSettingsService;
+        facultyControl.filter = FacultyFilterSettingsService;
     }
 })();

@@ -5,7 +5,7 @@
 
     ImporterService.$inject = ['vendors', 'API_HOST', 'EventEmitterService', 'ImporterEvents', 'StudentsEvents', 'FacultyEvents'];
 
-    function ImporterService(vendors, API_HOST, EventEmitterService, ImporterEvents, StudentsEvents) {
+    function ImporterService(vendors, API_HOST, EventEmitterService, ImporterEvents, StudentsEvents, FacultyEvents) {
         var socket = vendors.Socket.connect(API_HOST);
         socket.on(ImporterEvents.IMPORTER_PROGRESS_LISTENER, function() {
             EventEmitterService.emit(ImporterEvents.GET_IN_PROGRESS_EVENT);

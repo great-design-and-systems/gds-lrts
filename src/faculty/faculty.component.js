@@ -6,9 +6,9 @@
             controller: FacultyComponent,
             controllerAs: 'facultyComponent'
         });
-    FacultyComponent.$inject = ['EventEmitterService', 'FacultyEvents', 'FilterSettingsService'];
+    FacultyComponent.$inject = ['EventEmitterService', 'FacultyEvents', 'FacultyFilterSettingsService'];
 
-    function FacultyComponent(EventEmitterService, FacultyEvents, FilterSettingsService) {
+    function FacultyComponent(EventEmitterService, FacultyEvents, FacultyFilterSettingsService) {
         var facultyComponent = this;
         facultyComponent.columns = [
             'facultyId',
@@ -29,7 +29,7 @@
 
         function onInit() {
             facultyComponent.isLoading = false;
-            facultyComponent.filter = FilterSettingsService;
+            facultyComponent.filter = FacultyFilterSettingsService;
             EventEmitterService.emit(FacultyEvents.GET_FACULTIES, facultyComponent.filter);
         }
 

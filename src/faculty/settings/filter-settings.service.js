@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('app.faculty')
-        .service('FilterSettingsService', FilterSettingsService);
+        .service('FacultyFilterSettingsService', FilterSettingsService);
 
     function FilterSettingsService() {
         var filterSetting = this;

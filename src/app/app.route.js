@@ -119,7 +119,7 @@
                         template: '<faculty-control></faculty-control>'
                     },
                     pageSetting: {
-                        template: '<filter-settings></filter-settings>'
+                        template: '<faculty-filter-settings></faculty-filter-settings>'
                     },
                 }
             });
