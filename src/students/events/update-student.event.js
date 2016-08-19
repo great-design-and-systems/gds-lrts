@@ -7,7 +7,7 @@
 		$rootScope.$on(StudentsEvents.UPDATE_STUDENT, function($event, data,
 				callback) {
 			vendors.pace.restart();
-			StudentsResourceService.updateStudent(data, function(err, result) {
+			StudentsResourceService.updateStudent(data.studentId, data, function(err, result) {
 				if (!err) {
 					callback(undefined, result);
 				} else {
