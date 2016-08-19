@@ -34,7 +34,7 @@
 			},
 			getFaculties : {
 				method : 'GET',
-				url : API_HOST + FACULTY_CONTEXT + 'get-faculties'
+				url : API_HOST + FACULTY_CONTEXT + 'getFaculties'
 			}
 		});
 

@@ -1,0 +1,40 @@
+<md-list>
+    <md-subheader ng-click="filterSettings.shown=!filterSettings.shown" class="md-no-sticky clickable">
+        <md-icon ng-if="filterSettings.shown" md-font-icon="fa fa-caret-up"></md-icon>
+        <md-icon ng-if="!filterSettings.shown" md-font-icon="fa fa-caret-down"></md-icon>
+        Faculty Table Properties
+    </md-subheader>
+    <md-list-item layout ng-if="filterSettings.shown">
+        <md-input-container flex>
+            <label>Total</label>
+            <input readonly ng-model="filterSettings.total">
+        </md-input-container>
+        <md-input-container flex>
+            <label>Limit</label>
+            <md-select ng-change="filterSettings.onChangeLimit()" ng-model="filterSettings.filter.limit">
+                <md-option ng-repeat="limit in filterSettings.limits" ng-value="limit">
+                    {{limit}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </md-list-item>
+    <md-list-item layout ng-if="filterSettings.shown">
+        <span flex="10"></span>
+        <md-button ng-disabled="filterSettings.filter.page == 1" ng-click="filterSettings.filter.page--" class="md-icon-button">
+            <md-icon md-font-icon="fa fa-backward"></md-icon>
+        </md-button>
+        <md-input-container flex>
+            <label>Page</label>
+            <md-select ng-change="filterSettings.onChangePage()" ng-model="filterSettings.filter.page">
+                <md-option ng-repeat="page in filterSettings.filter.pages" ng-value="page">
+                    {{page}}
+                </md-option>
+            </md-select>
+            <span flex></span>
+        </md-input-container>
+        <md-button ng-disabled="filterSettings.filter.page == filterSettings.filter.pages.length" ng-click="filterSettings.filter.page++" class="md-icon-button">
+            <md-icon md-font-icon="fa fa-forward"></md-icon>
+        </md-button>
+        <span flex="10"></span>
+    </md-list-item>
+</md-list>

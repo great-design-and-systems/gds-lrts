@@ -1,0 +1,8 @@
+faculty-filter-settings {
+    .md-subheader {
+        @extend .primary;
+    }
+    md-list-item {
+        background-color: $white;
+    }
+}
