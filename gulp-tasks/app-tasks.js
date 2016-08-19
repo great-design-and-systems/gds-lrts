@@ -198,6 +198,13 @@ var SRC_JS = [
     /* Faculty */
     'src/faculty/faculty.module.js',
     'src/faculty/links/faculty-link.component.js',
+    'src/faculty/faculty.constant.js',
+    'src/faculty/faculty-resource.service.js',
+    'src/faculty/events/create-faculty.event.js',
+    'src/faculty/events/delete-faculty.event.js',
+    'src/faculty/events/get-faculties.event.js',
+    'src/faculty/events/get-profile-by-faculty-id.event.js',
+    'src/faculty/events/update-faculty.event.js',
     /* Label */
     'src/labels/labels.module.js',
     'src/labels/labels.constant.js',
