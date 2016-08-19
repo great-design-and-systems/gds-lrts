@@ -57,6 +57,9 @@ main-frame {
     table.md-table {
         border: solid 1px #aaa;
     }
+    table.md-table thead.md-head {
+      background-color: #999;
+    }
     table.md-table thead th[md-column] {
         background-color: #aaa;
         font-size: 11px;

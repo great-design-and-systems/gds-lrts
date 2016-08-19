@@ -117,28 +117,42 @@ div[ui-view="control"] {
     margin-left: 15px; //this can be placed in page-control directive
 }
 
-button.md-button.md-primary.md-raised {
+button.md-button.md-primary.md-raised,
+md-dialog-actions  button[ng-click="dialog.hide()"].md-button.md-default-theme.md-primary,
+md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.md-primary {
     border-radius: 4px;
     background-color: #303F9F;
     border-bottom: solid 2px #1A237E;
     float: left;
     margin-right: 0;
-    margin-left: 10px
+    margin-left: 10px;
+    color: #fff;
+    text-transform: capitalize;
 }
-
-button.md-button.md-primary.md-raised:not([disabled]):hover {
+md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.md-primary {
+    background-color: #F44336;
+    border-bottom-color: #D32F2F;
+}
+button.md-button.md-primary.md-raised:not([disabled]):hover,
+md-dialog-actions  button[ng-click="dialog.hide()"].md-button.md-default-theme.md-primary:hover {
     background-color: #3F51B5;
 }
-
-button.md-button.md-primary.md-raised:active,
-button.md-button.md-primary.md-raised:disabled {
-    border-bottom: 0;
-    margin-top: 2px;
+md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.md-primary:hover {
+    background-color: #EF5350;
 }
-
+button.md-button.md-primary.md-raised:active,
+button.md-button.md-primary.md-raised:disabled,
+md-dialog-actions  button[ng-click="dialog.hide()"].md-button.md-default-theme.md-primary:active,
+md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.md-primary:active {
+    border-bottom: 0;
+    margin-top: 1px;
+}
 button.md-button.md-primary.md-raised:active span,
 button.md-button.md-primary.md-raised:disabled span {
     color: rgba(255, 255, 255, 0.30);
+}
+md-dialog-actions .md-button.md-default-theme.md-primary {
+    margin-top: 0;
 }
 
 // Header Toolbar

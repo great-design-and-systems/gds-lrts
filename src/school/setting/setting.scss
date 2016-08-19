@@ -53,20 +53,33 @@ school-setting {
             height: auto;
             min-width: 0;
             min-height: 0;
-            width: 40px;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            margin-top: 3px;
             border-radius: 0;
             line-height: 18px;
             padding: 0;
             border-radius: 4px;
             background-color: lighten($primary, 20%);
+            border-bottom: solid 2px $primary;
             i {
                 color: #fff;
                 padding: 5px;
                 border-radius: 3px;
             }
         }
+        button.md-icon-button.md-button.md-ink-ripple:active {
+            margin-top: 5px;
+            border-bottom: none;
+        }
+        button[aria-label="Refresh"].md-icon-button.md-button.md-ink-ripple {
+            background-color: #4CAF50;
+            border-bottom-color: #388E3C;
+        }
     }
     md-table-container {
         margin-bottom: 25px;
+
     }
 }

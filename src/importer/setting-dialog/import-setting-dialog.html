@@ -1,4 +1,4 @@
-<md-dialog class="import-dialog" aria-label="Import setting form">
+<md-dialog class="import-dialog import-settings" aria-label="Import setting form">
     <md-toolbar class="primary">
         <div class="md-toolbar-tools">
             <h3>Import setting</h3>
@@ -16,10 +16,9 @@
             <md-input-container flex>
                 <label for="importSettingFileField">File</label>
                 <input id="importSettingFileField" ng-model="importSettingDialog.uploadFile.name">
-            </md-input-container>
-            <div>
+
                 <md-button ngf-change="importSettingDialog.onFileChange()" class="md-primary md-raised" ngf-select ng-model="importSettingDialog.uploadFile" name="uploadFile" ngf-pattern="'*.csv'" ngf-accept="'.csv'" ngf-max-size="20MB">Browse</md-button>
-            </div>
+            </md-input-container>
         </md-content>
         <div ng-if="importSettingDialog.isSubmitting">
             <md-progress-linear md-mode="determinate" value="{{importSettingDialog.progress}}"></md-progress-linear>

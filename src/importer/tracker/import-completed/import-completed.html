@@ -5,7 +5,8 @@
         Import Completed
     </md-subheader>
     <md-list-item ng-if="importCompleted.shown" ng-repeat="import in importCompleted.imports">
-        <div layout="row" class="md-item-div">
+    <div layout="column" class="import-wrap">
+        <div class="md-item-div" layout="row">
             <div class="md-circular">
                 <img height="24" width="25" ng-src="{{importCompleted.getIcon(import)}}">
             </div>
@@ -16,22 +17,23 @@
                     </md-tooltip>
                     {{ import.description }}
                 </md-button>
-                <div layout>
-                    <span class="tracker total" flex>Total: {{import.progressLimit}}
-                        <md-tooltip>{{import.progressLimit}}</md-tooltip>
-                    </span>
-                    <span ng-if="import.errorCount > 0" class="tracker error" flex>Errors: {{import.errorCount}}
-                        <md-tooltip>{{import.errorCount}}</md-tooltip>
-                    </span>
-                    <span class="tracker success" flex> Sucess: {{import.progressLimit - import.errorCount}}
-                        <md-tooltip>{{import.progressLimit - import.errorCount}}</md-tooltip>
-                    </span>
-                </div>
             </div>
             <div class="md-circular-close">
                 <md-icon md-font-icon="fa fa-close" event-class="faa-flash animated" event-debounce="true" emit-event="openRemoveImportConfirmDialog" event-data="import"></md-icon>
             </div>
+        </div>                    
+        <div class="counts">
+            <span class="tracker total" flex>Total: {{import.progressLimit}}
+                <md-tooltip>{{import.progressLimit}}</md-tooltip>
+            </span>
+            <span ng-if="import.errorCount > 0" class="tracker error" flex>Errors: {{import.errorCount}}
+                <md-tooltip>{{import.errorCount}}</md-tooltip>
+            </span>
+            <span class="tracker success" flex> Success: {{import.progressLimit - import.errorCount}}
+                <md-tooltip>{{import.progressLimit - import.errorCount}}</md-tooltip>
+            </span>
         </div>
+    </div>
     </md-list-item>
 </md-list>
 <div class="div-loader" ng-if="importCompleted.isLoading">

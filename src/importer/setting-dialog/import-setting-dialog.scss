@@ -1,3 +1,65 @@
 .import-dialog {
-    width: 450px;
+    width: 650px;
+
+    button.md-button.md-raised,   	
+    button.md-button.md-raised:hover,   	
+    button.md-button.md-raised:active {   	
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		text-transform: capitalize;
+    }
+
+    md-toolbar {
+    	min-height: 42px;
+
+		.md-toolbar-tools {
+			font-size: 16px;
+			height: 42px;
+
+			.md-icon-button.md-button.md-ink-ripple {
+				margin-top: 5px;
+			}
+		}
+    }
+
+    md-input-container {
+
+    	label {
+    		color: #000;
+    		padding-bottom: 5px;
+    	}
+    	input.md-input {
+			border-color: #000;
+    	}
+    	button.md-button.md-primary.md-raised {
+    		float: right;
+    		margin-top: 10px;
+    	}
+    	button.md-button.md-primary.md-raised:active {
+    		margin-top: 12px;
+    	}
+    }
+    md-dialog-actions {
+    	padding: 0 18px 20px;
+
+    	button.md-button {
+    		margin: 0;
+    		float: left;
+    	}
+
+    	button.md-accent.md-button {
+    		background-color: #F44336;
+    		border-bottom: solid 2px #D32F2F;
+    		margin-left: 10px;
+    	}
+		button.md-button.md-accent.md-raised:not([disabled]):hover, {
+    		background-color: #EF5350;
+    	}
+		button.md-button.md-accent.md-raised:not([disabled]):active {
+    		background-color: #E53935;
+    		margin-top: 2px;
+    		border-bottom: none;
+    	}
+    }
 }
