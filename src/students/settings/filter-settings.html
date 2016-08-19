@@ -1,0 +1,18 @@
+<md-list>
+    <md-subheader ng-click="filterSettings.shown=!filterSettings.shown" class="md-no-sticky clickable">
+        <md-icon ng-if="filterSettings.shown" md-font-icon="fa fa-caret-up"></md-icon>
+        <md-icon ng-if="!filterSettings.shown" md-font-icon="fa fa-caret-down"></md-icon>
+        Properties
+    </md-subheader>
+    <md-list-item layout ng-if="filterSettings.shown">
+        <md-input-container>
+            <label>Limit</label>
+            <md-select ng-model="filterSettings.filter.limit">
+                <md-option ng-repeat="limit in filterSettings.limits" ng-value="limit">
+                    {{limit}}
+                </md-option>
+            </md-select>
+            <span flex></span>
+        </md-input-container>
+    </md-list-item>
+</md-list>

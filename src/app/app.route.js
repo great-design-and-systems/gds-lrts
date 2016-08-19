@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
     angular.module('gdsApp')
         .config(AppRoute);
@@ -87,7 +87,10 @@
                     },
                     control: {
                         template: '<students-control></students-control>'
-                    }
+                    },
+                    pageSetting: {
+                        template: '<filter-settings></filter-settings>'
+                    },
                 }
             })
             .state('importLog', {
