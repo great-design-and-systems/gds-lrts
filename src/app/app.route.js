@@ -78,6 +78,19 @@
                         template: '<students-control></students-control>'
                     }
                 }
+            })
+            .state('importLog', {
+                url: '/import-logs/:importId',
+                label: 'Import',
+                legend: 'Logs',
+                legendFI: 'fa fa-history',
+                views: {
+                    mainFrame: {
+                        template: '<import-logs import-id="route.param.importId"></import-logs>',
+                        controller: ExposeRouteParams,
+                        controllerAs: 'route'
+                    }
+                }
             });
     }
     ExposeRouteParams.$inject = ['$stateParams'];

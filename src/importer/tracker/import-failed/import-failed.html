@@ -10,7 +10,7 @@
                 <img height="24" width="25" ng-src="{{importFailed.getIcon(import)}}">
             </div>
             <div class="md-list-item-text" layout="column" flex>
-                <md-button md-tooltip="{{ import.description }}" class="md-primary">
+                <md-button ui-sref="importLog({importId:import._id})" md-tooltip="{{ import.description }}" class="md-primary">
                     <md-tooltip md-direction="top">
                         {{import.description}}
                     </md-tooltip>

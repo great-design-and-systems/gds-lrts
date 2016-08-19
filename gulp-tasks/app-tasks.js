@@ -212,6 +212,7 @@ var SRC_JS = [
     'src/importer/tracker/import-completed/import-completed.component.js',
     'src/importer/tracker/import-in-progress/import-in-progress.component.js',
     'src/importer/tracker/import-failed/import-failed.component.js',
+    'src/importer/logs/import-logs.component.js',
     /* Print */
     'vendors/ngPrint/ngPrint.js'
 ];

@@ -1,0 +1,22 @@
+<div auto-height offset="170" layout="row" flex>
+    <div ng-if="importLogs.isLoading" flex>
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    <md-table-container flex ng-if="!importLogs.isLoading">
+        <md-progress ng-if="importLogs.isLoading"></md-progress>
+        <table md-table>
+            <thead md-head>
+                <th md-column>No.</th>
+                <th md-column ng-repeat="column in importLogs.logs[0].columns">{{column}}</th>
+                <th md-column>Status</th>
+            </thead>
+            <tbody md-body ng-repeat="log in importLogs.logs">
+                <tr md-row ng-class="log.status == 'FAILED'? 'fail':'success'">
+                    <td md-cell>{{($index + 1)}}</td>
+                    <td md-cell ng-repeat="item in log.items">{{(item)}}</td>
+                    <td md-cell>{{(log.status)}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+</div>

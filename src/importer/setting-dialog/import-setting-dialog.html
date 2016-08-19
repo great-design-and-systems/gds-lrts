@@ -26,7 +26,7 @@
         </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-        <md-button emit-event="uploadSingleFile" event-class="animated pulse" event-fail="importSettingDialog.onUploadFail" event-complete="importSettingDialog.onUploadComplete" event-debouce="true" event-data="importSettingDialog.uploadData" ng-disabled="!importSettingDialog.uploadFile"
+        <md-button emit-event="uploadSingleFile" event-fail="importSettingDialog.onUploadFail" event-complete="importSettingDialog.onUploadComplete" event-debouce="true" event-data="importSettingDialog.uploadData" ng-disabled="!importSettingDialog.uploadFile || importSettingDialog.isSubmitting"
             class="md-primary md-raised">
             Upload
             <md-tooltip>Upload</md-tooltip>

@@ -9,7 +9,10 @@
             getImportLogs: {
                 method: 'GET',
                 isArray: true,
-                url: API_HOST + IMPORT_CONTEXT + 'getImportLogs?param=importId::importId'
+                url: API_HOST + IMPORT_CONTEXT + 'getImportLogs?param=importId::importId',
+                params: {
+                    importId: '@importId'
+                }
             },
             createImportCSV: {
                 method: 'POST',

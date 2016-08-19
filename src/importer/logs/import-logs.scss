@@ -1,0 +1,10 @@
+import-logs {
+    tr[md-row] {
+        &.fail {
+            td {
+                background-color: $danger;
+                color: $white;
+            }
+        }
+    }
+}
