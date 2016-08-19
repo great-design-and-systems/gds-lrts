@@ -105,6 +105,23 @@
                         controllerAs: 'route'
                     }
                 }
+            })
+            .state('faculty', {
+                url: '/school/faculty',
+                label: 'School',
+                legend: 'Faculty',
+                legendFI: 'fa fa-book',
+                views: {
+                    mainFrame: {
+                        template: '<faculty></faculty>'
+                    },
+                    control: {
+                        template: '<faculty-control></faculty-control>'
+                    },
+                    pageSetting: {
+                        template: '<filter-settings></filter-settings>'
+                    },
+                }
             });
     }
     ExposeRouteParams.$inject = ['$stateParams'];
