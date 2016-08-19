@@ -184,6 +184,9 @@ var SRC_JS = [
     'src/students/links/students-link.component.js',
     'src/students/control/students-control.component.js',
     'src/students/students.component.js',
+    'src/students/students-resource.service.js',
+    'src/students/students.constant.js',
+    'src/students/events/get-profile-by-student-id.event.js',
     /* Faculty */
     'src/faculty/faculty.module.js',
     'src/faculty/links/faculty-link.component.js',
