@@ -20,7 +20,7 @@
     </md-list-item>
     <md-list-item layout ng-if="filterSettings.shown">
         <span flex="10"></span>
-        <md-button class="md-icon-button">
+        <md-button ng-disabled="filterSettings.filter.page == 1" ng-click="filterSettings.filter.page--" class="md-icon-button">
             <md-icon md-font-icon="fa fa-backward"></md-icon>
         </md-button>
         <md-input-container flex>
@@ -32,7 +32,7 @@
             </md-select>
             <span flex></span>
         </md-input-container>
-        <md-button class="md-icon-button">
+        <md-button ng-disabled="filterSettings.filter.page == filterSettings.filter.pages.length" ng-click="filterSettings.filter.page++" class="md-icon-button">
             <md-icon md-font-icon="fa fa-forward"></md-icon>
         </md-button>
         <span flex="10"></span>
