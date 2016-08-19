@@ -194,6 +194,7 @@ var SRC_JS = [
     'src/students/events/create-student.event.js',
     'src/students/events/update-student.event.js',
     'src/students/events/delete-student.event.js',
+    'src/students/events/get-students.event.js',
     /* Faculty */
     'src/faculty/faculty.module.js',
     'src/faculty/links/faculty-link.component.js',
