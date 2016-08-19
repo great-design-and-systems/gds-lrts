@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	angular.module('app.faculty').run(Event);
-	Event.$inject = [ '$rootScope', 'FacultyResourceService', 'FacultyEvents' ];
+	Event.$inject = [ '$rootScope', 'FacultyResourceService', 'FacultyEvents', 'vendors' ];
 
 	function Event($rootScope, FacultyResourceService, FacultyEvents, vendors) {
 		$rootScope.$on(FacultyEvents.DELETE_FACULTY, function($event, facultyId,
