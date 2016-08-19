@@ -12,6 +12,15 @@
             </thead>
             <tbody md-body>
                 <tr md-row ng-repeat="students in studentsComponent.students">
+                    <td md-cell>{{::students.studentId}}</td>
+                    <td md-cell>{{::students.firstName}}</td>
+                    <td md-cell>{{::students.middleName}}</td>
+                    <td md-cell>{{::students.lastName}}</td>
+                    <td md-cell>{{::students.gender}}</td>
+                    <td md-cell>{{::students.contactNo}}</td>
+                    <td md-cell>{{::students.emailAddress}}</td>
+                    <td md-cell>{{::students.department}}</td>
+                    <td md-cell>{{::students.level}}</td>
                 </tr>
             </tbody>
         </table>

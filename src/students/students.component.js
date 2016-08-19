@@ -23,10 +23,9 @@
         ];
         studentsComponent.$onInit = onInit;
         studentsComponent.$onDestroy = onDestroy;
-        studentsComponent.onLimitChange = onLimitChange;
 
-        EventEmitterService.onComplete(StudentsEvents.GET_STUDENTS, function(students) {
-            studentsComponent.students = students;
+        EventEmitterService.onComplete(StudentsEvents.GET_STUDENTS, function(result) {
+            studentsComponent.students = result.docs;
         });
 
         function onInit() {
@@ -40,9 +39,6 @@
             studentsComponent.filter = undefined;
         }
 
-        function onLimitChange() {
-            studentsComponent.filter.page = 1;
-            EventEmitterService.emit(StudentsEvents.GET_STUDENTS, studentsComponent.filter);
-        }
+
     }
 })();

@@ -5,6 +5,7 @@
 
     function FilterSettingsService() {
         var filterSetting = this;
+        filterSetting.pages = [];
         filterSetting.page = 1;
         filterSetting.limit = 25;
     }
