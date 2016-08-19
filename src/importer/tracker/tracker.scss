@@ -1,0 +1,67 @@
+import-in-progress {
+    .md-subheader {
+        @extend .primary;
+    }
+    .toggle-shown {
+        cursor: pointer;
+        md-icon {
+            color: $white;
+        }
+    }
+    md-list {
+        padding-top: 0;
+        background-color: $white;
+        border-radius: 2px;
+    }
+    md-list-item {
+        border-bottom: 1px solid darken($borderColor, 10);
+        padding: 2px !important;
+        .md-item-div {
+            width: 100%;
+            padding-bottom: 2px;
+            padding-right: 10px;
+        }
+        .md-circular {
+            padding-top: 15px;
+        }
+    }
+}
+
+import-completed,
+import-failed {
+    .md-subheader {
+        @extend .primary;
+    }
+    .toggle-shown {
+        cursor: pointer;
+        font-size: 16px;
+        md-icon {
+            color: $white;
+        }
+    }
+    md-list-item {
+        background-color: $white;
+        border-bottom: 1px solid darken($borderColor, 10);
+        padding: 2px !important;
+        .md-item-div {
+            width: 100%;
+            padding-bottom: 2px;
+        }
+        .md-circular {
+            padding-left: 10px;
+            padding-top: 15px;
+            padding-right: 5px;
+        }
+        .md-circular-close {
+            @extend .md-circular;
+            padding-right: 10px;
+            md-icon {
+                cursor: pointer;
+                color: $danger;
+            }
+        }
+    }
+    .div-loader {
+        height: 50px;
+    }
+}

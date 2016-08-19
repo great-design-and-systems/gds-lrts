@@ -73,6 +73,30 @@
                 views: {
                     mainFrame: {
                         template: '<create-user school-id="route.param.schoolId"></create-user>',
+                    }
+                })
+            .state('students', {
+                url: '/school/students',
+                label: 'School',
+                legend: 'Student',
+                legendFI: 'fa fa-book',
+                views: {
+                    mainFrame: {
+                        template: '<students></students>'
+                    },
+                    control: {
+                        template: '<students-control></students-control>'
+                    }
+                }
+            })
+            .state('importLog', {
+                url: '/import-logs/:importId',
+                label: 'Import',
+                legend: 'Logs',
+                legendFI: 'fa fa-history',
+                views: {
+                    mainFrame: {
+                        template: '<import-logs import-id="route.param.importId"></import-logs>',
                         controller: ExposeRouteParams,
                         controllerAs: 'route'
                     }

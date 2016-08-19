@@ -16,8 +16,8 @@
 
 </head>
 
-<body layout="row" ng-controller="GdsAppCtrl as gdsApp">
-    <div flex ng-cloak>
+<body ng-cloak layout="row" ng-controller="GdsAppCtrl as gdsApp">
+    <div flex>
         <page-control ng-if="isSessionActive"></page-control>
         <div class="placeholder-div" ng-if="!isSessionActive">
         </div>

@@ -161,6 +161,8 @@ var SRC_JS = [
     /* Upload */
     'src/upload/upload.module.js',
     'src/upload/upload-resource.service.js',
+    'src/upload/events/upload-single-file.event.js',
+    'src/upload/upload.constant.js',
     /* Security */
     'src/security/security.module.js',
     'src/security/security-resource.service.js',
@@ -182,6 +184,11 @@ var SRC_JS = [
     /* Students */
     'src/students/students.module.js',
     'src/students/links/students-link.component.js',
+    'src/students/control/students-control.component.js',
+    'src/students/students.component.js',
+    'src/students/students-resource.service.js',
+    'src/students/students.constant.js',
+    'src/students/events/get-profile-by-student-id.event.js',
     /* Faculty */
     'src/faculty/faculty.module.js',
     'src/faculty/links/faculty-link.component.js',
@@ -192,6 +199,25 @@ var SRC_JS = [
     'src/labels/labels.service.js',
     'src/labels/events/get-label.event.js',
     'src/labels/events/cascade-labels.event.js',
+    /* Importer */
+    'src/importer/importer.module.js',
+    'src/importer/importer.constant.js',
+    'src/importer/importer-resource.service.js',
+    'src/importer/importer.services.js',
+    'src/importer/setting-dialog/import-setting-dialog.controller.js',
+    'src/importer/events/get-import-completed.event.js',
+    'src/importer/events/get-import-failed.event.js',
+    'src/importer/events/get-import-progress.js',
+    'src/importer/events/get-import-logs.event.js',
+    'src/importer/events/create-import-csv.event.js',
+    'src/importer/events/run-import-csv.event.js',
+    'src/importer/events/remove-import-tracker.event.js',
+    'src/importer/events/open-import-setting-dialog.event.js',
+    'src/importer/events/opem-remove-import-confirm-dialog.event.js',
+    'src/importer/tracker/import-completed/import-completed.component.js',
+    'src/importer/tracker/import-in-progress/import-in-progress.component.js',
+    'src/importer/tracker/import-failed/import-failed.component.js',
+    'src/importer/logs/import-logs.component.js',
     /* Print */
     'vendors/ngPrint/ngPrint.js'
 ];
