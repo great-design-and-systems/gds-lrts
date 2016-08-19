@@ -62,6 +62,7 @@ var SRC_JS = [
     'src/exporter/events/get-export-failed.event.service.js',
     'src/exporter/tracker/export-failed/export-failed.component.js',
     'src/exporter/csv/csv-formatter.service.js',
+    'src/exporter/events/open-remove-export-confirm-dialog.event.js',
     /* Downloader */
     'src/downloader/downloader.module.js',
     'src/downloader/downloader.service.js',
@@ -200,13 +201,17 @@ var SRC_JS = [
     /* Faculty */
     'src/faculty/faculty.module.js',
     'src/faculty/links/faculty-link.component.js',
-    'src/faculty/faculty.constant.js',
+    'src/faculty/control/faculty-control.component.js',
+    'src/faculty/faculty.component.js',
     'src/faculty/faculty-resource.service.js',
+    'src/faculty/faculty.constant.js',
+    'src/faculty/events/get-profile-by-faculty-id.event.js',
     'src/faculty/events/create-faculty.event.js',
+    'src/faculty/events/update-faculty.event.js',
     'src/faculty/events/delete-faculty.event.js',
     'src/faculty/events/get-faculties.event.js',
-    'src/faculty/events/get-profile-by-faculty-id.event.js',
-    'src/faculty/events/update-faculty.event.js',
+    'src/faculty/settings/filter-settings.component.js',
+    'src/faculty/settings/filter-settings.service.js',
     /* Label */
     'src/labels/labels.module.js',
     'src/labels/labels.constant.js',
