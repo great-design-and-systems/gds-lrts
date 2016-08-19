@@ -9,8 +9,7 @@
 		var resource = $resource(API_HOST + STUDENT_CONTEXT, {}, {
 			getProfileByStudentId : {
 				method : 'GET',
-				url : API_HOST + STUDENT_CONTEXT
-						+ 'getProfileByStudentId?param=studentId::studentId',
+				url : API_HOST + STUDENT_CONTEXT + 'getProfileByStudentId?param=studentId::studentId',
 				params : {
 					studentId : '@studentId'
 				}
@@ -25,8 +24,7 @@
 			},
 			deleteStudent : {
 				method : 'DELETE',
-				url : API_HOST + STUDENT_CONTEXT
-						+ 'delete?param=studentId::studentId',
+				url : API_HOST + STUDENT_CONTEXT + 'delete?param=studentId::studentId',
 				params : {
 					studentId : '@studentId'
 				}
