@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	angular.module('app.students').run(Event);
-	Event.$inject = [ '$rootScope', 'StudentsResourceService', 'StudentsEvents' ];
+	Event.$inject = [ '$rootScope', 'StudentsResourceService', 'StudentsEvents', 'vendors' ];
 
 	function Event($rootScope, StudentsResourceService, StudentsEvents, vendors) {
 		$rootScope.$on(StudentsEvents.CREATE_STUDENT, function($event, data,
