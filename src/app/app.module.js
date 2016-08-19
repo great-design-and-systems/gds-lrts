@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
     angular.module('gdsApp', [ /*Vendor modules */
         'ui.router',
@@ -8,6 +8,7 @@
         'ngCookies',
         'mdColorPicker',
         'ngPrint',
+        'ngFileUpload',
         /*start of application modules here*/
         'app.core',
         'app.monitor',
@@ -24,6 +25,8 @@
         'app.reports',
         'app.students',
         'app.faculty',
-        'app.labels'
+        'app.labels',
+        'app.upload',
+        'app.importer'
     ]);
 })();

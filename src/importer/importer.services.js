@@ -20,6 +20,9 @@
         socket.on(ImporterEvents.IMPORTER_FAILED_COMPLETED_LISTENER, function() {
             EventEmitterService.emit(ImporterEvents.GET_FAILED_EVENT);
         });
-        console.log('Export progress listener has been started: ', socket);
+        socket.on(ImporterEvents.NEW_IMPORT_CREATED_LISTENER, function() {
+            EventEmitterService.emit(ImporterEvents.GET_IN_PROGRESS_EVENT);
+        });
+        console.log('Import listener has been started: ', socket);
     }
 })();

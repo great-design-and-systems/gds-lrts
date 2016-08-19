@@ -1,0 +1,23 @@
+<md-list ng-if="importInProgress.imports && importInProgress.imports.length">
+    <md-subheader class="md-no-sticky clickable">
+        <md-icon ng-if="importInProgress.shown" md-font-icon="fa fa-caret-up"></md-icon>
+        <md-icon ng-if="!importInProgress.shown" md-font-icon="fa fa-caret-down"></md-icon>
+        Import In-progress
+    </md-subheader>
+    <md-list-item ng-if="importInProgress.shown" ng-repeat="import in importInProgress.imports">
+        <div layout="row" class="md-item-div">
+            <div class="md-circular">
+                <md-progress-circular class="md-hue-2" md-diameter="40px"></md-progress-circular>
+            </div>
+            <div class="md-list-item-text" layout="column" flex>
+                <h4 md-tooltip="{{ import.description }}" class="md-primary">
+                    <md-tooltip md-direction="top">
+                        {{import.description}}
+                    </md-tooltip>
+                    {{ import.description }}
+                </h4>
+                <md-progress-linear md-mode="determinate" value="{{importInProgress.getPercent(import)}}"></md-progress-linear>
+            </div>
+        </div>
+    </md-list-item>
+</md-list>

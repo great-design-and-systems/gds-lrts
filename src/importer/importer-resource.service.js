@@ -17,11 +17,11 @@
             },
             runImportCsv: {
                 method: 'PUT',
-                url: API_HOST + IMPORT_CONTEXT + 'runImportCsv'
+                url: API_HOST + IMPORT_CONTEXT + 'runImportCsv?$event=$newImportCreated'
             },
             removeImportTracker: {
                 method: 'DELETE',
-                url: API_HOST + IMPORT_CONTEXT + 'removeImportTracker?param=importId::importId',
+                url: API_HOST + IMPORT_CONTEXT + 'removeImportTracker?$event=importer-deleted&param=importId::importId',
                 params: {
                     importId: '@importId'
                 }
@@ -115,7 +115,7 @@
                 callback({
                     message: err.message
                 });
-            })
+            });
         }
     }
 })();

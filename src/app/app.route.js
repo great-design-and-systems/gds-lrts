@@ -63,8 +63,21 @@
                     control: {
                         template: '<reports-control></reports-control>'
                     }
-                },
-
+                }
+            })
+            .state('students', {
+                url: '/school/students',
+                label: 'School',
+                legend: 'Student',
+                legendFI: 'fa fa-book',
+                views: {
+                    mainFrame: {
+                        template: '<students></students>'
+                    },
+                    control: {
+                        template: '<students-control></students-control>'
+                    }
+                }
             });
     }
     ExposeRouteParams.$inject = ['$stateParams'];

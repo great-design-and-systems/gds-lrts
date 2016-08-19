@@ -1,0 +1,29 @@
+<md-list ng-if="importCompleted.imports && importCompleted.imports.length && !importCompleted.isLoading">
+    <md-subheader class="md-no-sticky clickable" ng-click="importCompleted.shown=!importCompleted.shown">
+        <md-icon ng-if="importCompleted.shown" md-font-icon="fa fa-caret-up"></md-icon>
+        <md-icon ng-if="!importCompleted.shown" md-font-icon="fa fa-caret-down"></md-icon>
+        Import Completed
+    </md-subheader>
+    <md-list-item ng-if="importCompleted.shown" ng-repeat="import in importCompleted.imports">
+        <div layout="row" class="md-item-div">
+            <div class="md-circular">
+                <img height="24" width="25" ng-src="{{importCompleted.getIcon(import)}}">
+            </div>
+            <div class="md-list-item-text" layout="column" flex>
+                <md-button md-tooltip="{{ import.description }}" class="md-primary">
+                    <md-tooltip md-direction="top">
+                        {{import.description}}
+                    </md-tooltip>
+                    {{ import.description }}
+                </md-button>
+            </div>
+            <div class="md-circular-close">
+                <md-progress-circular md-diameter="20px" ng-if="import.isRemoving" md-mode="indeterminate"></md-progress-circular>
+                <md-icon ng-if="!import.isRemoving" md-font-icon="fa fa-close" event-class="faa-flash animated" event-debounce="true" emit-event="openRemoveImportConfirmDialog" event-data="import"></md-icon>
+            </div>
+        </div>
+    </md-list-item>
+</md-list>
+<div class="div-loader" ng-if="importCompleted.isLoading">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
