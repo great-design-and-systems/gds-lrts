@@ -72,8 +72,8 @@
 			});
 		}
 
-		function updateStudent(studentId, data, callback) {
-			return resource.updateStudent(studentId, data, function(result) {
+		function updateStudent(data, callback) {
+			return resource.updateStudent(data, function(result) {
 				callback(undefined, result);
 			}, function(err) {
 				callback(err);
