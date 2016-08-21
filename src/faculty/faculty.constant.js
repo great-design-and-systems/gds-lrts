@@ -6,6 +6,7 @@
             CREATE_FACULTY: 'createFaculty',
             UPDATE_FACULTY: 'updateFaculty',
             DELETE_FACULTY: 'deleteFaculty',
-            GET_FACULTIES: 'getFaculties'
+            GET_FACULTIES: 'getFaculties',
+            OPEN_REMOVE_FACULTY_CONFIRM_DIALOG: 'openRemoveFacultyConfirmDialog'
         });
 })();

@@ -17,18 +17,18 @@
             },
             createStudent: {
                 method: 'POST',
-                url: API_HOST + STUDENT_CONTEXT + 'create'
+                url: API_HOST + STUDENT_CONTEXT + 'createStudent'
             },
             updateStudent: {
                 method: 'PUT',
-                url: API_HOST + STUDENT_CONTEXT + 'update?param=studentId::studentId',
+                url: API_HOST + STUDENT_CONTEXT + 'updateStudent?param=studentId::studentId',
                 params: {
                     studentId: '@studentId'
                 }
             },
             deleteStudent: {
                 method: 'DELETE',
-                url: API_HOST + STUDENT_CONTEXT + 'delete?param=studentId::studentId',
+                url: API_HOST + STUDENT_CONTEXT + 'deleteStudent?param=studentId::studentId',
                 params: {
                     studentId: '@studentId'
                 }

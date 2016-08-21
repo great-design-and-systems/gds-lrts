@@ -198,6 +198,7 @@ var SRC_JS = [
     'src/students/events/get-students.event.js',
     'src/students/settings/filter-settings.component.js',
     'src/students/settings/filter-settings.service.js',
+    'src/students/events/open-remove-student-confirm-dialog.event.js',
     /* Faculty */
     'src/faculty/faculty.module.js',
     'src/faculty/links/faculty-link.component.js',
@@ -212,6 +213,7 @@ var SRC_JS = [
     'src/faculty/events/get-faculties.event.js',
     'src/faculty/settings/filter-settings.component.js',
     'src/faculty/settings/filter-settings.service.js',
+    'src/faculty/events/open-remove-faculty-confirm-dialog.event.js',
     /* Label */
     'src/labels/labels.module.js',
     'src/labels/labels.constant.js',

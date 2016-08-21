@@ -1,8 +1,13 @@
 reports-settings {
-  .md-subheader {
-      @extend .primary;
-  }
-  md-list-item {
-      background-color: $white;
-  }
+    .md-subheader {
+        @extend .primary;
+    }
+    md-list-item {
+        background-color: $white;
+    }
+    .date-picker {
+        div {
+            width: 88%;
+        }
+    }
 }
