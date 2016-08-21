@@ -11,7 +11,7 @@
         "server": "./node_modules/.bin/http-server",
         "start": "npm run server",
         "debug": "npm run gulp debug",
-        "container": "npm run gulp pull && npm run server"
+        "container": "npm run gulp pull && gulp && npm run server"
     },
     "repository": {
         "type": "git",
