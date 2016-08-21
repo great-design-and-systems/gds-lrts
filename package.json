@@ -11,7 +11,7 @@
         "server": "./node_modules/.bin/http-server",
         "start": "npm run server",
         "debug": "npm run gulp debug",
-        "container": "npm run gulp pull && gulp && npm run server"
+        "container": "npm run gulp pull && gulp bower && gulp && npm run server"
     },
     "repository": {
         "type": "git",
@@ -30,6 +30,7 @@
         "bower": "^1.7.9",
         "gulp": "^3.9.1",
         "gulp-angular-templates": "0.0.2",
+        "gulp-bower": "0.0.13",
         "gulp-concat": "^2.6.0",
         "gulp-copy": "0.0.2",
         "gulp-git": "^1.11.0",

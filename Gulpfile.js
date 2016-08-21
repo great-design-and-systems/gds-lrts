@@ -20,6 +20,8 @@ var replace = require('gulp-replace');
 var appTasks = new require('./gulp-tasks/app-tasks')(gulp);
 new require('./gulp-tasks/vendor-tasks')(gulp);
 var git = require('gulp-git');
+var bower = require('gulp-bower');
+
 gulp.task('default', function() {
     runSequence('vendor-build', 'set-constant-values', 'app-build', 'html-prod');
 });
@@ -71,4 +73,8 @@ gulp.task('pull', function() {
     git.pull('origin', ['master'], function(err) {
         if (err) throw err;
     });
+});
+
+gulp.task('bower', function() {
+    return bower({ cmd: 'update' });
 });
