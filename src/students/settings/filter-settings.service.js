@@ -14,11 +14,11 @@
         filterSetting.next = next;
 
         function isPrevDisabled() {
-            return filterSetting.page == 1;
+            return filterSetting.page === 1;
         }
 
         function isNextDisabled() {
-            return filterSetting.page == filterSetting.pages.length;
+            return filterSetting.page === filterSetting.pages.length;
         }
 
         function prev() {

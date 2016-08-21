@@ -96,40 +96,6 @@ info-bar {
                     }
                 }
             }
-            .import-wrap {
-                width: 100%;
-
-                .counts {
-                    text-align: center;
-                    padding-bottom: 12px;
-
-                    .tracker {
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-        md-list-item.date-picker {
-            h4 {
-                margin: 30px 15px 0;
-                font-weight: 400;
-                font-size: 13px;
-            }
-            md-datepicker {
-                background-color: transparent;
-                padding-right: 0;
-                .md-datepicker-input-container {
-                    margin-left: 0px;
-                    border-color: #000;
-                    input {
-                        width: 165px;
-                        font-size: 13px;
-                    }
-                }
-            }
-        }
-        md-list-item.date-picker:last-child {
-            padding-bottom: 20px !important;
         }
     }
 }

@@ -149,7 +149,7 @@ var SRC_JS = [
     'src/user/user.service.js',
     'src/user/events/get-user-name.event.js',
     'src/user/events/get-user-profile.event.js',
-    'src/user/link/user-link.component.js',
+    'src/user/link/menu-link.component.js',
     'src/user/change-password/change-password.component.js',
     'src/user/events/change-password.event.js',
     'src/user/events/get-user-pasword.event.js',

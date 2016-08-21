@@ -2,7 +2,7 @@
     'use strict';
     angular.module('app.user')
         .component('userLink', {
-            templateUrl: 'src/user/link/user-link.html',
+            templateUrl: 'src/user/link/menu-link.html',
             controller: UserLinkComponent,
             controllerAs: 'userLink',
             bindings: {
