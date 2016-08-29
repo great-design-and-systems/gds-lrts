@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "gulp": "./node_modules/.bin/gulp",
         "bower": "./node_modules/.bin/bower",
-        "postinstall": "bower update -V && gulp",
+        "postinstall": "gulp bower && gulp",
         "server": "./node_modules/.bin/http-server",
         "start": "npm run server",
         "debug": "npm run gulp debug",
