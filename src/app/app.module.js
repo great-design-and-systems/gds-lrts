@@ -27,6 +27,7 @@
         'app.faculty',
         'app.labels',
         'app.upload',
-        'app.importer'
+        'app.importer',
+        'app.file'
     ]);
 })();

@@ -1,0 +1,46 @@
+<md-dialog class="uploadImage-dialog" aria-label="uploadImage form">
+    <md-toolbar class="primary">
+        <div class="md-toolbar-tools">
+            <h3>{{uploadImageDialog.title}}</h3>
+            <span flex></span>
+            <md-button ng-disabled="uploadImageDialog.isSubmitting" class="md-icon-button" ng-click="uploadImageDialog.cancelUpload()">
+                <md-icon md-font-icon="fa fa-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content layout-padding="1">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{uploadImageDialog.data.lastName}}, {{uploadImageDialog.data.firstName}}</span>
+                    <span class="md-subhead">{{uploadImageDialog.data.department}} - {{uploadImageDialog.data.level}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="row" layout-align="space-between">
+                <div ng-if="uploadImageDialog.isSubmitting" class="md-media-xl card-media">
+                </div>
+                <img ng-if="!uploadImageDialog.data.imageId && !uploadImageDialog.isSubmitting" ng-src="/img/id-image-placeholder.png" class="md-media-xl card-media">
+                <img ng-if="uploadImageDialog.data.imageId && !uploadImageDialog.isSubmitting" ng-src="{{uploadImageDialog.avatarLink}}" class="md-media-xl card-media">
+                <md-card-actions layout="column">
+                    <md-button ngf-change="uploadImageDialog.onFileChange()" class="md-primary md-raised" ngf-select ng-model="uploadImageDialog.uploadFile" name="uploadFile" ngf-accept="'image/*'" ngf-max-size="20MB" aria-label="Browse">
+                        <md-icon md-font-icon="fa fa-search"></md-icon>
+                        {{!uploadImageDialog.data.imageId? 'ADD':'CHANGE'}} IMAGE
+                    </md-button>
+                </md-card-actions>
+            </md-card-content>
+        </md-card>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <div ng-if="uploadImageDialog.isSubmitting">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <md-button ng-click="uploadImageDialog.save()" ng-disabled="!uploadImageDialog.data.imageId || uploadImageDialog.isSubmitting" class="md-primary md-raised">
+            {{uploadImageDialog.submitLabel}}
+            <md-tooltip>{{uploadImageDialog.submitLabel}}</md-tooltip>
+        </md-button>
+        <md-button ng-disabled="uploadImageDialog.isSubmitting" ng-click="uploadImageDialog.cancelUpload()" class="md-accent md-raised">
+            {{uploadImageDialog.cancelLabel}}
+            <md-tooltip>{{uploadImageDialog.cancelLabel}}</md-tooltip>
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

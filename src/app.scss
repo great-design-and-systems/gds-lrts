@@ -118,8 +118,7 @@ div[ui-view="control"] {
 }
 
 button.md-button.md-primary.md-raised,
-md-dialog-actions  button[ng-click="dialog.hide()"].md-button.md-default-theme.md-primary,
-md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.md-primary {
+md-dialog-actions button.md-button.md-default-theme.md-primary {
     border-radius: 4px;
     background-color: #303F9F;
     border-bottom: solid 2px #1A237E;
@@ -129,30 +128,57 @@ md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.
     color: #fff;
     text-transform: capitalize;
 }
-md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.md-primary {
+
+md-dialog-actions button.md-button.md-default-theme.md-accent {
     background-color: #F44336;
     border-bottom-color: #D32F2F;
 }
+
 button.md-button.md-primary.md-raised:not([disabled]):hover,
-md-dialog-actions  button[ng-click="dialog.hide()"].md-button.md-default-theme.md-primary:hover {
+md-dialog-actions button.md-button.md-default-theme.md-primary:hover {
     background-color: #3F51B5;
 }
-md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.md-primary:hover {
+
+md-dialog-actions button.md-button.md-default-theme.md-accent:hover {
     background-color: #EF5350;
 }
+
 button.md-button.md-primary.md-raised:active,
 button.md-button.md-primary.md-raised:disabled,
-md-dialog-actions  button[ng-click="dialog.hide()"].md-button.md-default-theme.md-primary:active,
-md-dialog-actions  button[ng-click="dialog.abort()"].md-button.md-default-theme.md-primary:active {
+md-dialog-actions button.md-button.md-default-theme.md-primary:active {
     border-bottom: 0;
     margin-top: 1px;
 }
+
 button.md-button.md-primary.md-raised:active span,
 button.md-button.md-primary.md-raised:disabled span {
     color: rgba(255, 255, 255, 0.30);
 }
+
 md-dialog-actions .md-button.md-default-theme.md-primary {
     margin-top: 0;
+}
+
+md-dialog-actions {
+    padding: 0 18px 20px;
+    button.md-button {
+        margin: 0;
+        float: left;
+    }
+    button.md-accent.md-button {
+        background-color: #F44336;
+        border-bottom: solid 2px #D32F2F;
+        margin-left: 10px;
+    }
+    button.md-button.md-accent.md-raised:not([disabled]):hover,
+    {
+        background-color: #EF5350;
+    }
+    button.md-button.md-accent.md-raised:not([disabled]):active {
+        background-color: #E53935;
+        margin-top: 2px;
+        border-bottom: none;
+    }
 }
 
 // Header Toolbar

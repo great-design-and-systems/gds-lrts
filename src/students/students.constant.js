@@ -7,6 +7,7 @@
             UPDATE_STUDENT: 'updateStudent',
             DELETE_STUDENT: 'deleteStudent',
             GET_STUDENTS: 'getStudents',
-            OPEN_REMOVE_STUDENT_CONFIRM_DIALOG: 'openRemoveStudentConfirmDialog'
+            OPEN_REMOVE_STUDENT_CONFIRM_DIALOG: 'openRemoveStudentConfirmDialog',
+            OPEN_IMAGE_UPLOAD_FOR_STUDENT_DIALOG: 'openImageUploadForStudentDialog'
         });
 })();

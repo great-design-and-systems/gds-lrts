@@ -29,9 +29,11 @@
         });
 
         function onInit() {
-            studentsComponent.isLoading = false;
+            studentsComponent.isLoading = true;
             studentsComponent.filter = FilterSettingsService;
-            EventEmitterService.emit(StudentsEvents.GET_STUDENTS, studentsComponent.filter);
+            EventEmitterService.emit(StudentsEvents.GET_STUDENTS, studentsComponent.filter, function() {
+                studentsComponent.isLoading = false;
+            });
         }
 
         function onDestroy() {

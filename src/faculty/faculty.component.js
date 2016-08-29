@@ -28,9 +28,11 @@
         });
 
         function onInit() {
-            facultyComponent.isLoading = false;
+            facultyComponent.isLoading = true;
             facultyComponent.filter = FacultyFilterSettingsService;
-            EventEmitterService.emit(FacultyEvents.GET_FACULTIES, facultyComponent.filter);
+            EventEmitterService.emit(FacultyEvents.GET_FACULTIES, facultyComponent.filter, function() {
+                facultyComponent.isLoading = false;
+            });
         }
 
         function onDestroy() {

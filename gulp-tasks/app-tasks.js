@@ -33,6 +33,7 @@ var SRC_JS = [
     'src/app/core/frame-legend/frame-legend.component.js',
     'src/app/core/emit-event/emit-event.directive.js',
     'src/app/core/page-settings/page-settings.component.js',
+    'src/app/core/image-load/image-load.directive.js',
     /* Monitor */
     'src/monitor/monitor.module.js',
     'src/monitor/monitor-resource.service.js',
@@ -166,6 +167,9 @@ var SRC_JS = [
     'src/upload/upload-resource.service.js',
     'src/upload/events/upload-single-file.event.js',
     'src/upload/upload.constant.js',
+    'src/upload/image-dialog/upload-image-dialog.controller.js',
+    'src/upload/events/open-image-upload-dialog.event.js',
+    'src/upload/events/update-single-file-content.event.js',
     /* Security */
     'src/security/security.module.js',
     'src/security/security-resource.service.js',
@@ -199,6 +203,7 @@ var SRC_JS = [
     'src/students/settings/filter-settings.component.js',
     'src/students/settings/filter-settings.service.js',
     'src/students/events/open-remove-student-confirm-dialog.event.js',
+    'src/students/events/open-image-upload-for-student-dialog.event.js',
     /* Faculty */
     'src/faculty/faculty.module.js',
     'src/faculty/links/faculty-link.component.js',
@@ -241,7 +246,12 @@ var SRC_JS = [
     'src/importer/tracker/import-failed/import-failed.component.js',
     'src/importer/logs/import-logs.component.js',
     /* Print */
-    'vendors/ngPrint/ngPrint.js'
+    'vendors/ngPrint/ngPrint.js',
+    /* File */
+    'src/file/file.module.js',
+    'src/file/file.constant.js',
+    'src/file/file-resource.service.js',
+    'src/file/events/delete-file.event.js'
 ];
 
 var SASS_INDEX = 'src/app.scss';

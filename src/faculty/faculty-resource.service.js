@@ -74,6 +74,7 @@
         }
 
         function updateFaculty(data, callback) {
+            data.facultyId = data._id;
             return resource.updateFaculty(data, function(result) {
                 callback(undefined, result);
             }, function(err) {
