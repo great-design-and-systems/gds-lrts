@@ -219,6 +219,7 @@ var SRC_JS = [
     'src/faculty/settings/filter-settings.component.js',
     'src/faculty/settings/filter-settings.service.js',
     'src/faculty/events/open-remove-faculty-confirm-dialog.event.js',
+    'src/faculty/events/open-image-upload-for-faculty-dialog.event.js',
     /* Label */
     'src/labels/labels.module.js',
     'src/labels/labels.constant.js',
