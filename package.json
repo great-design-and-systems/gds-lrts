@@ -11,7 +11,7 @@
         "server": "./node_modules/.bin/http-server",
         "start": "npm run gulp && npm run server",
         "debug": "npm run gulp debug",
-        "container-pre-start": "pre-start.sh",
+        "container-pre-start": "/app/scripts/pre-start.sh",
         "container": "npm run gulp pull && gulp bower && gulp && npm run server"
     },
     "repository": {
