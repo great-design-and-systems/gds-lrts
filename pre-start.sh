@@ -1,1 +1,2 @@
-sh /app/scripts/pre-start.sh
+cd /app/scripts
+sh pre-start.sh
