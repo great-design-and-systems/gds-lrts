@@ -1,0 +1,1 @@
+sh /app/scripts/pre-start.sh

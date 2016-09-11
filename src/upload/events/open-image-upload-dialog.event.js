@@ -9,7 +9,7 @@
             var dialogData = {
                 controller: 'UploadImageDialogController',
                 controllerAs: 'uploadImageDialog',
-                templateUrl: 'src/upload/image-dialog/upload-image-dialog.html',
+                templateUrl: 'src/upload/image-dialog/apload-image-dialog.html',
                 locals: {
                     data: data
                 }

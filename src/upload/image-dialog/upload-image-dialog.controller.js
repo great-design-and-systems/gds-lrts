@@ -48,7 +48,8 @@
                     fileUpload.fileId = uploadImageDialog.data.imageId;
                     EventEmitterService.emit(UploadEvents.UPDATE_SINGLE_FILE_CONTENT, fileUpload, function(err) {
                         uploadImageDialog.isSubmitting = false;
-                        uploadImageDialog.avatarLink = DownloaderService.createRawFileLink(uploadImageDialog.data.imageId) + '&cb=' + (new Date()).toString();
+                        uploadImageDialog.avatarLink = DownloaderService.createRawFileLink(uploadImageDialog.data.imageId) +
+                            '&cb=' + (new Date()).toString();
                     });
                 } else {
                     EventEmitterService.emit(UploadEvents.UPLOAD_SINGLE_FILE, fileUpload, function(err, result) {
