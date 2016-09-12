@@ -1,6 +1,15 @@
-(function() {
+(function () {
     'use strict';
-    angular.module('gdsApp', [ /*Vendor modules */
+    Bootstrap.$inject = ['EventEmitterService', 'LabelsEvents', 'LabelsService'];
+    function Bootstrap(EventEmitterService, LabelsEvents, LabelsService) {
+        EventEmitterService.emit(LabelsEvents.GET_LABELS, function (err, result) {
+            if(!err){
+                LabelsService.setLabels(result);
+            }
+        });
+    }
+
+    angular.module('gdsApp', [/*Vendor modules */
         'ui.router',
         'ngResource',
         'ngMaterial',
@@ -29,5 +38,5 @@
         'app.upload',
         'app.importer',
         'app.file'
-    ]);
+    ]).run(Bootstrap);
 })();

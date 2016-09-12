@@ -6,10 +6,12 @@
             controller: ToolbarLogoComponent,
             controllerAs: 'toolbarLogo'
         });
-    ToolbarLogoComponent.$inject = ['EventEmitterService', 'LabelsEvents'];
-    function ToolbarLogoComponent(EventEmitterService, LabelsEvents) {
+    ToolbarLogoComponent.$inject = ['EventEmitterService', 'LabelsEvents', 'LabelsService'];
+    function ToolbarLogoComponent(EventEmitterService, LabelsEvents, LabelsService) {
         var toolbarLogo = this;
-        toolbarLogo.isLoading = true;
+        toolbarLogo.title = LabelsService.values.label_title_name;
+        toolbarLogo.branch = LabelsService.values.label_title_branch;
+
         EventEmitterService.onComplete(LabelsEvents.CASCADE_LABELS, function (result) {
             toolbarLogo.isLoading = false;
             if (result) {
