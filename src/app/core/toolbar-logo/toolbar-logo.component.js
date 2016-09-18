@@ -9,8 +9,8 @@
     ToolbarLogoComponent.$inject = ['EventEmitterService', 'LabelsEvents', 'LabelsService'];
     function ToolbarLogoComponent(EventEmitterService, LabelsEvents, LabelsService) {
         var toolbarLogo = this;
-        toolbarLogo.title = LabelsService.values.label_title_name;
-        toolbarLogo.branch = LabelsService.values.label_title_branch;
+        toolbarLogo.title = LabelsService.values['label_title_name'];
+        toolbarLogo.branch = LabelsService.values['label_title_branch'];
 
         EventEmitterService.onComplete(LabelsEvents.CASCADE_LABELS, function (result) {
             toolbarLogo.isLoading = false;

@@ -1,0 +1,10 @@
+<md-input-container flex ng-if="!selectAsync.isLoading" aria-label="{{title}}">
+    <label for="selectAsyncField">{{title}}</label>
+    <md-select aria-required="{{required}}" ng-change="selectAsync.onChange()" id="selectAsyncField"
+               ng-model="selectAsync.async">
+        <md-option value="{{async.name}}" ng-repeat="async in selectAsync.asyncs">
+            {{async.name}}
+        </md-option>
+    </md-select>
+</md-input-container>
+<md-progress-circular ng-if="selectAsync.isLoading" md-mode="indeterminate"></md-progress-circular>

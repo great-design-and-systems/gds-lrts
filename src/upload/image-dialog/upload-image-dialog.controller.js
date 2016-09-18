@@ -1,10 +1,10 @@
-(function() {
+(function () {
     'use strict';
     angular.module('app.upload')
         .controller('UploadImageDialogController', UploadImageDialogController);
-    UploadImageDialogController.$inject = ['$scope', '$cacheFactory', 'DownloaderService', 'EventEmitterService', 'FileEvents', 'UploadEvents'];
+    UploadImageDialogController.$inject = ['$scope', 'DownloaderService', 'EventEmitterService', 'FileEvents', 'UploadEvents'];
 
-    function UploadImageDialogController($scope, $cacheFactory, DownloaderService, EventEmitterService, FileEvents, UploadEvents) {
+    function UploadImageDialogController($scope, DownloaderService, EventEmitterService, FileEvents, UploadEvents) {
         var uploadImageDialog = this;
         uploadImageDialog.submitLabel = 'Save';
         uploadImageDialog.cancelLabel = 'Cancel';
@@ -46,24 +46,23 @@
             if (fileUpload.file) {
                 if (uploadImageDialog.data.imageId) {
                     fileUpload.fileId = uploadImageDialog.data.imageId;
-                    EventEmitterService.emit(UploadEvents.UPDATE_SINGLE_FILE_CONTENT, fileUpload, function(err) {
+                    EventEmitterService.emit(UploadEvents.UPDATE_SINGLE_FILE_CONTENT, fileUpload, function (err) {
                         uploadImageDialog.isSubmitting = false;
                         uploadImageDialog.avatarLink = DownloaderService.createRawFileLink(uploadImageDialog.data.imageId) +
                             '&cb=' + (new Date()).toString();
                     });
                 } else {
-                    EventEmitterService.emit(UploadEvents.UPLOAD_SINGLE_FILE, fileUpload, function(err, result) {
+                    EventEmitterService.emit(UploadEvents.UPLOAD_SINGLE_FILE, fileUpload, function (err, result) {
                         uploadImageDialog.isSubmitting = false;
                         uploadImageDialog.fileId = result.fileId;
                         uploadImageDialog.data.imageId = result.fileId;
                         uploadImageDialog.avatarLink = DownloaderService.createRawFileLink(result.fileId);
                     });
                 }
-
             }
         }
 
-        function track(progress) {
+        function track() {
             if (!uploadImageDialog.isSubmitting) {
                 uploadImageDialog.isSubmitting = true;
             }

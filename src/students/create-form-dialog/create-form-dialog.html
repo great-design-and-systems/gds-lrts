@@ -4,28 +4,94 @@
             <h3>{{createForm.title}}</h3>
             <span flex></span>
             <md-button ng-disabled="createForm.isSubmitting" class="md-icon-button"
-                       ng-click="createForm.cancelUpload()">
+                       ng-click="createForm.cancelCreate()">
                 <md-icon md-font-icon="fa fa-close" aria-label="Close dialog"></md-icon>
             </md-button>
         </div>
     </md-toolbar>
-    <md-dialog-content layout-padding="1">
+    <form ng-submit="createForm.save()">
+        <md-dialog-content layout-padding="1" layout="column">
+            <div class="error" ng-if="createForm.message">
+                {{createForm.message}}
+            </div>
+            <div flex layout>
+                <div ngf-change="createForm.onFileChange()" class="clickable" ngf-select
+                     ng-model="createForm.uploadFile" name="uploadFile" ngf-accept="'image/*'"
+                     ngf-max-size="20MB" aria-label="Browse">
+                    <img ng-if="!createForm.data.imageId" height="128" width="128"
+                         ng-src="/img/id-image-placeholder.png" class="md-media-xl card-media">
+                    <img ng-if="createForm.data.imageId" height="128" width="128"
+                         ng-src="{{createForm.avatarLink}}" class="md-media-xl card-media">
+                </div>
+                <div flex layout="column">
+                    <div flex layout>
+                        <md-input-container flex>
+                            <label for="studentIDField">Student ID</label>
+                            <input name="studentId" id="studentIDField"
+                                   ng-model="createForm.data.studentId"
+                                   required>
+                        </md-input-container>
+                    </div>
+                    <div flex layout>
+                        <select-async required title="Department" event="getDepartments" flex layout
+                                      ng-model="createForm.data.department"></select-async>
+                    </div>
+                    <div flex layout>
+                        <select-async required title="Level" event="getEducationLevels" flex layout
+                                      ng-model="createForm.data.level"></select-async>
+                    </div>
+                </div>
+            </div>
+            <div flex layout>
+                <md-input-container>
+                    <label for="studentFirstName">First Name</label>
+                    <input id="studentFirstName" ng-model="createForm.data.firstName" required>
+                </md-input-container>
+                <md-input-container>
+                    <label for="studentLastName">Last Name</label>
+                    <input id="studentLastName" ng-model="createForm.data.lastName" required>
+                </md-input-container>
+                <md-input-container>
+                    <label for="studentMiddleName">Middle Name</label>
+                    <input id="studentMiddleName" ng-model="createForm.data.middleName">
+                </md-input-container>
+            </div>
+            <div flex layout>
+                <md-input-container flex>
+                    <label>Gender</label>
+                    <md-select ng-model="createForm.data.gender">
+                        <md-option value="Female">Female</md-option>
+                        <md-option value="Male">Male</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div flex layout>
+                <md-input-container flex>
+                    <label>Email</label>
+                    <input type="email" ng-model="createForm.data.emailAddress">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Contact No</label>
+                    <input ng-model="createForm.data.contactNo">
+                </md-input-container>
+            </div>
 
-    </md-dialog-content>
-    <md-dialog-actions layout="row">
-        <div ng-if="createForm.isSubmitting">
-            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-        </div>
-        <md-button ng-click="createForm.save()"
-                   ng-disabled="!createForm.data.imageId || createForm.isSubmitting"
-                   class="md-primary md-raised">
-            {{createForm.submitLabel}}
-            <md-tooltip>{{createForm.submitLabel}}</md-tooltip>
-        </md-button>
-        <md-button ng-disabled="createForm.isSubmitting" ng-click="createForm.cancelUpload()"
-                   class="md-accent md-raised">
-            {{createForm.cancelLabel}}
-            <md-tooltip>{{createForm.cancelLabel}}</md-tooltip>
-        </md-button>
-    </md-dialog-actions>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <div ng-if="createForm.isSubmitting">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+            <md-button type="submit"
+                       ng-disabled="createForm.isSubmitting"
+                       class="md-primary md-raised">
+                {{createForm.submitLabel}}
+                <md-tooltip>{{createForm.submitLabel}}</md-tooltip>
+            </md-button>
+            <md-button ng-disabled="createForm.isSubmitting" ng-click="createForm.cancelCreate()"
+                       class="md-accent md-raised">
+                {{createForm.cancelLabel}}
+                <md-tooltip>{{createForm.cancelLabel}}</md-tooltip>
+            </md-button>
+        </md-dialog-actions>
+    </form>
 </md-dialog>
