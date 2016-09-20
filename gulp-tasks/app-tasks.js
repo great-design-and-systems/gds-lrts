@@ -206,7 +206,9 @@ var SRC_JS = [
     'src/students/events/open-remove-student-confirm-dialog.event.js',
     'src/students/events/open-image-upload-for-student-dialog.event.js',
     'src/students/events/open-create-student-form-dialog.event.js',
+    'src/students/events/open-edit-student-form-dialog.event.js',
     'src/students/create-form-dialog/create-form-dialog.controller.js',
+    'src/students/create-form-dialog/edit-form-dialog.controller.js',
     'src/students/events/create-student-with-detail.event.js',
     'src/students/events/validate-student-id.event.js',
     /* Faculty */

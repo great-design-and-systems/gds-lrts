@@ -20,6 +20,10 @@
                                 <md-icon md-font-icon="fa fa-close" event-class="faa-flash animated" event-debounce="true" event-data="students" emit-event="openRemoveStudentConfirmDialog"></md-icon>
                             </md-button>
                             <md-button class="md-icon-button md-primary">
+                                <md-tooltip>Edit {{students.firstName}}</md-tooltip>
+                                <md-icon md-font-icon="fa fa fa-pencil" event-class="faa-flash animated" event-debounce="true" event-data="students" emit-event="openEditStudentFormDialog"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button md-primary">
                                 <md-tooltip>Update image</md-tooltip>
                                 <md-icon md-font-icon="fa fa fa-picture-o" event-class="faa-flash animated" event-debounce="true" event-data="students" emit-event="openImageUploadForStudentDialog"></md-icon>
                             </md-button>

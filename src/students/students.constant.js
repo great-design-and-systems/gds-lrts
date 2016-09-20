@@ -11,6 +11,7 @@
             VALIDATE_STUDENT_ID: 'validateStudentId',
             OPEN_REMOVE_STUDENT_CONFIRM_DIALOG: 'openRemoveStudentConfirmDialog',
             OPEN_IMAGE_UPLOAD_FOR_STUDENT_DIALOG: 'openImageUploadForStudentDialog',
-            OPEN_CREATE_STUDENT_FORM_DIALOG: 'openCreateStudentFromDialog'
+            OPEN_CREATE_STUDENT_FORM_DIALOG: 'openCreateStudentFromDialog',
+            OPEN_EDIT_STUDENT_FORM_DIALOG: 'openEditStudentFormDialog'
         });
 })();
