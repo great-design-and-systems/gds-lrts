@@ -36,6 +36,10 @@
             getFaculties: {
                 method: 'GET',
                 url: API_HOST + FACULTY_CONTEXT + 'getFaculties'
+            },
+            validateFacultyId: {
+                method: 'GET',
+                url: API_HOST + FACULTY_CONTEXT + 'validateFacultyId'
             }
         });
 
@@ -44,7 +48,9 @@
             createFaculty: createFaculty,
             updateFaculty: updateFaculty,
             deleteFaculty: deleteFaculty,
-            getFaculties: getFaculties
+            getFaculties: getFaculties,
+            createFacultyWithDetail: createFacultyWithDetail,
+            validateFacultyId: validateFacultyId
         };
 
         function getProfileByFacultyId(facultyId, callback) {
@@ -72,7 +78,23 @@
                 callback(err);
             });
         }
-
+		function createFacultyWithDetail(data, callback) {
+			return resource.createFaculty({
+				facultyId : data.facultyId,
+				firstName : data.firstName,
+				lastName : data.lastName,
+				middleName : data.middleName,
+				gender : data.gender,
+				contactNo : data.contactNo,
+				emailAddress : data.emailAddress,
+				department : data.department,
+				imageId : data.imageId
+			}, function(result) {
+				callback(undefined, result);
+			}, function(err) {
+				callback(err);
+			});
+		}
         function updateFaculty(data, callback) {
             return resource.updateFaculty(data, function(result) {
                 callback(undefined, result);
@@ -99,6 +121,16 @@
             }, function(result) {
                 callback(undefined, result);
             }, function(err) {
+                callback(err);
+            });
+        }
+
+        function validateFacultyId(facultyId, callback) {
+            return resource.validateFacultyId({
+                facultyId: facultyId
+            }, function (result) {
+                callback(undefined, result);
+            }, function (err) {
                 callback(err);
             });
         }

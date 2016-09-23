@@ -1,0 +1,93 @@
+<md-dialog class="form-dialog" aria-label="facultyForm form">
+    <md-toolbar class="primary">
+        <div class="md-toolbar-tools">
+            <h3>{{facultyForm.title}}</h3>
+            <span flex></span>
+            <md-button ng-disabled="facultyForm.isSubmitting" class="md-icon-button"
+                       ng-click="facultyForm.cancelCreate()">
+                <md-icon md-font-icon="fa fa-close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <form ng-submit="facultyForm.save()">
+        <md-dialog-content layout-padding="1" layout="column">
+            <div class="error" ng-if="facultyForm.message">
+                {{facultyForm.message}}
+            </div>
+            <div flex layout>
+                <div ngf-change="facultyForm.onFileChange()" class="clickable" ngf-select
+                     ng-model="facultyForm.uploadFile" name="uploadFile" ngf-accept="'image/*'"
+                     ngf-max-size="20MB" aria-label="Browse">
+                    <img ng-if="!facultyForm.data.imageId" height="128" width="128"
+                         ng-src="/img/id-image-placeholder.png" class="md-media-xl card-media">
+                    <img ng-if="facultyForm.data.imageId" height="128" width="128"
+                         ng-src="{{facultyForm.avatarLink}}" class="md-media-xl card-media">
+                </div>
+                <div flex layout="column">
+                    <div flex layout>
+                        <md-input-container flex>
+                            <label for="facultyIDField">Student ID</label>
+                            <input name="facultyId" id="facultyIDField"
+                                   ng-model="facultyForm.data.facultyId"
+                                   required>
+                        </md-input-container>
+                    </div>
+                    <div flex layout>
+                        <select-async required title="Department" event="getDepartments" flex layout
+                                      ng-model="facultyForm.data.department"></select-async>
+                    </div>
+                </div>
+            </div>
+            <div flex layout>
+                <md-input-container>
+                    <label for="facultyFirstName">First Name</label>
+                    <input id="facultyFirstName" ng-model="facultyForm.data.firstName" required>
+                </md-input-container>
+                <md-input-container>
+                    <label for="facultyLastName">Last Name</label>
+                    <input id="facultyLastName" ng-model="facultyForm.data.lastName" required>
+                </md-input-container>
+                <md-input-container>
+                    <label for="facultyMiddleName">Middle Name</label>
+                    <input id="facultyMiddleName" ng-model="facultyForm.data.middleName">
+                </md-input-container>
+            </div>
+            <div flex layout>
+                <md-input-container flex>
+                    <label>Gender</label>
+                    <md-select ng-model="facultyForm.data.gender">
+                        <md-option value="Female">Female</md-option>
+                        <md-option value="Male">Male</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div flex layout>
+                <md-input-container flex>
+                    <label>Email</label>
+                    <input type="email" ng-model="facultyForm.data.emailAddress">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Contact No</label>
+                    <input ng-model="facultyForm.data.contactNo">
+                </md-input-container>
+            </div>
+
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <div ng-if="facultyForm.isSubmitting">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+            <md-button type="submit"
+                       ng-disabled="facultyForm.isSubmitting"
+                       class="md-primary md-raised">
+                {{facultyForm.submitLabel}}
+                <md-tooltip>{{facultyForm.submitLabel}}</md-tooltip>
+            </md-button>
+            <md-button ng-disabled="facultyForm.isSubmitting" ng-click="facultyForm.cancelCreate()"
+                       class="md-accent md-raised">
+                {{facultyForm.cancelLabel}}
+                <md-tooltip>{{facultyForm.cancelLabel}}</md-tooltip>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

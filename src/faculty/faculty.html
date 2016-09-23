@@ -16,7 +16,12 @@
                     <td md-cell>
                         <div layout>
                             <md-button class="md-icon-button md-accent">
+                            	<md-tooltip>Delete {{faculty.firstName}}</md-tooltip>
                                 <md-icon md-font-icon="fa fa-close" event-class="faa-flash animated" event-debounce="true" event-data="faculty" emit-event="openRemoveFacultyConfirmDialog"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button md-primary">
+                                <md-tooltip>Edit {{faculty.firstName}}</md-tooltip>
+                                <md-icon md-font-icon="fa fa fa-pencil" event-class="faa-flash animated" event-debounce="true" event-data="faculty" emit-event="openEditFacultyFormDialog"></md-icon>
                             </md-button>
                             <md-button class="md-icon-button md-primary">
                                 <md-icon md-font-icon="fa fa fa-picture-o" event-class="faa-flash animated" event-debounce="true" event-data="faculty" emit-event="openImageUploadForFacultyDialog"></md-icon>
