@@ -13,6 +13,7 @@
         uploadImageDialog.save = save;
         uploadImageDialog.cancelUpload = cancelUpload;
         uploadImageDialog.onFileChange = onFileChange;
+        var addNewImage = false;
         var fileUpload = {};
         fileUpload.track = track;
         onInit();
@@ -33,6 +34,9 @@
         }
 
         function cancelUpload() {
+            if (addNewImage) {
+                uploadImageDialog.data.imageId = undefined;
+            }
             uploadImageDialog.cancel();
             if (uploadImageDialog.fileId) {
                 EventEmitterService.emit(FileEvents.DELETE_FILE, {
@@ -52,6 +56,7 @@
                             '&cb=' + (new Date()).toString();
                     });
                 } else {
+                    addNewImage = true;
                     EventEmitterService.emit(UploadEvents.UPLOAD_SINGLE_FILE, fileUpload, function (err, result) {
                         uploadImageDialog.isSubmitting = false;
                         uploadImageDialog.fileId = result.fileId;

@@ -27,7 +27,7 @@ gulp.task('default', function() {
 });
 gulp.task('debug', function() {
     runSequence('vendor-debug', 'set-constant-values', 'app-debug', 'html-dev');
-})
+});
 gulp.task('html-dev', function() {
     return gulp.src('html-build/index.html')
         .pipe(htmlreplace({
@@ -37,7 +37,7 @@ gulp.task('html-dev', function() {
             vendorCSS: 'dist/vendors.css'
         }))
         .pipe(gulp.dest('.'));
-})
+});
 
 gulp.task('html-prod', function() {
     return gulp.src('html-build/index.html')
