@@ -18,8 +18,8 @@
             'gender',
             'contactNo',
             'emailAddress',
-            'department',
-            'level'
+            'department/grade',
+            'level/section'
         ];
         studentsComponent.$onInit = onInit;
         studentsComponent.$onDestroy = onDestroy;
