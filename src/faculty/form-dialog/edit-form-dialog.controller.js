@@ -3,12 +3,19 @@
     angular.module('app.faculty').controller('FacultyEditFormController', FacultyEditFormController);
     FacultyEditFormController.$inject = ['DownloaderService', 'EventEmitterService', 'UploadEvents', '$scope', 'FileEvents', 'FacultyEvents'];
     function FacultyEditFormController(DownloaderService, EventEmitterService, UploadEvents, $scope, FileEvents, FacultyEvents) {
-        var editForm = this;
+        var editForm = this, addedNewImage = false;
         editForm.save = save;
         editForm.onFileChange = onFileChange;
         editForm.cancelCreate = cancelCreate;
-        //editForm.data = {};
         $scope.$on('$destroy', destroy);
+        onInit();
+        function onInit() {
+        	addedNewImage = false;
+        	if (editForm.data && editForm.data.imageId) {
+        		editForm.avatarLink = DownloaderService.createRawFileLink(editForm.data.imageId) +
+                '&cb=' + (new Date()).toString();
+        	}
+        }
         function save() {
             EventEmitterService.emit(FacultyEvents.UPDATE_FACULTY, editForm.data, function (err) {
                 if (!err) {
@@ -36,6 +43,7 @@
                             '&cb=' + (new Date()).toString();
                     });
             } else {
+            	addedNewImage = true;
                 EventEmitterService.emit(UploadEvents.UPLOAD_SINGLE_FILE, {
                     file: editForm.uploadFile,
                     track: track
@@ -55,15 +63,17 @@
         function destroy() {
             editForm.data = undefined;
             editForm.message = undefined;
+            addedNewImage = false;
         }
 
         function cancelCreate() {
-            if (editForm.data.imageId) {
+            if (addedNewImage && editForm.data.imageId) {
                 editForm.isSubmitting = true;
                 EventEmitterService.emit(FileEvents.DELETE_FILE, {
                     fileId: editForm.data.imageId
                 }, function () {
                     editForm.isSubmitting = false;
+                    editForm.data.imageId = undefined;
                     editForm.cancel();
                 });
             } else {

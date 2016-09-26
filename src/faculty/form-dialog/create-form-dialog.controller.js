@@ -64,6 +64,7 @@
                     fileId: createForm.data.imageId
                 }, function () {
                     createForm.isSubmitting = false;
+                    createForm.data.imageId = undefined;
                     createForm.cancel();
                 });
             } else {

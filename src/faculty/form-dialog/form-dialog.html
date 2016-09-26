@@ -26,7 +26,7 @@
                 <div flex layout="column">
                     <div flex layout>
                         <md-input-container flex>
-                            <label for="facultyIDField">Student ID</label>
+                            <label for="facultyIDField">Faculty ID</label>
                             <input name="facultyId" id="facultyIDField"
                                    ng-model="facultyForm.data.facultyId"
                                    required>
@@ -44,12 +44,12 @@
                     <input id="facultyFirstName" ng-model="facultyForm.data.firstName" required>
                 </md-input-container>
                 <md-input-container>
-                    <label for="facultyLastName">Last Name</label>
-                    <input id="facultyLastName" ng-model="facultyForm.data.lastName" required>
-                </md-input-container>
-                <md-input-container>
                     <label for="facultyMiddleName">Middle Name</label>
                     <input id="facultyMiddleName" ng-model="facultyForm.data.middleName">
+                </md-input-container>
+                <md-input-container>
+                    <label for="facultyLastName">Last Name</label>
+                    <input id="facultyLastName" ng-model="facultyForm.data.lastName" required>
                 </md-input-container>
             </div>
             <div flex layout>

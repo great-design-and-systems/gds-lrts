@@ -5,7 +5,7 @@
     Event.$inject = ['$rootScope', 'FacultyEvents', 'UploadResourceService', 'AppEvents', 'EventEmitterService', 'FilterSettingsService'];
 
     function Event($rootScope, FacultyEvents, UploadResourceService, AppEvents, EventEmitterService, FilterSettingsService) {
-        $rootScope.$on(FacultyEvents.OPEN_EDIT_FACULTY_FORM_DIALOG, function ($event, callback) {
+        $rootScope.$on(FacultyEvents.OPEN_EDIT_FACULTY_FORM_DIALOG, function ($event, data, callback) {
             var dialogData = {
                 controller: 'FacultyEditFormController',
                 controllerAs: 'facultyForm',
@@ -13,7 +13,8 @@
                 locals: {
                     cancelLabel: 'Cancel',
                     submitLabel: 'Save',
-                    title: 'New Faculty'
+                    title: 'Edit Faculty',
+                    data: data
                 }
             };
 
