@@ -33,6 +33,7 @@ var LIB_JS = [
     'vendors/color2color/color2color.js',
     'vendors/html2canvas/html2canvas.js',
     'vendors/canvas2image/canvas2image.js',
+    'vendors/ngPrint/ngPrint.js'
 ];
 
 var LIB_CSS = [
