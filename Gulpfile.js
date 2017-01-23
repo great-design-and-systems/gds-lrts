@@ -22,15 +22,16 @@ new require('./gulp-tasks/vendor-tasks')(gulp);
 var git = require('gulp-git');
 var bower = require('gulp-bower');
 
-gulp.task('default', function() {
+gulp.task('default', function () {
     runSequence('vendor-build', 'set-constant-values', 'app-build', 'html-prod');
 });
-gulp.task('debug', function() {
+gulp.task('debug', function () {
     runSequence('vendor-debug', 'set-constant-values', 'app-debug', 'html-dev');
 });
-gulp.task('html-dev', function() {
+gulp.task('html-dev', function () {
     return gulp.src('html-build/index.html')
         .pipe(htmlreplace({
+            socket: API_HOST + '/socket.io/socket.io.js',
             appJS: appTasks.SRC_JS,
             appCSS: 'dist/app.css',
             vendorJS: 'dist/vendors.js',
@@ -39,9 +40,10 @@ gulp.task('html-dev', function() {
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('html-prod', function() {
+gulp.task('html-prod', function () {
     return gulp.src('html-build/index.html')
         .pipe(htmlreplace({
+            socket: API_HOST + '/socket.io/socket.io.js',
             appJS: 'dist/release/app.js',
             appCSS: 'dist/release/app.css',
             vendorJS: 'dist/release/vendors.js',
@@ -50,7 +52,7 @@ gulp.task('html-prod', function() {
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('set-constant-values', function() {
+gulp.task('set-constant-values', function () {
     gulp.src(['html-build/app.constant.js'])
         .pipe(replace('#API_HOST', API_HOST))
         .pipe(replace('#SCANNER_CONTEXT', SCANNER_CONTEXT))
@@ -69,12 +71,12 @@ gulp.task('set-constant-values', function() {
 });
 
 // Run git pull from multiple branches 
-gulp.task('pull', function() {
-    git.pull('origin', ['master'], function(err) {
+gulp.task('pull', function () {
+    git.pull('origin', ['master'], function (err) {
         if (err) throw err;
     });
 });
 
-gulp.task('bower', function() {
+gulp.task('bower', function () {
     return bower({ cmd: 'update' });
 });
