@@ -16,9 +16,11 @@
         filterSettings.filter = FilterSettingsService;
         filterSettings.onChangeLimit = onChangeLimit;
         filterSettings.onChangePage = onChangePage;
+        filterSettings.onNextPage = onNextPage;
+        filterSettings.onPrevPage = onPrevPage;
         EventEmitterService.onComplete(StudentsEvents.GET_STUDENTS, function(result) {
+            filterSettings.filter.pages = [];
             for (var i = 1; i <= result.pages; i++) {
-                filterSettings.filter.pages = [];
                 filterSettings.filter.pages.push(i);
             }
             filterSettings.total = result.total;
@@ -30,6 +32,16 @@
         }
 
         function onChangePage() {
+            EventEmitterService.emit(StudentsEvents.GET_STUDENTS, filterSettings.filter);
+        }
+
+        function onNextPage() {
+            filterSettings.filter.page++;
+            EventEmitterService.emit(StudentsEvents.GET_STUDENTS, filterSettings.filter);
+        }
+
+        function onPrevPage() {
+            filterSettings.filter.page--;
             EventEmitterService.emit(StudentsEvents.GET_STUDENTS, filterSettings.filter);
         }
     }

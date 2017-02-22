@@ -26,7 +26,7 @@
         }
 
         function next() {
-            filterSetting.next++;
+            filterSetting.page++;
         }
     }
 })();
