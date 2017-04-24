@@ -21,9 +21,9 @@
             },
             updateFaculty: {
                 method: 'PUT',
-                url: API_HOST + FACULTY_CONTEXT + 'updateFaculty?param=facultyId::facultyId',
+                url: API_HOST + FACULTY_CONTEXT + 'updateFaculty?param=facultyId::id',
                 params: {
-                    facultyId: '@facultyId'
+                    id: '@id'
                 }
             },
             deleteFaculty: {
@@ -96,7 +96,18 @@
 			});
 		}
         function updateFaculty(data, callback) {
-            return resource.updateFaculty(data, function(result) {
+            return resource.updateFaculty({
+                id: data._id,
+				facultyId : data.facultyId,
+				firstName : data.firstName,
+				lastName : data.lastName,
+				middleName : data.middleName,
+				gender : data.gender,
+				contactNo : data.contactNo,
+				emailAddress : data.emailAddress,
+				department : data.department,
+				imageId : data.imageId
+			}, function(result) {
                 callback(undefined, result);
             }, function(err) {
                 callback(err);

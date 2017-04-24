@@ -21,9 +21,9 @@
             },
             updateStudent: {
                 method: 'PUT',
-                url: API_HOST + STUDENT_CONTEXT + 'updateStudent?param=studentId::studentId',
+                url: API_HOST + STUDENT_CONTEXT + 'updateStudent?param=studentId::id',
                 params: {
-                    studentId: '@studentId'
+                    id: '@id'
                 }
             },
             deleteStudent: {
@@ -100,7 +100,19 @@
         }
 
         function updateStudent(data, callback) {
-            return resource.updateStudent(data, function (result) {
+            return resource.updateStudent({
+                id: data._id,
+                studentId: data.studentId,
+                firstName: data.firstName,
+                lastName: data.lastName,
+                middleName: data.middleName,
+                gender: data.gender,
+                contactNo: data.contactNo,
+                emailAddress: data.emailAddress,
+                department: data.department,
+                level: data.level,
+                imageId: data.imageId
+            }, function (result) {
                 callback(undefined, result);
             }, function (err) {
                 callback(err);
