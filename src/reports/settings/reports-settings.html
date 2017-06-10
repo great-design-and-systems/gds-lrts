@@ -2,7 +2,7 @@
     <md-subheader ng-click="reportsSettings.shown=!reportsSettings.shown" class="md-no-sticky clickable">
         <md-icon ng-if="reportsSettings.shown" md-font-icon="fa fa-caret-up"></md-icon>
         <md-icon ng-if="!reportsSettings.shown" md-font-icon="fa fa-caret-down"></md-icon>
-        Properties
+        Report Settings <i class="fa fa-gear"/>
     </md-subheader>
     <md-list-item layout ng-if="reportsSettings.shown">
         <md-input-container flex>
@@ -30,36 +30,55 @@
         <div flex layout="column" class="person-type">
             <h4>Person type</h4>
             <div layout>
-                <md-checkbox aria-label="Filter visitor" flex ng-model="reportsSettings.reportProperties.isVisitor">Visitor</md-checkbox>
-                <md-checkbox aria-label="Filter faculty" flex ng-model="reportsSettings.reportProperties.isFaculty">Faculty</md-checkbox>
+                <md-checkbox aria-label="Filter visitor" flex ng-model="reportsSettings.reportProperties.isVisitor">
+                    Visitor
+                </md-checkbox>
+                <md-checkbox aria-label="Filter faculty" flex ng-model="reportsSettings.reportProperties.isFaculty">
+                    Faculty
+                </md-checkbox>
             </div>
             <div>
-                <md-checkbox aria-label="Filter student" ng-model="reportsSettings.reportProperties.isStudent">Student</md-checkbox>
+                <md-checkbox aria-label="Filter student" ng-model="reportsSettings.reportProperties.isStudent">Student
+                </md-checkbox>
             </div>
         </div>
     </md-list-item>
-    <md-list-item ng-if="reportsSettings.shown && (reportsSettings.reportProperties.reportType ==='bar' || reportsSettings.reportProperties.reportType==='line')">
+    <md-list-item
+            ng-if="reportsSettings.shown && (reportsSettings.reportProperties.reportType ==='bar' || reportsSettings.reportProperties.reportType==='line')">
         <div flex layout="column" class="chart-color">
             <h4> Chart color </h4>
-            <div md-color-hex="false" md-color-hsl="false" type="1" label="Visitor" ng-if="reportsSettings.reportProperties.isVisitor" ng-model="reportsSettings.reportProperties.visitorColor" md-color-picker md-color-generic-palette="false" md-color-history="false">
+            <div md-color-hex="false" md-color-hsl="false" type="1" label="Visitor"
+                 ng-if="reportsSettings.reportProperties.isVisitor"
+                 ng-model="reportsSettings.reportProperties.visitorColor" md-color-picker
+                 md-color-generic-palette="false" md-color-history="false">
             </div>
-            <div md-color-hex="false" md-color-hsl="false" type="1" label="Faculty" ng-if="reportsSettings.reportProperties.isFaculty" ng-model="reportsSettings.reportProperties.facultyColor" md-color-picker md-color-generic-palette="false" md-color-history="false">
+            <div md-color-hex="false" md-color-hsl="false" type="1" label="Faculty"
+                 ng-if="reportsSettings.reportProperties.isFaculty"
+                 ng-model="reportsSettings.reportProperties.facultyColor" md-color-picker
+                 md-color-generic-palette="false" md-color-history="false">
             </div>
-            <div md-color-hex="false" md-color-hsl="false" type="1" label="Student" ng-if="reportsSettings.reportProperties.isStudent" ng-model="reportsSettings.reportProperties.studentColor" md-color-picker md-color-generic-palette="false" md-color-history="false">
+            <div md-color-hex="false" md-color-hsl="false" type="1" label="Student"
+                 ng-if="reportsSettings.reportProperties.isStudent"
+                 ng-model="reportsSettings.reportProperties.studentColor" md-color-picker
+                 md-color-generic-palette="false" md-color-history="false">
             </div>
         </div>
     </md-list-item>
+
     <md-list-item ng-if="reportsSettings.shown" class="date-picker">
         <h4>Date</h4>
     </md-list-item>
     <md-list-item ng-if="reportsSettings.shown" class="date-picker">
         <div layout>
-            <md-datepicker flex required md-placeholder="From" md-max-date="reportsSettings.today" ng-model="reportsSettings.reportProperties.dateFrom"></md-datepicker>
+            <md-datepicker flex required md-placeholder="From" md-max-date="reportsSettings.today"
+                           ng-model="reportsSettings.reportProperties.dateFrom"></md-datepicker>
         </div>
     </md-list-item>
     <md-list-item ng-if="reportsSettings.shown" class="date-picker">
         <div layout>
-            <md-datepicker flex required md-min-date="reportsSettings.reportProperties.dateFrom" md-max-date="reportsSettings.today" md-placeholder="To" ng-model="reportsSettings.reportProperties.dateTo"></md-datepicker>
+            <md-datepicker flex required md-min-date="reportsSettings.reportProperties.dateFrom"
+                           md-max-date="reportsSettings.today" md-placeholder="To"
+                           ng-model="reportsSettings.reportProperties.dateTo"></md-datepicker>
         </div>
     </md-list-item>
 </md-list>
