@@ -1,6 +1,6 @@
 'use strict';
 
-var API_HOST = process.env.API_HOST || 'http://192.168.160.161:8080';// TODO: Find a way to dynamically adjust
+var API_HOST = process.env.API_HOST || '';// TODO: Find a way to dynamically adjust
 var SCANNER_CONTEXT = process.env.SCANNER_CONTEXT || '/gds/scanner/';
 var TIME_CONTEXT = process.env.TIME_CONTEXT || '/gds/timeServicePort/';
 var SCHOOL_ID = process.env.SCHOOL_ID || '57a60c8d9b19871d0010f0dd'; //Assumption college
